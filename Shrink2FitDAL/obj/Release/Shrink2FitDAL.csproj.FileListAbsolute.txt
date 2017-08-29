@@ -1,0 +1,11 @@
+C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitDAL\bin\Release\RateFile.csv
+C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitDAL\bin\Release\Shrink2FitDAL.dll.config
+C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitDAL\bin\Release\Shrink2FitDAL.dll
+C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitDAL\bin\Release\Shrink2FitDAL.pdb
+C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitDAL\bin\Release\EntityFramework.dll
+C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitDAL\bin\Release\FastThreeOptionSearchV3_2_1.dll
+C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitDAL\bin\Release\FastThreeOptionSearchV3_2_1.pdb
+C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitDAL\bin\Release\EntityFramework.xml
+C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitDAL\obj\Release\Shrink2FitDAL.csprojResolveAssemblyReference.cache
+C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitDAL\obj\Release\Shrink2FitDAL.dll
+C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitDAL\obj\Release\Shrink2FitDAL.pdb

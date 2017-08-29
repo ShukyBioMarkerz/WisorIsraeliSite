@@ -1,0 +1,1968 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="BankOfIsraelInterestRates" EntityType="Model.Store.BankOfIsraelInterestRates" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BankOfIsraelInterestTypes" EntityType="Model.Store.BankOfIsraelInterestTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ChangePreferences" EntityType="Model.Store.ChangePreferences" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CPITable" EntityType="Model.Store.CPITable" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Currencies" EntityType="Model.Store.Currencies" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DealTypes" EntityType="Model.Store.DealTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Executions" EntityType="Model.Store.Executions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExecutionStatus" EntityType="Model.Store.ExecutionStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IndexTypes" EntityType="Model.Store.IndexTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Invoices" EntityType="Model.Store.Invoices" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ListBanks" EntityType="Model.Store.ListBanks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ListedTracks" EntityType="Model.Store.ListedTracks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MailTemplates" EntityType="Model.Store.MailTemplates" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ObligationOrFutures" EntityType="Model.Store.ObligationOrFutures" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OffersOrChecks" EntityType="Model.Store.OffersOrChecks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderApprovingBanks" EntityType="Model.Store.OrderApprovingBanks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Orders" EntityType="Model.Store.Orders" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderStatus" EntityType="Model.Store.OrderStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RelationshipTypes" EntityType="Model.Store.RelationshipTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ResultEntries" EntityType="Model.Store.ResultEntries" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Results" EntityType="Model.Store.Results" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ResultTracks" EntityType="Model.Store.ResultTracks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Savings" EntityType="Model.Store.Savings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SavingsTypes" EntityType="Model.Store.SavingsTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TrackInterestRates" EntityType="Model.Store.TrackInterestRates" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tracks" EntityType="Model.Store.Tracks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="Model.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserStatus" EntityType="Model.Store.UserStatus" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_BankOfIsraelInterestRates_BankOfIsraelInterestTypes" Association="Model.Store.FK_BankOfIsraelInterestRates_BankOfIsraelInterestTypes">
+            <End Role="BankOfIsraelInterestTypes" EntitySet="BankOfIsraelInterestTypes" />
+            <End Role="BankOfIsraelInterestRates" EntitySet="BankOfIsraelInterestRates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChangePreferences_Orders" Association="Model.Store.FK_ChangePreferences_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="ChangePreferences" EntitySet="ChangePreferences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPITable_IndexTypes" Association="Model.Store.FK_CPITable_IndexTypes">
+            <End Role="IndexTypes" EntitySet="IndexTypes" />
+            <End Role="CPITable" EntitySet="CPITable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Executions_ExecutionStatus" Association="Model.Store.FK_Executions_ExecutionStatus">
+            <End Role="ExecutionStatus" EntitySet="ExecutionStatus" />
+            <End Role="Executions" EntitySet="Executions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Executions_Orders" Association="Model.Store.FK_Executions_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Executions" EntitySet="Executions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoices_Currencies" Association="Model.Store.FK_Invoices_Currencies">
+            <End Role="Currencies" EntitySet="Currencies" />
+            <End Role="Invoices" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoices_Orders" Association="Model.Store.FK_Invoices_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Invoices" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ObligationFutures_Orders" Association="Model.Store.FK_ObligationFutures_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="ObligationOrFutures" EntitySet="ObligationOrFutures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderApprovingBanks_ListBanks" Association="Model.Store.FK_OrderApprovingBanks_ListBanks">
+            <End Role="ListBanks" EntitySet="ListBanks" />
+            <End Role="OrderApprovingBanks" EntitySet="OrderApprovingBanks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderApprovingBanks_Orders" Association="Model.Store.FK_OrderApprovingBanks_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderApprovingBanks" EntitySet="OrderApprovingBanks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_DealTypes" Association="Model.Store.FK_Orders_DealTypes">
+            <End Role="DealTypes" EntitySet="DealTypes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_ListBanks" Association="Model.Store.FK_Orders_ListBanks">
+            <End Role="ListBanks" EntitySet="ListBanks" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_ListBanks1" Association="Model.Store.FK_Orders_ListBanks1">
+            <End Role="ListBanks" EntitySet="ListBanks" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_OrderStatus" Association="Model.Store.FK_Orders_OrderStatus">
+            <End Role="OrderStatus" EntitySet="OrderStatus" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_RelationshipTypes" Association="Model.Store.FK_Orders_RelationshipTypes">
+            <End Role="RelationshipTypes" EntitySet="RelationshipTypes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Users" Association="Model.Store.FK_Orders_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RefinanceCheckForOrders_Orders" Association="Model.Store.FK_RefinanceCheckForOrders_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OffersOrChecks" EntitySet="OffersOrChecks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResultEntries_Orders" Association="Model.Store.FK_ResultEntries_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="ResultEntries" EntitySet="ResultEntries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Results_Executions" Association="Model.Store.FK_Results_Executions">
+            <End Role="Executions" EntitySet="Executions" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResultTracks_ListedTracks" Association="Model.Store.FK_ResultTracks_ListedTracks">
+            <End Role="ListedTracks" EntitySet="ListedTracks" />
+            <End Role="ResultTracks" EntitySet="ResultTracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResultTracks_ResultEntries" Association="Model.Store.FK_ResultTracks_ResultEntries">
+            <End Role="ResultEntries" EntitySet="ResultEntries" />
+            <End Role="ResultTracks" EntitySet="ResultTracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Savings_Orders" Association="Model.Store.FK_Savings_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Savings" EntitySet="Savings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Savings_SavingsTypes" Association="Model.Store.FK_Savings_SavingsTypes">
+            <End Role="SavingsTypes" EntitySet="SavingsTypes" />
+            <End Role="Savings" EntitySet="Savings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrackInterestRates_ListBanks" Association="Model.Store.FK_TrackInterestRates_ListBanks">
+            <End Role="ListBanks" EntitySet="ListBanks" />
+            <End Role="TrackInterestRates" EntitySet="TrackInterestRates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrackInterestRates_ListedTracks" Association="Model.Store.FK_TrackInterestRates_ListedTracks">
+            <End Role="ListedTracks" EntitySet="ListedTracks" />
+            <End Role="TrackInterestRates" EntitySet="TrackInterestRates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tracks_ListedTracks" Association="Model.Store.FK_Tracks_ListedTracks">
+            <End Role="ListedTracks" EntitySet="ListedTracks" />
+            <End Role="Tracks" EntitySet="Tracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tracks_OffersOrChecks" Association="Model.Store.FK_Tracks_OffersOrChecks">
+            <End Role="OffersOrChecks" EntitySet="OffersOrChecks" />
+            <End Role="Tracks" EntitySet="Tracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_UserStatus" Association="Model.Store.FK_Users_UserStatus">
+            <End Role="UserStatus" EntitySet="UserStatus" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BankOfIsraelInterestRates">
+          <Key>
+            <PropertyRef Name="Year" />
+            <PropertyRef Name="Month" />
+            <PropertyRef Name="BOIIndexType" />
+          </Key>
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="Month" Type="int" Nullable="false" />
+          <Property Name="Value" Type="decimal" Nullable="false" />
+          <Property Name="BOIIndexType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BankOfIsraelInterestTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BOIIndexType" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ChangePreferences">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="NewPredictedPayment" Type="int" />
+          <Property Name="TimeOfChange" Type="int" />
+          <Property Name="TimeOfRepay" Type="int" />
+        </EntityType>
+        <EntityType Name="CPITable">
+          <Key>
+            <PropertyRef Name="Year" />
+            <PropertyRef Name="Month" />
+            <PropertyRef Name="IndexType" />
+          </Key>
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="BaseYear" Type="int" Nullable="false" />
+          <Property Name="Multiplier" Type="decimal" Nullable="false" />
+          <Property Name="Month" Type="int" Nullable="false" />
+          <Property Name="Value" Type="decimal" Nullable="false" />
+          <Property Name="IndexType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Currencies">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CurrencySign" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CurrencyName" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="DealTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DealType" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Executions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="date" Nullable="false" />
+          <Property Name="InNewInstance" Type="bit" Nullable="false" />
+          <Property Name="InstanceCreatedOn" Type="date" Nullable="false" />
+          <Property Name="InstanceType" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="InstanceID" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ExecutionStatus" Type="int" Nullable="false" />
+          <Property Name="DateSoftwareLaunch" Type="datetime" Nullable="false" />
+          <Property Name="CalculationStartedOn" Type="datetime" Nullable="false" />
+          <Property Name="CalculationEndedOn" Type="datetime" />
+          <Property Name="DateSoftwareClosed" Type="datetime" />
+          <Property Name="DateInstanceClosed" Type="datetime" />
+          <Property Name="SoftwareRunNumber" Type="int" Nullable="false" />
+          <Property Name="VMCostPerHour" Type="decimal" Nullable="false" Scale="2" />
+        </EntityType>
+        <EntityType Name="ExecutionStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="IndexTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IndexType" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Invoices">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="IsBilling" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="date" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Scale="2" />
+          <Property Name="NumberOfPayments" Type="int" Nullable="false" />
+          <Property Name="CurrencyID" Type="int" Nullable="false" />
+          <Property Name="Link" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ListBanks">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BankNumber" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="PrimaryOption" Type="bit" Nullable="false" />
+          <Property Name="Available" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ListedTracks">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Inflated" Type="bit" Nullable="false" />
+          <Property Name="MinTimeMonths" Type="int" Nullable="false" />
+          <Property Name="MaxTimeMonth" Type="int" Nullable="false" />
+          <Property Name="JumpsInMonths" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MailTemplates">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Subject" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Body" Type="nvarchar(max)" />
+          <Property Name="MultiLine" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ObligationOrFutures">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+          <Property Name="EndYear" Type="int" Nullable="false" />
+          <Property Name="EndMonth" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OffersOrChecks">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="ApprovingBank" Type="int" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderApprovingBanks">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="BankID" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="BankID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Label" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="DealType" Type="int" Nullable="false" />
+          <Property Name="NumberOfLoaners" Type="int" Nullable="false" />
+          <Property Name="YoungestLoanerAge" Type="int" Nullable="false" />
+          <Property Name="TotalNetIncome" Type="int" Nullable="false" />
+          <Property Name="Obligations" Type="bit" Nullable="false" />
+          <Property Name="FutureMoney" Type="bit" Nullable="false" />
+          <Property Name="PropertyValue" Type="int" Nullable="false" />
+          <Property Name="DesiredLoanAmount" Type="int" Nullable="false" />
+          <Property Name="DesiredMonthlyPayment" Type="int" Nullable="false" />
+          <Property Name="RefinanceCheck" Type="bit" Nullable="false" />
+          <Property Name="BankOffers" Type="bit" Nullable="false" />
+          <Property Name="PlanningPreference" Type="int" Nullable="false" />
+          <Property Name="StabilityPreference" Type="int" Nullable="false" />
+          <Property Name="ChangesPreference" Type="bit" Nullable="false" />
+          <Property Name="Relations" Type="int" Nullable="false" />
+          <Property Name="Savings" Type="bit" Nullable="false" />
+          <Property Name="MainAccount" Type="int" />
+          <Property Name="SecondaryAccount" Type="int" />
+          <Property Name="EntranceMonth" Type="int" />
+          <Property Name="EntranceYear" Type="int" />
+          <Property Name="CurrentRent" Type="int" />
+          <Property Name="InitialCalculatedTotal" Type="decimal" />
+        </EntityType>
+        <EntityType Name="OrderStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="RelationshipTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RelationsName" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ResultEntries">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ExecutionID" Type="int" Nullable="false" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Results">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ExecutionID" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="RefinancePoint" Type="int" Nullable="false" />
+          <Property Name="TotalChecksMade" Type="int" Nullable="false" />
+          <Property Name="TotalChecksMatch" Type="int" Nullable="false" />
+          <Property Name="TotalChecksSaved" Type="int" Nullable="false" />
+          <Property Name="Link" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ResultTracks">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ResultEntryID" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+          <Property Name="TrackType" Type="int" Nullable="false" />
+          <Property Name="Time" Type="int" Nullable="false" />
+          <Property Name="Inflation" Type="bit" Nullable="false" />
+          <Property Name="Rate" Type="decimal" Nullable="false" Scale="4" />
+          <Property Name="PMT" Type="int" Nullable="false" />
+          <Property Name="TotalPay" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Savings">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="AmountSaved" Type="int" Nullable="false" />
+          <Property Name="SavingsType" Type="int" Nullable="false" />
+          <Property Name="Yield" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="Liquidity" Type="bit" />
+        </EntityType>
+        <EntityType Name="SavingsTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SavingTypeName" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TrackInterestRates">
+          <Key>
+            <PropertyRef Name="BankID" />
+            <PropertyRef Name="TrackID" />
+            <PropertyRef Name="Period" />
+          </Key>
+          <Property Name="BankID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TrackID" Type="int" Nullable="false" />
+          <Property Name="Period" Type="int" Nullable="false" />
+          <Property Name="Rate" Type="decimal" Nullable="false" Scale="2" />
+        </EntityType>
+        <EntityType Name="Tracks">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OfferOrCheckID" Type="int" Nullable="false" />
+          <Property Name="YearTaken" Type="int" />
+          <Property Name="MonthTaken" Type="int" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+          <Property Name="TrackType" Type="int" Nullable="false" />
+          <Property Name="Time" Type="int" Nullable="false" />
+          <Property Name="Inflation" Type="bit" Nullable="false" />
+          <Property Name="Rate" Type="decimal" Scale="4" />
+          <Property Name="PMT" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="SecondaryEmail" Type="nvarchar" MaxLength="500" />
+          <Property Name="LastLogin" Type="datetime" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Role" Type="int" Nullable="false" />
+          <Property Name="FacebookID" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="UserStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_BankOfIsraelInterestRates_BankOfIsraelInterestTypes">
+          <End Role="BankOfIsraelInterestTypes" Type="Model.Store.BankOfIsraelInterestTypes" Multiplicity="1" />
+          <End Role="BankOfIsraelInterestRates" Type="Model.Store.BankOfIsraelInterestRates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BankOfIsraelInterestTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BankOfIsraelInterestRates">
+              <PropertyRef Name="BOIIndexType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChangePreferences_Orders">
+          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="1" />
+          <End Role="ChangePreferences" Type="Model.Store.ChangePreferences" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ChangePreferences">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPITable_IndexTypes">
+          <End Role="IndexTypes" Type="Model.Store.IndexTypes" Multiplicity="1" />
+          <End Role="CPITable" Type="Model.Store.CPITable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IndexTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CPITable">
+              <PropertyRef Name="IndexType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Executions_ExecutionStatus">
+          <End Role="ExecutionStatus" Type="Model.Store.ExecutionStatus" Multiplicity="1" />
+          <End Role="Executions" Type="Model.Store.Executions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExecutionStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Executions">
+              <PropertyRef Name="ExecutionStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Executions_Orders">
+          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="1" />
+          <End Role="Executions" Type="Model.Store.Executions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Executions">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoices_Currencies">
+          <End Role="Currencies" Type="Model.Store.Currencies" Multiplicity="1" />
+          <End Role="Invoices" Type="Model.Store.Invoices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currencies">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invoices">
+              <PropertyRef Name="CurrencyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoices_Orders">
+          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="1" />
+          <End Role="Invoices" Type="Model.Store.Invoices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invoices">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ObligationFutures_Orders">
+          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="1" />
+          <End Role="ObligationOrFutures" Type="Model.Store.ObligationOrFutures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ObligationOrFutures">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderApprovingBanks_ListBanks">
+          <End Role="ListBanks" Type="Model.Store.ListBanks" Multiplicity="1" />
+          <End Role="OrderApprovingBanks" Type="Model.Store.OrderApprovingBanks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListBanks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderApprovingBanks">
+              <PropertyRef Name="BankID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderApprovingBanks_Orders">
+          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="1" />
+          <End Role="OrderApprovingBanks" Type="Model.Store.OrderApprovingBanks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderApprovingBanks">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_DealTypes">
+          <End Role="DealTypes" Type="Model.Store.DealTypes" Multiplicity="1" />
+          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DealTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="DealType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_ListBanks">
+          <End Role="ListBanks" Type="Model.Store.ListBanks" Multiplicity="0..1" />
+          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListBanks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="MainAccount" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_ListBanks1">
+          <End Role="ListBanks" Type="Model.Store.ListBanks" Multiplicity="0..1" />
+          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListBanks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="SecondaryAccount" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_OrderStatus">
+          <End Role="OrderStatus" Type="Model.Store.OrderStatus" Multiplicity="1" />
+          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_RelationshipTypes">
+          <End Role="RelationshipTypes" Type="Model.Store.RelationshipTypes" Multiplicity="1" />
+          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RelationshipTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Relations" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Users">
+          <End Role="Users" Type="Model.Store.Users" Multiplicity="1" />
+          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RefinanceCheckForOrders_Orders">
+          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="1" />
+          <End Role="OffersOrChecks" Type="Model.Store.OffersOrChecks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OffersOrChecks">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResultEntries_Orders">
+          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="1" />
+          <End Role="ResultEntries" Type="Model.Store.ResultEntries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ResultEntries">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Results_Executions">
+          <End Role="Executions" Type="Model.Store.Executions" Multiplicity="1" />
+          <End Role="Results" Type="Model.Store.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Executions">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="ExecutionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResultTracks_ListedTracks">
+          <End Role="ListedTracks" Type="Model.Store.ListedTracks" Multiplicity="1" />
+          <End Role="ResultTracks" Type="Model.Store.ResultTracks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListedTracks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ResultTracks">
+              <PropertyRef Name="TrackType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResultTracks_ResultEntries">
+          <End Role="ResultEntries" Type="Model.Store.ResultEntries" Multiplicity="1" />
+          <End Role="ResultTracks" Type="Model.Store.ResultTracks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResultEntries">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ResultTracks">
+              <PropertyRef Name="ResultEntryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Savings_Orders">
+          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="1" />
+          <End Role="Savings" Type="Model.Store.Savings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Savings">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Savings_SavingsTypes">
+          <End Role="SavingsTypes" Type="Model.Store.SavingsTypes" Multiplicity="1" />
+          <End Role="Savings" Type="Model.Store.Savings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SavingsTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Savings">
+              <PropertyRef Name="SavingsType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrackInterestRates_ListBanks">
+          <End Role="ListBanks" Type="Model.Store.ListBanks" Multiplicity="1" />
+          <End Role="TrackInterestRates" Type="Model.Store.TrackInterestRates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListBanks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TrackInterestRates">
+              <PropertyRef Name="BankID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrackInterestRates_ListedTracks">
+          <End Role="ListedTracks" Type="Model.Store.ListedTracks" Multiplicity="1" />
+          <End Role="TrackInterestRates" Type="Model.Store.TrackInterestRates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListedTracks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TrackInterestRates">
+              <PropertyRef Name="TrackID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tracks_ListedTracks">
+          <End Role="ListedTracks" Type="Model.Store.ListedTracks" Multiplicity="1" />
+          <End Role="Tracks" Type="Model.Store.Tracks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListedTracks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tracks">
+              <PropertyRef Name="TrackType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tracks_OffersOrChecks">
+          <End Role="OffersOrChecks" Type="Model.Store.OffersOrChecks" Multiplicity="1" />
+          <End Role="Tracks" Type="Model.Store.Tracks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OffersOrChecks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tracks">
+              <PropertyRef Name="OfferOrCheckID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_UserStatus">
+          <End Role="UserStatus" Type="Model.Store.UserStatus" Multiplicity="1" />
+          <End Role="Users" Type="Model.Store.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Shrink2FitEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="BankOfIsraelInterestRates" EntityType="Model.BankOfIsraelInterestRate" />
+          <EntitySet Name="BankOfIsraelInterestTypes" EntityType="Model.BankOfIsraelInterestType" />
+          <EntitySet Name="ChangePreferences" EntityType="Model.ChangePreference" />
+          <EntitySet Name="CPITables" EntityType="Model.CPITable" />
+          <EntitySet Name="Currencies" EntityType="Model.Currency" />
+          <EntitySet Name="DealTypes" EntityType="Model.DealType" />
+          <EntitySet Name="Executions" EntityType="Model.Execution" />
+          <EntitySet Name="ExecutionStatus" EntityType="Model.ExecutionStatu" />
+          <EntitySet Name="IndexTypes" EntityType="Model.IndexType" />
+          <EntitySet Name="Invoices" EntityType="Model.Invoice" />
+          <EntitySet Name="ListBanks" EntityType="Model.ListBank" />
+          <EntitySet Name="ListedTracks" EntityType="Model.ListedTrack" />
+          <EntitySet Name="ObligationOrFutures" EntityType="Model.ObligationOrFuture" />
+          <EntitySet Name="OffersOrChecks" EntityType="Model.OffersOrCheck" />
+          <EntitySet Name="RelationshipTypes" EntityType="Model.RelationshipType" />
+          <EntitySet Name="Results" EntityType="Model.Result" />
+          <EntitySet Name="Savings" EntityType="Model.Saving" />
+          <EntitySet Name="SavingsTypes" EntityType="Model.SavingsType" />
+          <EntitySet Name="TrackInterestRates" EntityType="Model.TrackInterestRate" />
+          <EntitySet Name="Tracks" EntityType="Model.Track" />
+          <EntitySet Name="Users" EntityType="Model.User" />
+          <AssociationSet Name="FK_BankOfIsraelInterestRates_BankOfIsraelInterestTypes" Association="Model.FK_BankOfIsraelInterestRates_BankOfIsraelInterestTypes">
+            <End Role="BankOfIsraelInterestType" EntitySet="BankOfIsraelInterestTypes" />
+            <End Role="BankOfIsraelInterestRate" EntitySet="BankOfIsraelInterestRates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPITable_IndexTypes" Association="Model.FK_CPITable_IndexTypes">
+            <End Role="IndexType" EntitySet="IndexTypes" />
+            <End Role="CPITable" EntitySet="CPITables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoices_Currencies" Association="Model.FK_Invoices_Currencies">
+            <End Role="Currency" EntitySet="Currencies" />
+            <End Role="Invoice" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Executions_ExecutionStatus" Association="Model.FK_Executions_ExecutionStatus">
+            <End Role="ExecutionStatu" EntitySet="ExecutionStatus" />
+            <End Role="Execution" EntitySet="Executions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Results_Executions" Association="Model.FK_Results_Executions">
+            <End Role="Execution" EntitySet="Executions" />
+            <End Role="Result" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrackInterestRates_ListBanks" Association="Model.FK_TrackInterestRates_ListBanks">
+            <End Role="ListBank" EntitySet="ListBanks" />
+            <End Role="TrackInterestRate" EntitySet="TrackInterestRates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrackInterestRates_ListedTracks" Association="Model.FK_TrackInterestRates_ListedTracks">
+            <End Role="ListedTrack" EntitySet="ListedTracks" />
+            <End Role="TrackInterestRate" EntitySet="TrackInterestRates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tracks_ListedTracks" Association="Model.FK_Tracks_ListedTracks">
+            <End Role="ListedTrack" EntitySet="ListedTracks" />
+            <End Role="Track" EntitySet="Tracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tracks_OffersOrChecks" Association="Model.FK_Tracks_OffersOrChecks">
+            <End Role="OffersOrCheck" EntitySet="OffersOrChecks" />
+            <End Role="Track" EntitySet="Tracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Savings_SavingsTypes" Association="Model.FK_Savings_SavingsTypes">
+            <End Role="SavingsType" EntitySet="SavingsTypes" />
+            <End Role="Saving" EntitySet="Savings" />
+          </AssociationSet>
+          <EntitySet Name="UserStatus" EntityType="Model.UserStatus" />
+          <AssociationSet Name="FK_Users_UserStatus" Association="Model.FK_Users_UserStatus">
+            <End Role="UserStatus" EntitySet="UserStatus" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="Orders" EntityType="Model.Order" />
+          <AssociationSet Name="FK_ChangePreferences_Orders" Association="Model.FK_ChangePreferences_Orders">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="ChangePreference" EntitySet="ChangePreferences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_DealTypes" Association="Model.FK_Orders_DealTypes">
+            <End Role="DealType" EntitySet="DealTypes" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Executions_Orders" Association="Model.FK_Executions_Orders">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Execution" EntitySet="Executions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoices_Orders" Association="Model.FK_Invoices_Orders">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Invoice" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_ListBanks" Association="Model.FK_Orders_ListBanks">
+            <End Role="ListBank" EntitySet="ListBanks" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_ListBanks1" Association="Model.FK_Orders_ListBanks1">
+            <End Role="ListBank" EntitySet="ListBanks" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ObligationFutures_Orders" Association="Model.FK_ObligationFutures_Orders">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="ObligationOrFuture" EntitySet="ObligationOrFutures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RefinanceCheckForOrders_Orders" Association="Model.FK_RefinanceCheckForOrders_Orders">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="OffersOrCheck" EntitySet="OffersOrChecks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_RelationshipTypes" Association="Model.FK_Orders_RelationshipTypes">
+            <End Role="RelationshipType" EntitySet="RelationshipTypes" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Users" Association="Model.FK_Orders_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Savings_Orders" Association="Model.FK_Savings_Orders">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Saving" EntitySet="Savings" />
+          </AssociationSet>
+          <AssociationSet Name="OrderApprovingBanks" Association="Model.OrderApprovingBanks">
+            <End Role="ListBank" EntitySet="ListBanks" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <EntitySet Name="OrderStatus" EntityType="Model.OrderStatus" />
+          <AssociationSet Name="FK_Orders_OrderStatus" Association="Model.FK_Orders_OrderStatus">
+            <End Role="OrderStatus" EntitySet="OrderStatus" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <EntitySet Name="ResultEntries" EntityType="Model.ResultEntry" />
+          <EntitySet Name="ResultTracks" EntityType="Model.ResultTrack" />
+          <AssociationSet Name="FK_ResultEntries_Orders" Association="Model.FK_ResultEntries_Orders">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="ResultEntry" EntitySet="ResultEntries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResultTracks_ResultEntries" Association="Model.FK_ResultTracks_ResultEntries">
+            <End Role="ResultEntry" EntitySet="ResultEntries" />
+            <End Role="ResultTrack" EntitySet="ResultTracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResultTracks_ListedTracks" Association="Model.FK_ResultTracks_ListedTracks">
+            <End Role="ListedTrack" EntitySet="ListedTracks" />
+            <End Role="ResultTrack" EntitySet="ResultTracks" />
+          </AssociationSet>
+          <EntitySet Name="MailTemplates" EntityType="Model.MailTemplate" />
+          </EntityContainer>
+        <EntityType Name="BankOfIsraelInterestRate">
+          <Key>
+            <PropertyRef Name="Year" />
+            <PropertyRef Name="Month" />
+            <PropertyRef Name="BOIIndexType" />
+          </Key>
+          <Property Type="Int32" Name="Year" Nullable="false" />
+          <Property Type="Int32" Name="Month" Nullable="false" />
+          <Property Type="Decimal" Name="Value" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="BOIIndexType" Nullable="false" />
+          <NavigationProperty Name="BankOfIsraelInterestType" Relationship="Model.FK_BankOfIsraelInterestRates_BankOfIsraelInterestTypes" FromRole="BankOfIsraelInterestRate" ToRole="BankOfIsraelInterestType" />
+        </EntityType>
+        <EntityType Name="BankOfIsraelInterestType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="BOIIndexType" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BankOfIsraelInterestRates" Relationship="Model.FK_BankOfIsraelInterestRates_BankOfIsraelInterestTypes" FromRole="BankOfIsraelInterestType" ToRole="BankOfIsraelInterestRate" />
+        </EntityType>
+        <EntityType Name="ChangePreference">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="Int32" Name="NewPredictedPayment" />
+          <Property Type="Int32" Name="TimeOfChange" />
+          <Property Type="Int32" Name="TimeOfRepay" />
+          <NavigationProperty Name="Order" Relationship="Model.FK_ChangePreferences_Orders" FromRole="ChangePreference" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="CPITable">
+          <Key>
+            <PropertyRef Name="Year" />
+            <PropertyRef Name="Month" />
+            <PropertyRef Name="IndexType" />
+          </Key>
+          <Property Type="Int32" Name="Year" Nullable="false" />
+          <Property Type="Int32" Name="BaseYear" Nullable="false" />
+          <Property Type="Decimal" Name="Multiplier" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="Month" Nullable="false" />
+          <Property Type="Decimal" Name="Value" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="IndexType" Nullable="false" />
+          <NavigationProperty Name="IndexType1" Relationship="Model.FK_CPITable_IndexTypes" FromRole="CPITable" ToRole="IndexType" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CurrencySign" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CurrencyName" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Invoices" Relationship="Model.FK_Invoices_Currencies" FromRole="Currency" ToRole="Invoice" />
+        </EntityType>
+        <EntityType Name="DealType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DealType1" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Orders" Relationship="Model.FK_Orders_DealTypes" FromRole="DealType" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Execution">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="0" />
+          <Property Type="Boolean" Name="InNewInstance" Nullable="false" />
+          <Property Type="DateTime" Name="InstanceCreatedOn" Nullable="false" Precision="0" />
+          <Property Type="String" Name="InstanceType" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InstanceID" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ExecutionStatus" Nullable="false" />
+          <Property Type="DateTime" Name="DateSoftwareLaunch" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="CalculationStartedOn" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="CalculationEndedOn" Precision="3" />
+          <Property Type="DateTime" Name="DateSoftwareClosed" Precision="3" />
+          <Property Type="DateTime" Name="DateInstanceClosed" Precision="3" />
+          <Property Type="Int32" Name="SoftwareRunNumber" Nullable="false" />
+          <Property Type="Decimal" Name="VMCostPerHour" Nullable="false" Precision="18" Scale="2" />
+          <NavigationProperty Name="ExecutionStatu" Relationship="Model.FK_Executions_ExecutionStatus" FromRole="Execution" ToRole="ExecutionStatu" />
+          <NavigationProperty Name="Results" Relationship="Model.FK_Results_Executions" FromRole="Execution" ToRole="Result" />
+          <NavigationProperty Name="Order" Relationship="Model.FK_Executions_Orders" FromRole="Execution" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="ExecutionStatu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Executions" Relationship="Model.FK_Executions_ExecutionStatus" FromRole="ExecutionStatu" ToRole="Execution" />
+        </EntityType>
+        <EntityType Name="IndexType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="IndexType1" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CPITables" Relationship="Model.FK_CPITable_IndexTypes" FromRole="IndexType" ToRole="CPITable" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="Boolean" Name="IsBilling" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="0" />
+          <Property Type="Decimal" Name="Amount" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="NumberOfPayments" Nullable="false" />
+          <Property Type="Int32" Name="CurrencyID" Nullable="false" />
+          <Property Type="String" Name="Link" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Currency" Relationship="Model.FK_Invoices_Currencies" FromRole="Invoice" ToRole="Currency" />
+          <NavigationProperty Name="Order" Relationship="Model.FK_Invoices_Orders" FromRole="Invoice" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="ListBank">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="BankNumber" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="PrimaryOption" Nullable="false" />
+          <Property Type="Boolean" Name="Available" Nullable="false" />
+          <NavigationProperty Name="TrackInterestRates" Relationship="Model.FK_TrackInterestRates_ListBanks" FromRole="ListBank" ToRole="TrackInterestRate" />
+          <NavigationProperty Name="Orders" Relationship="Model.FK_Orders_ListBanks" FromRole="ListBank" ToRole="Order" />
+          <NavigationProperty Name="Orders1" Relationship="Model.FK_Orders_ListBanks1" FromRole="ListBank" ToRole="Order" />
+          <NavigationProperty Name="Orders2" Relationship="Model.OrderApprovingBanks" FromRole="ListBank" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="ListedTrack">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Inflated" Nullable="false" />
+          <Property Type="Int32" Name="MinTimeMonths" Nullable="false" />
+          <Property Type="Int32" Name="MaxTimeMonth" Nullable="false" />
+          <Property Type="Int32" Name="JumpsInMonths" Nullable="false" />
+          <NavigationProperty Name="TrackInterestRates" Relationship="Model.FK_TrackInterestRates_ListedTracks" FromRole="ListedTrack" ToRole="TrackInterestRate" />
+          <NavigationProperty Name="Tracks" Relationship="Model.FK_Tracks_ListedTracks" FromRole="ListedTrack" ToRole="Track" />
+          <NavigationProperty Name="ResultTracks" Relationship="Model.FK_ResultTracks_ListedTracks" FromRole="ListedTrack" ToRole="ResultTrack" />
+        </EntityType>
+        <EntityType Name="ObligationOrFuture">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="Int32" Name="Type" Nullable="false" />
+          <Property Type="Int32" Name="Amount" Nullable="false" />
+          <Property Type="Int32" Name="EndYear" Nullable="false" />
+          <Property Type="Int32" Name="EndMonth" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="Model.FK_ObligationFutures_Orders" FromRole="ObligationOrFuture" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="OffersOrCheck">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Type" Nullable="false" />
+          <Property Type="Int32" Name="ApprovingBank" />
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <NavigationProperty Name="Tracks" Relationship="Model.FK_Tracks_OffersOrChecks" FromRole="OffersOrCheck" ToRole="Track" />
+          <NavigationProperty Name="Order" Relationship="Model.FK_RefinanceCheckForOrders_Orders" FromRole="OffersOrCheck" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="RelationshipType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RelationsName" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Orders" Relationship="Model.FK_Orders_RelationshipTypes" FromRole="RelationshipType" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ExecutionID" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="RefinancePoint" Nullable="false" />
+          <Property Type="Int32" Name="TotalChecksMade" Nullable="false" />
+          <Property Type="Int32" Name="TotalChecksMatch" Nullable="false" />
+          <Property Type="Int32" Name="TotalChecksSaved" Nullable="false" />
+          <Property Type="String" Name="Link" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Execution" Relationship="Model.FK_Results_Executions" FromRole="Result" ToRole="Execution" />
+        </EntityType>
+        <EntityType Name="Saving">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="Int32" Name="AmountSaved" Nullable="false" />
+          <Property Type="Int32" Name="SavingsType" Nullable="false" />
+          <Property Type="Decimal" Name="Yield" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Boolean" Name="Liquidity" />
+          <NavigationProperty Name="SavingsType1" Relationship="Model.FK_Savings_SavingsTypes" FromRole="Saving" ToRole="SavingsType" />
+          <NavigationProperty Name="Order" Relationship="Model.FK_Savings_Orders" FromRole="Saving" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="SavingsType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SavingTypeName" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Savings" Relationship="Model.FK_Savings_SavingsTypes" FromRole="SavingsType" ToRole="Saving" />
+        </EntityType>
+        <EntityType Name="TrackInterestRate">
+          <Key>
+            <PropertyRef Name="BankID" />
+            <PropertyRef Name="TrackID" />
+            <PropertyRef Name="Period" />
+          </Key>
+          <Property Type="Int32" Name="BankID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="TrackID" Nullable="false" />
+          <Property Type="Int32" Name="Period" Nullable="false" />
+          <Property Type="Decimal" Name="Rate" Nullable="false" Precision="18" Scale="2" />
+          <NavigationProperty Name="ListBank" Relationship="Model.FK_TrackInterestRates_ListBanks" FromRole="TrackInterestRate" ToRole="ListBank" />
+          <NavigationProperty Name="ListedTrack" Relationship="Model.FK_TrackInterestRates_ListedTracks" FromRole="TrackInterestRate" ToRole="ListedTrack" />
+        </EntityType>
+        <EntityType Name="Track">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="OfferOrCheckID" Nullable="false" />
+          <Property Type="Int32" Name="YearTaken" />
+          <Property Type="Int32" Name="MonthTaken" />
+          <Property Type="Int32" Name="Amount" Nullable="false" />
+          <Property Type="Int32" Name="TrackType" Nullable="false" />
+          <Property Type="Int32" Name="Time" Nullable="false" />
+          <Property Type="Boolean" Name="Inflation" Nullable="false" />
+          <Property Type="Decimal" Name="Rate" Precision="18" Scale="4" />
+          <Property Type="Int32" Name="PMT" />
+          <NavigationProperty Name="ListedTrack" Relationship="Model.FK_Tracks_ListedTracks" FromRole="Track" ToRole="ListedTrack" />
+          <NavigationProperty Name="OffersOrCheck" Relationship="Model.FK_Tracks_OffersOrChecks" FromRole="Track" ToRole="OffersOrCheck" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SecondaryEmail" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastLogin" Precision="3" />
+          <Property Type="Int32" Name="Status" Nullable="false" />
+          <Property Type="Int32" Name="Role" Nullable="false" />
+          <NavigationProperty Name="UserStatus" Relationship="Model.FK_Users_UserStatus" FromRole="User" ToRole="UserStatus" />
+          <NavigationProperty Name="Orders" Relationship="Model.FK_Orders_Users" FromRole="User" ToRole="Order" />
+          <Property Type="String" Name="FacebookID" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_BankOfIsraelInterestRates_BankOfIsraelInterestTypes">
+          <End Type="Model.BankOfIsraelInterestType" Role="BankOfIsraelInterestType" Multiplicity="1" />
+          <End Type="Model.BankOfIsraelInterestRate" Role="BankOfIsraelInterestRate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BankOfIsraelInterestType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BankOfIsraelInterestRate">
+              <PropertyRef Name="BOIIndexType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPITable_IndexTypes">
+          <End Type="Model.IndexType" Role="IndexType" Multiplicity="1" />
+          <End Type="Model.CPITable" Role="CPITable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IndexType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CPITable">
+              <PropertyRef Name="IndexType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoices_Currencies">
+          <End Type="Model.Currency" Role="Currency" Multiplicity="1" />
+          <End Type="Model.Invoice" Role="Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="CurrencyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Executions_ExecutionStatus">
+          <End Type="Model.ExecutionStatu" Role="ExecutionStatu" Multiplicity="1" />
+          <End Type="Model.Execution" Role="Execution" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExecutionStatu">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Execution">
+              <PropertyRef Name="ExecutionStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Results_Executions">
+          <End Type="Model.Execution" Role="Execution" Multiplicity="1" />
+          <End Type="Model.Result" Role="Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Execution">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="ExecutionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrackInterestRates_ListBanks">
+          <End Type="Model.ListBank" Role="ListBank" Multiplicity="1" />
+          <End Type="Model.TrackInterestRate" Role="TrackInterestRate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListBank">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TrackInterestRate">
+              <PropertyRef Name="BankID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrackInterestRates_ListedTracks">
+          <End Type="Model.ListedTrack" Role="ListedTrack" Multiplicity="1" />
+          <End Type="Model.TrackInterestRate" Role="TrackInterestRate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListedTrack">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TrackInterestRate">
+              <PropertyRef Name="TrackID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tracks_ListedTracks">
+          <End Type="Model.ListedTrack" Role="ListedTrack" Multiplicity="1" />
+          <End Type="Model.Track" Role="Track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListedTrack">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Track">
+              <PropertyRef Name="TrackType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tracks_OffersOrChecks">
+          <End Type="Model.OffersOrCheck" Role="OffersOrCheck" Multiplicity="1" />
+          <End Type="Model.Track" Role="Track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OffersOrCheck">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Track">
+              <PropertyRef Name="OfferOrCheckID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Savings_SavingsTypes">
+          <End Type="Model.SavingsType" Role="SavingsType" Multiplicity="1" />
+          <End Type="Model.Saving" Role="Saving" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SavingsType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Saving">
+              <PropertyRef Name="SavingsType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="Model.FK_Users_UserStatus" FromRole="UserStatus" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Users_UserStatus">
+          <End Type="Model.UserStatus" Role="UserStatus" Multiplicity="1" />
+          <End Type="Model.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Label" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="Int32" Name="Status" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="DealType" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfLoaners" Nullable="false" />
+          <Property Type="Int32" Name="YoungestLoanerAge" Nullable="false" />
+          <Property Type="Int32" Name="TotalNetIncome" Nullable="false" />
+          <Property Type="Boolean" Name="Obligations" Nullable="false" />
+          <Property Type="Boolean" Name="FutureMoney" Nullable="false" />
+          <Property Type="Int32" Name="PropertyValue" Nullable="false" />
+          <Property Type="Int32" Name="DesiredLoanAmount" Nullable="false" />
+          <Property Type="Int32" Name="DesiredMonthlyPayment" Nullable="false" />
+          <Property Type="Boolean" Name="RefinanceCheck" Nullable="false" />
+          <Property Type="Boolean" Name="BankOffers" Nullable="false" />
+          <Property Type="Int32" Name="PlanningPreference" Nullable="false" />
+          <Property Type="Int32" Name="StabilityPreference" Nullable="false" />
+          <Property Type="Boolean" Name="ChangesPreference" Nullable="false" />
+          <Property Type="Int32" Name="Relations" Nullable="false" />
+          <Property Type="Boolean" Name="Savings" Nullable="false" />
+          <Property Type="Int32" Name="MainAccount" />
+          <Property Type="Int32" Name="SecondaryAccount" />
+          <Property Type="Int32" Name="EntranceMonth" />
+          <Property Type="Int32" Name="EntranceYear" />
+          <Property Type="Int32" Name="CurrentRent" />
+          <NavigationProperty Name="ChangePreferences" Relationship="Model.FK_ChangePreferences_Orders" FromRole="Order" ToRole="ChangePreference" />
+          <NavigationProperty Name="DealType1" Relationship="Model.FK_Orders_DealTypes" FromRole="Order" ToRole="DealType" />
+          <NavigationProperty Name="Executions" Relationship="Model.FK_Executions_Orders" FromRole="Order" ToRole="Execution" />
+          <NavigationProperty Name="Invoices" Relationship="Model.FK_Invoices_Orders" FromRole="Order" ToRole="Invoice" />
+          <NavigationProperty Name="ListBank" Relationship="Model.FK_Orders_ListBanks" FromRole="Order" ToRole="ListBank" />
+          <NavigationProperty Name="ListBank1" Relationship="Model.FK_Orders_ListBanks1" FromRole="Order" ToRole="ListBank" />
+          <NavigationProperty Name="ObligationOrFutures" Relationship="Model.FK_ObligationFutures_Orders" FromRole="Order" ToRole="ObligationOrFuture" />
+          <NavigationProperty Name="OffersOrChecks" Relationship="Model.FK_RefinanceCheckForOrders_Orders" FromRole="Order" ToRole="OffersOrCheck" />
+          <NavigationProperty Name="RelationshipType" Relationship="Model.FK_Orders_RelationshipTypes" FromRole="Order" ToRole="RelationshipType" />
+          <NavigationProperty Name="User" Relationship="Model.FK_Orders_Users" FromRole="Order" ToRole="User" />
+          <NavigationProperty Name="Savings1" Relationship="Model.FK_Savings_Orders" FromRole="Order" ToRole="Saving" />
+          <NavigationProperty Name="ListBanks" Relationship="Model.OrderApprovingBanks" FromRole="Order" ToRole="ListBank" />
+          <NavigationProperty Name="OrderStatus" Relationship="Model.FK_Orders_OrderStatus" FromRole="Order" ToRole="OrderStatus" />
+          <NavigationProperty Name="ResultEntries" Relationship="Model.FK_ResultEntries_Orders" FromRole="Order" ToRole="ResultEntry" />
+          <Property Type="Decimal" Name="InitialCalculatedTotal" Precision="18" Scale="0" />
+        </EntityType>
+        <Association Name="FK_ChangePreferences_Orders">
+          <End Type="Model.Order" Role="Order" Multiplicity="1" />
+          <End Type="Model.ChangePreference" Role="ChangePreference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ChangePreference">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_DealTypes">
+          <End Type="Model.DealType" Role="DealType" Multiplicity="1" />
+          <End Type="Model.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DealType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="DealType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Executions_Orders">
+          <End Type="Model.Order" Role="Order" Multiplicity="1" />
+          <End Type="Model.Execution" Role="Execution" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Execution">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoices_Orders">
+          <End Type="Model.Order" Role="Order" Multiplicity="1" />
+          <End Type="Model.Invoice" Role="Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_ListBanks">
+          <End Type="Model.ListBank" Role="ListBank" Multiplicity="0..1" />
+          <End Type="Model.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListBank">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="MainAccount" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_ListBanks1">
+          <End Type="Model.ListBank" Role="ListBank" Multiplicity="0..1" />
+          <End Type="Model.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListBank">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="SecondaryAccount" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ObligationFutures_Orders">
+          <End Type="Model.Order" Role="Order" Multiplicity="1" />
+          <End Type="Model.ObligationOrFuture" Role="ObligationOrFuture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ObligationOrFuture">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RefinanceCheckForOrders_Orders">
+          <End Type="Model.Order" Role="Order" Multiplicity="1" />
+          <End Type="Model.OffersOrCheck" Role="OffersOrCheck" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OffersOrCheck">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_RelationshipTypes">
+          <End Type="Model.RelationshipType" Role="RelationshipType" Multiplicity="1" />
+          <End Type="Model.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RelationshipType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="Relations" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Users">
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <End Type="Model.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Savings_Orders">
+          <End Type="Model.Order" Role="Order" Multiplicity="1" />
+          <End Type="Model.Saving" Role="Saving" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Saving">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OrderApprovingBanks">
+          <End Type="Model.ListBank" Role="ListBank" Multiplicity="*" />
+          <End Type="Model.Order" Role="Order" Multiplicity="*" />
+        </Association>
+        <EntityType Name="OrderStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Orders" Relationship="Model.FK_Orders_OrderStatus" FromRole="OrderStatus" ToRole="Order" />
+        </EntityType>
+        <Association Name="FK_Orders_OrderStatus">
+          <End Type="Model.OrderStatus" Role="OrderStatus" Multiplicity="1" />
+          <End Type="Model.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ResultEntry">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ExecutionID" Nullable="false" />
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Precision="3" />
+          <NavigationProperty Name="Order" Relationship="Model.FK_ResultEntries_Orders" FromRole="ResultEntry" ToRole="Order" />
+          <NavigationProperty Name="ResultTracks" Relationship="Model.FK_ResultTracks_ResultEntries" FromRole="ResultEntry" ToRole="ResultTrack" />
+        </EntityType>
+        <EntityType Name="ResultTrack">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ResultEntryID" Nullable="false" />
+          <Property Type="Int32" Name="Amount" Nullable="false" />
+          <Property Type="Int32" Name="TrackType" Nullable="false" />
+          <Property Type="Int32" Name="Time" Nullable="false" />
+          <Property Type="Boolean" Name="Inflation" Nullable="false" />
+          <Property Type="Decimal" Name="Rate" Nullable="false" Precision="18" Scale="4" />
+          <Property Type="Int32" Name="PMT" Nullable="false" />
+          <Property Type="Int32" Name="TotalPay" Nullable="false" />
+          <NavigationProperty Name="ResultEntry" Relationship="Model.FK_ResultTracks_ResultEntries" FromRole="ResultTrack" ToRole="ResultEntry" />
+          <NavigationProperty Name="ListedTrack" Relationship="Model.FK_ResultTracks_ListedTracks" FromRole="ResultTrack" ToRole="ListedTrack" />
+        </EntityType>
+        <Association Name="FK_ResultEntries_Orders">
+          <End Type="Model.Order" Role="Order" Multiplicity="1" />
+          <End Type="Model.ResultEntry" Role="ResultEntry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ResultEntry">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResultTracks_ResultEntries">
+          <End Type="Model.ResultEntry" Role="ResultEntry" Multiplicity="1" />
+          <End Type="Model.ResultTrack" Role="ResultTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResultEntry">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ResultTrack">
+              <PropertyRef Name="ResultEntryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResultTracks_ListedTracks">
+          <End Type="Model.ListedTrack" Role="ListedTrack" Multiplicity="1" />
+          <End Type="Model.ResultTrack" Role="ResultTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListedTrack">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ResultTrack">
+              <PropertyRef Name="TrackType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MailTemplate">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Subject" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Body" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MultiLine" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Shrink2FitEntities">
+          <EntitySetMapping Name="BankOfIsraelInterestRates">
+            <EntityTypeMapping TypeName="Model.BankOfIsraelInterestRate">
+              <MappingFragment StoreEntitySet="BankOfIsraelInterestRates">
+                <ScalarProperty Name="BOIIndexType" ColumnName="BOIIndexType" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BankOfIsraelInterestTypes">
+            <EntityTypeMapping TypeName="Model.BankOfIsraelInterestType">
+              <MappingFragment StoreEntitySet="BankOfIsraelInterestTypes">
+                <ScalarProperty Name="BOIIndexType" ColumnName="BOIIndexType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChangePreferences">
+            <EntityTypeMapping TypeName="Model.ChangePreference">
+              <MappingFragment StoreEntitySet="ChangePreferences">
+                <ScalarProperty Name="TimeOfRepay" ColumnName="TimeOfRepay" />
+                <ScalarProperty Name="TimeOfChange" ColumnName="TimeOfChange" />
+                <ScalarProperty Name="NewPredictedPayment" ColumnName="NewPredictedPayment" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CPITables">
+            <EntityTypeMapping TypeName="Model.CPITable">
+              <MappingFragment StoreEntitySet="CPITable">
+                <ScalarProperty Name="IndexType" ColumnName="IndexType" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Multiplier" ColumnName="Multiplier" />
+                <ScalarProperty Name="BaseYear" ColumnName="BaseYear" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Currencies">
+            <EntityTypeMapping TypeName="Model.Currency">
+              <MappingFragment StoreEntitySet="Currencies">
+                <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
+                <ScalarProperty Name="CurrencySign" ColumnName="CurrencySign" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DealTypes">
+            <EntityTypeMapping TypeName="Model.DealType">
+              <MappingFragment StoreEntitySet="DealTypes">
+                <ScalarProperty Name="DealType1" ColumnName="DealType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Executions">
+            <EntityTypeMapping TypeName="Model.Execution">
+              <MappingFragment StoreEntitySet="Executions">
+                <ScalarProperty Name="VMCostPerHour" ColumnName="VMCostPerHour" />
+                <ScalarProperty Name="SoftwareRunNumber" ColumnName="SoftwareRunNumber" />
+                <ScalarProperty Name="DateInstanceClosed" ColumnName="DateInstanceClosed" />
+                <ScalarProperty Name="DateSoftwareClosed" ColumnName="DateSoftwareClosed" />
+                <ScalarProperty Name="CalculationEndedOn" ColumnName="CalculationEndedOn" />
+                <ScalarProperty Name="CalculationStartedOn" ColumnName="CalculationStartedOn" />
+                <ScalarProperty Name="DateSoftwareLaunch" ColumnName="DateSoftwareLaunch" />
+                <ScalarProperty Name="ExecutionStatus" ColumnName="ExecutionStatus" />
+                <ScalarProperty Name="InstanceID" ColumnName="InstanceID" />
+                <ScalarProperty Name="InstanceType" ColumnName="InstanceType" />
+                <ScalarProperty Name="InstanceCreatedOn" ColumnName="InstanceCreatedOn" />
+                <ScalarProperty Name="InNewInstance" ColumnName="InNewInstance" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExecutionStatus">
+            <EntityTypeMapping TypeName="Model.ExecutionStatu">
+              <MappingFragment StoreEntitySet="ExecutionStatus">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IndexTypes">
+            <EntityTypeMapping TypeName="Model.IndexType">
+              <MappingFragment StoreEntitySet="IndexTypes">
+                <ScalarProperty Name="IndexType1" ColumnName="IndexType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoices">
+            <EntityTypeMapping TypeName="Model.Invoice">
+              <MappingFragment StoreEntitySet="Invoices">
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+                <ScalarProperty Name="NumberOfPayments" ColumnName="NumberOfPayments" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsBilling" ColumnName="IsBilling" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ListBanks">
+            <EntityTypeMapping TypeName="Model.ListBank">
+              <MappingFragment StoreEntitySet="ListBanks">
+                <ScalarProperty Name="Available" ColumnName="Available" />
+                <ScalarProperty Name="PrimaryOption" ColumnName="PrimaryOption" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BankNumber" ColumnName="BankNumber" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ListedTracks">
+            <EntityTypeMapping TypeName="Model.ListedTrack">
+              <MappingFragment StoreEntitySet="ListedTracks">
+                <ScalarProperty Name="JumpsInMonths" ColumnName="JumpsInMonths" />
+                <ScalarProperty Name="MaxTimeMonth" ColumnName="MaxTimeMonth" />
+                <ScalarProperty Name="MinTimeMonths" ColumnName="MinTimeMonths" />
+                <ScalarProperty Name="Inflated" ColumnName="Inflated" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ObligationOrFutures">
+            <EntityTypeMapping TypeName="Model.ObligationOrFuture">
+              <MappingFragment StoreEntitySet="ObligationOrFutures">
+                <ScalarProperty Name="EndMonth" ColumnName="EndMonth" />
+                <ScalarProperty Name="EndYear" ColumnName="EndYear" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OffersOrChecks">
+            <EntityTypeMapping TypeName="Model.OffersOrCheck">
+              <MappingFragment StoreEntitySet="OffersOrChecks">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ApprovingBank" ColumnName="ApprovingBank" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RelationshipTypes">
+            <EntityTypeMapping TypeName="Model.RelationshipType">
+              <MappingFragment StoreEntitySet="RelationshipTypes">
+                <ScalarProperty Name="RelationsName" ColumnName="RelationsName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Results">
+            <EntityTypeMapping TypeName="Model.Result">
+              <MappingFragment StoreEntitySet="Results">
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="TotalChecksSaved" ColumnName="TotalChecksSaved" />
+                <ScalarProperty Name="TotalChecksMatch" ColumnName="TotalChecksMatch" />
+                <ScalarProperty Name="TotalChecksMade" ColumnName="TotalChecksMade" />
+                <ScalarProperty Name="RefinancePoint" ColumnName="RefinancePoint" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ExecutionID" ColumnName="ExecutionID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Savings">
+            <EntityTypeMapping TypeName="Model.Saving">
+              <MappingFragment StoreEntitySet="Savings">
+                <ScalarProperty Name="Liquidity" ColumnName="Liquidity" />
+                <ScalarProperty Name="Yield" ColumnName="Yield" />
+                <ScalarProperty Name="SavingsType" ColumnName="SavingsType" />
+                <ScalarProperty Name="AmountSaved" ColumnName="AmountSaved" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SavingsTypes">
+            <EntityTypeMapping TypeName="Model.SavingsType">
+              <MappingFragment StoreEntitySet="SavingsTypes">
+                <ScalarProperty Name="SavingTypeName" ColumnName="SavingTypeName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrackInterestRates">
+            <EntityTypeMapping TypeName="Model.TrackInterestRate">
+              <MappingFragment StoreEntitySet="TrackInterestRates">
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Period" ColumnName="Period" />
+                <ScalarProperty Name="TrackID" ColumnName="TrackID" />
+                <ScalarProperty Name="BankID" ColumnName="BankID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tracks">
+            <EntityTypeMapping TypeName="Model.Track">
+              <MappingFragment StoreEntitySet="Tracks">
+                <ScalarProperty Name="PMT" ColumnName="PMT" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Inflation" ColumnName="Inflation" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="TrackType" ColumnName="TrackType" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="MonthTaken" ColumnName="MonthTaken" />
+                <ScalarProperty Name="YearTaken" ColumnName="YearTaken" />
+                <ScalarProperty Name="OfferOrCheckID" ColumnName="OfferOrCheckID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Model.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="FacebookID" ColumnName="FacebookID" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+                <ScalarProperty Name="SecondaryEmail" ColumnName="SecondaryEmail" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserStatus">
+            <EntityTypeMapping TypeName="Model.UserStatus">
+              <MappingFragment StoreEntitySet="UserStatus">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="Model.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="InitialCalculatedTotal" ColumnName="InitialCalculatedTotal" />
+                <ScalarProperty Name="CurrentRent" ColumnName="CurrentRent" />
+                <ScalarProperty Name="EntranceYear" ColumnName="EntranceYear" />
+                <ScalarProperty Name="EntranceMonth" ColumnName="EntranceMonth" />
+                <ScalarProperty Name="SecondaryAccount" ColumnName="SecondaryAccount" />
+                <ScalarProperty Name="MainAccount" ColumnName="MainAccount" />
+                <ScalarProperty Name="Savings" ColumnName="Savings" />
+                <ScalarProperty Name="Relations" ColumnName="Relations" />
+                <ScalarProperty Name="ChangesPreference" ColumnName="ChangesPreference" />
+                <ScalarProperty Name="StabilityPreference" ColumnName="StabilityPreference" />
+                <ScalarProperty Name="PlanningPreference" ColumnName="PlanningPreference" />
+                <ScalarProperty Name="BankOffers" ColumnName="BankOffers" />
+                <ScalarProperty Name="RefinanceCheck" ColumnName="RefinanceCheck" />
+                <ScalarProperty Name="DesiredMonthlyPayment" ColumnName="DesiredMonthlyPayment" />
+                <ScalarProperty Name="DesiredLoanAmount" ColumnName="DesiredLoanAmount" />
+                <ScalarProperty Name="PropertyValue" ColumnName="PropertyValue" />
+                <ScalarProperty Name="FutureMoney" ColumnName="FutureMoney" />
+                <ScalarProperty Name="Obligations" ColumnName="Obligations" />
+                <ScalarProperty Name="TotalNetIncome" ColumnName="TotalNetIncome" />
+                <ScalarProperty Name="YoungestLoanerAge" ColumnName="YoungestLoanerAge" />
+                <ScalarProperty Name="NumberOfLoaners" ColumnName="NumberOfLoaners" />
+                <ScalarProperty Name="DealType" ColumnName="DealType" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="OrderApprovingBanks" TypeName="Model.OrderApprovingBanks" StoreEntitySet="OrderApprovingBanks">
+            <EndProperty Name="Order">
+              <ScalarProperty Name="ID" ColumnName="OrderID" />
+            </EndProperty>
+            <EndProperty Name="ListBank">
+              <ScalarProperty Name="ID" ColumnName="BankID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="OrderStatus">
+            <EntityTypeMapping TypeName="Model.OrderStatus">
+              <MappingFragment StoreEntitySet="OrderStatus">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResultEntries">
+            <EntityTypeMapping TypeName="Model.ResultEntry">
+              <MappingFragment StoreEntitySet="ResultEntries">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ExecutionID" ColumnName="ExecutionID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResultTracks">
+            <EntityTypeMapping TypeName="Model.ResultTrack">
+              <MappingFragment StoreEntitySet="ResultTracks">
+                <ScalarProperty Name="TotalPay" ColumnName="TotalPay" />
+                <ScalarProperty Name="PMT" ColumnName="PMT" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Inflation" ColumnName="Inflation" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="TrackType" ColumnName="TrackType" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ResultEntryID" ColumnName="ResultEntryID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MailTemplates">
+            <EntityTypeMapping TypeName="Model.MailTemplate">
+              <MappingFragment StoreEntitySet="MailTemplates">
+                <ScalarProperty Name="MultiLine" ColumnName="MultiLine" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

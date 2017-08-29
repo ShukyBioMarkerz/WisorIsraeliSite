@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Shrink2FitEntities">
+    <EntitySetMapping Name="BankOfIsraelInterestRates">
+      <EntityTypeMapping TypeName="Model.BankOfIsraelInterestRate">
+        <MappingFragment StoreEntitySet="BankOfIsraelInterestRates">
+          <ScalarProperty Name="BOIIndexType" ColumnName="BOIIndexType" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BankOfIsraelInterestTypes">
+      <EntityTypeMapping TypeName="Model.BankOfIsraelInterestType">
+        <MappingFragment StoreEntitySet="BankOfIsraelInterestTypes">
+          <ScalarProperty Name="BOIIndexType" ColumnName="BOIIndexType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChangePreferences">
+      <EntityTypeMapping TypeName="Model.ChangePreference">
+        <MappingFragment StoreEntitySet="ChangePreferences">
+          <ScalarProperty Name="TimeOfRepay" ColumnName="TimeOfRepay" />
+          <ScalarProperty Name="TimeOfChange" ColumnName="TimeOfChange" />
+          <ScalarProperty Name="NewPredictedPayment" ColumnName="NewPredictedPayment" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CPITables">
+      <EntityTypeMapping TypeName="Model.CPITable">
+        <MappingFragment StoreEntitySet="CPITable">
+          <ScalarProperty Name="IndexType" ColumnName="IndexType" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Multiplier" ColumnName="Multiplier" />
+          <ScalarProperty Name="BaseYear" ColumnName="BaseYear" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="Model.Currency">
+        <MappingFragment StoreEntitySet="Currencies">
+          <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
+          <ScalarProperty Name="CurrencySign" ColumnName="CurrencySign" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DealTypes">
+      <EntityTypeMapping TypeName="Model.DealType">
+        <MappingFragment StoreEntitySet="DealTypes">
+          <ScalarProperty Name="DealType1" ColumnName="DealType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Executions">
+      <EntityTypeMapping TypeName="Model.Execution">
+        <MappingFragment StoreEntitySet="Executions">
+          <ScalarProperty Name="VMCostPerHour" ColumnName="VMCostPerHour" />
+          <ScalarProperty Name="SoftwareRunNumber" ColumnName="SoftwareRunNumber" />
+          <ScalarProperty Name="DateInstanceClosed" ColumnName="DateInstanceClosed" />
+          <ScalarProperty Name="DateSoftwareClosed" ColumnName="DateSoftwareClosed" />
+          <ScalarProperty Name="CalculationEndedOn" ColumnName="CalculationEndedOn" />
+          <ScalarProperty Name="CalculationStartedOn" ColumnName="CalculationStartedOn" />
+          <ScalarProperty Name="DateSoftwareLaunch" ColumnName="DateSoftwareLaunch" />
+          <ScalarProperty Name="ExecutionStatus" ColumnName="ExecutionStatus" />
+          <ScalarProperty Name="InstanceID" ColumnName="InstanceID" />
+          <ScalarProperty Name="InstanceType" ColumnName="InstanceType" />
+          <ScalarProperty Name="InstanceCreatedOn" ColumnName="InstanceCreatedOn" />
+          <ScalarProperty Name="InNewInstance" ColumnName="InNewInstance" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExecutionStatus">
+      <EntityTypeMapping TypeName="Model.ExecutionStatu">
+        <MappingFragment StoreEntitySet="ExecutionStatus">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IndexTypes">
+      <EntityTypeMapping TypeName="Model.IndexType">
+        <MappingFragment StoreEntitySet="IndexTypes">
+          <ScalarProperty Name="IndexType1" ColumnName="IndexType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoices">
+      <EntityTypeMapping TypeName="Model.Invoice">
+        <MappingFragment StoreEntitySet="Invoices">
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+          <ScalarProperty Name="NumberOfPayments" ColumnName="NumberOfPayments" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsBilling" ColumnName="IsBilling" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListBanks">
+      <EntityTypeMapping TypeName="Model.ListBank">
+        <MappingFragment StoreEntitySet="ListBanks">
+          <ScalarProperty Name="Available" ColumnName="Available" />
+          <ScalarProperty Name="PrimaryOption" ColumnName="PrimaryOption" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BankNumber" ColumnName="BankNumber" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListedTracks">
+      <EntityTypeMapping TypeName="Model.ListedTrack">
+        <MappingFragment StoreEntitySet="ListedTracks">
+          <ScalarProperty Name="JumpsInMonths" ColumnName="JumpsInMonths" />
+          <ScalarProperty Name="MaxTimeMonth" ColumnName="MaxTimeMonth" />
+          <ScalarProperty Name="MinTimeMonths" ColumnName="MinTimeMonths" />
+          <ScalarProperty Name="Inflated" ColumnName="Inflated" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObligationOrFutures">
+      <EntityTypeMapping TypeName="Model.ObligationOrFuture">
+        <MappingFragment StoreEntitySet="ObligationOrFutures">
+          <ScalarProperty Name="EndMonth" ColumnName="EndMonth" />
+          <ScalarProperty Name="EndYear" ColumnName="EndYear" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OffersOrChecks">
+      <EntityTypeMapping TypeName="Model.OffersOrCheck">
+        <MappingFragment StoreEntitySet="OffersOrChecks">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ApprovingBank" ColumnName="ApprovingBank" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RelationshipTypes">
+      <EntityTypeMapping TypeName="Model.RelationshipType">
+        <MappingFragment StoreEntitySet="RelationshipTypes">
+          <ScalarProperty Name="RelationsName" ColumnName="RelationsName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Results">
+      <EntityTypeMapping TypeName="Model.Result">
+        <MappingFragment StoreEntitySet="Results">
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="TotalChecksSaved" ColumnName="TotalChecksSaved" />
+          <ScalarProperty Name="TotalChecksMatch" ColumnName="TotalChecksMatch" />
+          <ScalarProperty Name="TotalChecksMade" ColumnName="TotalChecksMade" />
+          <ScalarProperty Name="RefinancePoint" ColumnName="RefinancePoint" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ExecutionID" ColumnName="ExecutionID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Savings">
+      <EntityTypeMapping TypeName="Model.Saving">
+        <MappingFragment StoreEntitySet="Savings">
+          <ScalarProperty Name="Liquidity" ColumnName="Liquidity" />
+          <ScalarProperty Name="Yield" ColumnName="Yield" />
+          <ScalarProperty Name="SavingsType" ColumnName="SavingsType" />
+          <ScalarProperty Name="AmountSaved" ColumnName="AmountSaved" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SavingsTypes">
+      <EntityTypeMapping TypeName="Model.SavingsType">
+        <MappingFragment StoreEntitySet="SavingsTypes">
+          <ScalarProperty Name="SavingTypeName" ColumnName="SavingTypeName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrackInterestRates">
+      <EntityTypeMapping TypeName="Model.TrackInterestRate">
+        <MappingFragment StoreEntitySet="TrackInterestRates">
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="TrackID" ColumnName="TrackID" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tracks">
+      <EntityTypeMapping TypeName="Model.Track">
+        <MappingFragment StoreEntitySet="Tracks">
+          <ScalarProperty Name="PMT" ColumnName="PMT" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Inflation" ColumnName="Inflation" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="TrackType" ColumnName="TrackType" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="MonthTaken" ColumnName="MonthTaken" />
+          <ScalarProperty Name="YearTaken" ColumnName="YearTaken" />
+          <ScalarProperty Name="OfferOrCheckID" ColumnName="OfferOrCheckID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Model.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="FacebookID" ColumnName="FacebookID" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+          <ScalarProperty Name="SecondaryEmail" ColumnName="SecondaryEmail" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserStatus">
+      <EntityTypeMapping TypeName="Model.UserStatus">
+        <MappingFragment StoreEntitySet="UserStatus">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="Model.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="InitialCalculatedTotal" ColumnName="InitialCalculatedTotal" />
+          <ScalarProperty Name="CurrentRent" ColumnName="CurrentRent" />
+          <ScalarProperty Name="EntranceYear" ColumnName="EntranceYear" />
+          <ScalarProperty Name="EntranceMonth" ColumnName="EntranceMonth" />
+          <ScalarProperty Name="SecondaryAccount" ColumnName="SecondaryAccount" />
+          <ScalarProperty Name="MainAccount" ColumnName="MainAccount" />
+          <ScalarProperty Name="Savings" ColumnName="Savings" />
+          <ScalarProperty Name="Relations" ColumnName="Relations" />
+          <ScalarProperty Name="ChangesPreference" ColumnName="ChangesPreference" />
+          <ScalarProperty Name="StabilityPreference" ColumnName="StabilityPreference" />
+          <ScalarProperty Name="PlanningPreference" ColumnName="PlanningPreference" />
+          <ScalarProperty Name="BankOffers" ColumnName="BankOffers" />
+          <ScalarProperty Name="RefinanceCheck" ColumnName="RefinanceCheck" />
+          <ScalarProperty Name="DesiredMonthlyPayment" ColumnName="DesiredMonthlyPayment" />
+          <ScalarProperty Name="DesiredLoanAmount" ColumnName="DesiredLoanAmount" />
+          <ScalarProperty Name="PropertyValue" ColumnName="PropertyValue" />
+          <ScalarProperty Name="FutureMoney" ColumnName="FutureMoney" />
+          <ScalarProperty Name="Obligations" ColumnName="Obligations" />
+          <ScalarProperty Name="TotalNetIncome" ColumnName="TotalNetIncome" />
+          <ScalarProperty Name="YoungestLoanerAge" ColumnName="YoungestLoanerAge" />
+          <ScalarProperty Name="NumberOfLoaners" ColumnName="NumberOfLoaners" />
+          <ScalarProperty Name="DealType" ColumnName="DealType" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="OrderApprovingBanks" TypeName="Model.OrderApprovingBanks" StoreEntitySet="OrderApprovingBanks">
+      <EndProperty Name="Order">
+        <ScalarProperty Name="ID" ColumnName="OrderID" />
+      </EndProperty>
+      <EndProperty Name="ListBank">
+        <ScalarProperty Name="ID" ColumnName="BankID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="OrderStatus">
+      <EntityTypeMapping TypeName="Model.OrderStatus">
+        <MappingFragment StoreEntitySet="OrderStatus">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResultEntries">
+      <EntityTypeMapping TypeName="Model.ResultEntry">
+        <MappingFragment StoreEntitySet="ResultEntries">
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ExecutionID" ColumnName="ExecutionID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResultTracks">
+      <EntityTypeMapping TypeName="Model.ResultTrack">
+        <MappingFragment StoreEntitySet="ResultTracks">
+          <ScalarProperty Name="TotalPay" ColumnName="TotalPay" />
+          <ScalarProperty Name="PMT" ColumnName="PMT" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Inflation" ColumnName="Inflation" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="TrackType" ColumnName="TrackType" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ResultEntryID" ColumnName="ResultEntryID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MailTemplates">
+      <EntityTypeMapping TypeName="Model.MailTemplate">
+        <MappingFragment StoreEntitySet="MailTemplates">
+          <ScalarProperty Name="MultiLine" ColumnName="MultiLine" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e184391f4fdf407f87e3b2f7fa9b03c2" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="Model.BankOfIsraelInterestRate" Width="1.5" PointX="3" PointY="4.875" />
+        <EntityTypeShape EntityType="Model.BankOfIsraelInterestType" Width="1.5" PointX="0.75" PointY="5.125" />
+        <EntityTypeShape EntityType="Model.ChangePreference" Width="1.5" PointX="8.25" PointY="23.125" />
+        <EntityTypeShape EntityType="Model.CPITable" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="Model.Currency" Width="1.5" PointX="9" PointY="11.5" />
+        <EntityTypeShape EntityType="Model.DealType" Width="1.5" PointX="3.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Model.Execution" Width="1.5" PointX="8.25" PointY="14.25" />
+        <EntityTypeShape EntityType="Model.ExecutionStatu" Width="1.5" PointX="6" PointY="8.625" />
+        <EntityTypeShape EntityType="Model.IndexType" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="Model.Invoice" Width="1.5" PointX="11.25" PointY="11" />
+        <EntityTypeShape EntityType="Model.ListBank" Width="1.5" PointX="0.75" PointY="15.125" />
+        <EntityTypeShape EntityType="Model.ListedTrack" Width="1.5" PointX="0.75" PointY="11.125" />
+        <EntityTypeShape EntityType="Model.ObligationOrFuture" Width="1.5" PointX="8.25" PointY="26" />
+        <EntityTypeShape EntityType="Model.OffersOrCheck" Width="1.5" PointX="8.25" PointY="29.125" />
+        <EntityTypeShape EntityType="Model.RelationshipType" Width="1.5" PointX="3.75" PointY="11.375" />
+        <EntityTypeShape EntityType="Model.Result" Width="1.5" PointX="10.5" PointY="19.125" />
+        <EntityTypeShape EntityType="Model.Saving" Width="1.5" PointX="11.25" PointY="15.125" />
+        <EntityTypeShape EntityType="Model.SavingsType" Width="1.5" PointX="9" PointY="8.625" />
+        <EntityTypeShape EntityType="Model.TrackInterestRate" Width="1.5" PointX="3" PointY="15.375" />
+        <EntityTypeShape EntityType="Model.Track" Width="1.5" PointX="10.5" PointY="28.625" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="3.75" PointY="19" />
+        <AssociationConnector Association="Model.FK_BankOfIsraelInterestRates_BankOfIsraelInterestTypes" />
+        <AssociationConnector Association="Model.FK_CPITable_IndexTypes" />
+        <AssociationConnector Association="Model.FK_Invoices_Currencies" />
+        <AssociationConnector Association="Model.FK_Executions_ExecutionStatus" />
+        <AssociationConnector Association="Model.FK_Results_Executions" />
+        <AssociationConnector Association="Model.FK_TrackInterestRates_ListBanks" />
+        <AssociationConnector Association="Model.FK_TrackInterestRates_ListedTracks" />
+        <AssociationConnector Association="Model.FK_Tracks_ListedTracks" />
+        <AssociationConnector Association="Model.FK_Tracks_OffersOrChecks" />
+        <AssociationConnector Association="Model.FK_Savings_SavingsTypes" />
+        <EntityTypeShape EntityType="Model.UserStatus" Width="1.5" PointX="1.5" PointY="19.875" />
+        <AssociationConnector Association="Model.FK_Users_UserStatus" />
+        <EntityTypeShape EntityType="Model.Order" Width="1.5" PointX="6" PointY="11.875" />
+        <AssociationConnector Association="Model.FK_ChangePreferences_Orders" />
+        <AssociationConnector Association="Model.FK_Orders_DealTypes" />
+        <AssociationConnector Association="Model.FK_Executions_Orders" />
+        <AssociationConnector Association="Model.FK_Invoices_Orders" />
+        <AssociationConnector Association="Model.FK_Orders_ListBanks" />
+        <AssociationConnector Association="Model.FK_Orders_ListBanks1" />
+        <AssociationConnector Association="Model.FK_ObligationFutures_Orders" />
+        <AssociationConnector Association="Model.FK_RefinanceCheckForOrders_Orders" />
+        <AssociationConnector Association="Model.FK_Orders_RelationshipTypes" />
+        <AssociationConnector Association="Model.FK_Orders_Users" />
+        <AssociationConnector Association="Model.FK_Savings_Orders" />
+        <AssociationConnector Association="Model.OrderApprovingBanks" />
+        <EntityTypeShape EntityType="Model.OrderStatus" Width="1.5" PointX="3.75" PointY="22.875" />
+        <AssociationConnector Association="Model.FK_Orders_OrderStatus" />
+        <EntityTypeShape EntityType="Model.ResultEntry" Width="1.5" PointX="8.25" PointY="32.125" />
+        <EntityTypeShape EntityType="Model.ResultTrack" Width="1.5" PointX="10.5" PointY="33.625" />
+        <AssociationConnector Association="Model.FK_ResultEntries_Orders" />
+        <AssociationConnector Association="Model.FK_ResultTracks_ResultEntries" />
+        <AssociationConnector Association="Model.FK_ResultTracks_ListedTracks" />
+        <EntityTypeShape EntityType="Model.MailTemplate" Width="1.5" PointX="5.75" PointY="0.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
