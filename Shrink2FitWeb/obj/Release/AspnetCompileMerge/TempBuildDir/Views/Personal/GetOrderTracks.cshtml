@@ -1,0 +1,179 @@
+﻿@model Shrink2FitDAL.VModels.AmountSavedVM
+@{
+    var maxBankOffer = Model.Offers.Count > 1 ? Model.Offers.Max(o => o.Tracks.Sum(t => t.Summation.TotalPay)) : 0;
+    var minBankOffer = Model.Offers.Count > 1 ? Model.Offers.Min(o => o.Tracks.Sum(t => t.Summation.TotalPay)) : 0;
+    string maxBank = "";
+    string minBank = "";
+}
+ <div class="accordion" >
+    <div class="item item-compare" id="item-compare">
+                          
+    <div class="item-title">השוואת הצעות מחיר - @(Model.Label)</div>
+    <div class="item-content">
+
+@foreach (var bank in Model.Offers)
+{
+                    if(bank.Tracks.Sum(t => t.Summation.TotalPay) == maxBankOffer){
+                        maxBank = bank.BankName;
+                    }
+                    if (bank.Tracks.Sum(t => t.Summation.TotalPay) == minBankOffer)
+                    {
+                        minBank = bank.BankName;
+                    }
+                    <div class="bankContainer">
+                        <h2>בנק @bank.BankName </h2>
+                        <table class="tableRight">
+                            <thead>
+                            <tr>
+                                <th>סכום בש"ח</th>
+                                <th>סוג המסלול</th>
+                                <th>ריבית</th>
+                                @*<th>הצמדה</th>*@
+                                <th>זמן</th>
+                                <th>החזר בש"ח</th>
+                            </tr>
+                               </thead>
+                            <tbody>         
+							@foreach (var offer in bank.Tracks) 
+						    {   
+								 <tr>
+									<td>@offer.Amount</td>
+									<td class="justify-right">@offer.TrackTypeName</td>
+									<td>@string.Format("{0:0.00}",offer.Rate)%</td>
+									@*<td>
+										
+										@(offer.Inflation ? "יש" : "אין")
+
+									</td>*@
+									<td>@offer.Time</td>
+									<td>@offer.PMT</td>
+								</tr>
+						    } 
+                           </tbody>
+                        </table>
+                                      
+                        <table class="tableLeft">
+                            <thead>
+                                <tr>
+                                    <th>קרן שולמה</th>
+                                    <th>ריבית שולמה</th>
+                                    <th>סה"כ שולם</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var row in bank.Tracks)
+                                {
+                                    <tr>
+
+                                        <td>@string.Format("{0}", (int)row.Summation.PrincipalPay)</td>
+                                        <td>@string.Format("{0}", (int)row.Summation.RatePayed)</td>
+                                        <td>@string.Format("{0}", row.Summation.TotalPay)</td>
+
+                                    </tr>
+		   
+								
+                            }
+                                <tr>
+                                    <td>@string.Format("{0}", bank.Tracks.Sum(t => (int)t.Summation.PrincipalPay))</td>
+                                    <td>@string.Format("{0}", bank.Tracks.Sum(t => (int)t.Summation.RatePayed))</td>
+                                    <td>@string.Format("{0}", bank.Tracks.Sum(t => t.Summation.TotalPay))</td>
+                                </tr>
+                            </tbody>
+                        </table>
+													
+                        </div>
+}
+
+
+						<br />
+        @if (Model.Offers.Count == 0)
+        {
+            <p class="profit-text">
+                על פי החישובים שלנו, ניתן להגיע לתשלום סופי חזוי של ₪@(Model.InitialSavings) עבור ההלואה.<br />
+                לא הוזנו הצעות מחיר להשואה בדיקה זו. זהו התשלום המינימלי שיש לשאוף אליו עבור ההלואה
+                @if(!ViewBag.WasPaid){
+                    <br />
+                   <span> כדי לקבל גישה אל ההרכבים המומלצים של Wisor יש להמשיך לביצוע תשלום</span>
+                }
+            </p>
+            
+        }
+        else{
+            if (Model.Offers.Count > 1)
+            {
+                if (ViewBag.Save)
+                {
+                    <p>
+                        הצעת המחיר הזולה ביותר היא של בנק @(minBank), והיקרה ביותר היא של בנק @(maxBank).<br />
+                        הפער בין הצעת המחיר היקרה ביותר לעומת הזולה ביותר הוא ₪@(maxBankOffer - minBankOffer).<br />
+                        על פי החישובים שלנו, ניתן לכוץ את התשלום הסופי עבור ההלואה בעוד @(Model.InitialSavings) ₪ לעומת הצעת המחיר הזולה ביותר !<br />
+                         @if(!ViewBag.WasPaid){
+                            <br />
+                            <span> כדי לקבל גישה אל ההרכבים המומלצים של Wisor יש להמשיך לביצוע תשלום</span>
+                        }
+                    </p>
+                }
+                else
+                {
+                    <p>
+                        הצעת המחיר הזולה ביותר היא של בנק @(minBank), והיקרה ביותר היא של בנק @(maxBank).<br />
+                        הפער בין הצעת המחיר היקרה ביותר לעומת הזולה ביותר הוא ₪@(maxBankOffer - minBankOffer).<br />
+                        על פי החישובים שלנו, לא ניתן לכוץ את התשלום הסופי עבור ההלואה לעומת הצעת המחיר הזולה ביותר.<br />
+                        זהו דבר טוב ! זה אומר שהצעת המחיר היא הצעה טובה !
+                    </p>
+                    
+                }
+            }
+            else{
+                if(ViewBag.Save){
+                    <p class="profit-text">על פי החישובים שלנו, ניתן לכוץ את התשלום הסופי עבור ההלואה ב ₪@(Model.InitialSavings) לעומת הצעת המחיר !
+                    @if(!ViewBag.WasPaid){
+                        <br />
+                       <span> כדי לקבל גישה אל ההרכבים המומלצים של Wisor יש להמשיך לביצוע תשלום</span>
+                    }
+                    </p>
+                }
+                else{
+                    <p class="profit-text">
+                        על פי החישובים שלנו, לא ניתן לכוץ את התשלום הסופי עבור ההלואה לעומת הצעת המחיר.<br />
+                        זהו דבר טוב ! זה אומר שהצעת המחיר היא הצעה טובה !
+                    </p>
+                }
+            }
+        }
+
+						<input type="hidden" value="@ViewBag.CurrentOrderId" id ="currentId" />
+
+						
+						<div id="waiting-for-results" class="orange-big-button no-click @(ViewBag.WasPaid == true && ViewBag.HasResults != true ? "show" : "")" >המערכת ממתינה לתוצאות הבדיקה</div>
+								
+						@if(!ViewBag.WasPaid)
+						{
+							<div onclick="openPopup('payment')" class="orange-big-button">
+								@if(ViewBag.Save){
+            
+                                    <span class="pay-text">בצע תשלום וחסוך</span><br />
+								    <span>@Model.InitialSavings ₪</span>
+                                }
+                                else{
+                                    <span class="pay-text" style="font-size:16px">בצע תשלום וקבל הרכב שיעלה </span><br />
+								    <span>@Model.InitialSavings ₪</span>
+                                }
+							</div>
+						}
+
+
+					 </div>
+	 </div>
+    
+		@if (ViewBag.WasPaid && ViewBag.HasResults)
+		{
+			Html.RenderPartial("CheckForInvoice", Model.Results);								
+		}
+	                    
+</div>			
+				
+						
+						
+                      

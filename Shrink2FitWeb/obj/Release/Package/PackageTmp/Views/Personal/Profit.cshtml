@@ -1,0 +1,54 @@
+﻿@model List<Shrink2FitDAL.VModels.OrderVM>
+
+@{
+	ViewBag.Title = "Profit";
+	Layout = "~/Views/Personal/PersonalLayout.cshtml";
+}
+
+
+<div style="height: 98px;">&nbsp;</div>
+
+<div id="profit">
+	<h1>בדוק כמה כיווצת מתוך העסקאות הבאות:</h1>
+	
+	<table class="mainProfitTable">
+		<thead>
+			<tr>
+				<th>מספר הזמנה</th>
+				<th>תאריך יצירה</th>
+				<th>סוג עסקה</th>
+				<th>שווי נכס בש"ח</th>
+				<th>הלוואה רצויה</th>
+				<th>החזר רצוי</th>
+				@*<th>חסכון פוטנציאלי</th>*@
+				<th class="transparent-td"></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var order in Model)
+   {
+				<tr>
+					<td>
+						@order.Label
+						<input type="hidden" class="orderid" value="@order.ID" />
+					</td>
+					<td>@order.CreatedOn.ToShortDateString()</td>
+					<td>@order.DealName</td>
+					<td>@order.PropertyValue</td>
+					<td>@order.DesiredLoanAmount</td>
+					<td>@order.DesiredMonthlyPayment</td>
+					@*<td>@(order.OffersTotal != 0 && order.OffersTotal - order.InitialCalculatedTotal > 0 ? order.OffersTotal - order.InitialCalculatedTotal + " ₪" : "אין השוואה") </td>*@
+					<td class="transparent-td">
+						<div class="green-button" onclick="displayProfitAccordion('@order.Label',@order.ID)">כמה חסכתי</div>
+					</td>
+					<!---->
+				</tr>
+   }
+
+		</tbody>
+	</table>
+
+	<br />
+	<div id="Tracks">
+	</div>
+</div>

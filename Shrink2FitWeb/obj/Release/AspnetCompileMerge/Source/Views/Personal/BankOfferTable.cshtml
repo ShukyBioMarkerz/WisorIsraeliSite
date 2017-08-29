@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+} 
+<div class="table-after-checkbox active-offer" style="width: 95%;margin:20px auto 60px auto;">
+    <span onclick="RemoveBank(event)" class="plusBox removeaddBank">
+        <div class="plus">-</div>
+		הסרת בנק
+    </span>
+    <span class="bankOffersTable">
+		    <label>בנק: </label>
+		    <select name="bank-name[]" class="bankName">
+                <option disabled selected style="display:none"></option>
+		        @foreach (var bank in ViewBag.BanksList)
+                {
+						<option value="@bank.ID">@bank.Name</option>									
+                }   
+		    </select><br />
+		    <table class="bankBidsTable" style="border: 2px solid #b2b2b2;">
+		        <tr>
+		            <th>סכום בש"ח</th>
+		            <th>סוג מסלול</th>
+		            <th>ריבית</th>
+		           
+		            <th>תקופה</th>
+		            <th>החזר בש"ח</th>
+												
+		        </tr>
+		        @Html.Action("BankOfferRow")
+		    </table>
+		    <span onclick="AddBankRow(event)" class="plusBox addBankBidTr">
+				<div class="plus">+</div>
+				<span> הוספת מסלול</span><br />
+			</span>
+	</span>
+</div>

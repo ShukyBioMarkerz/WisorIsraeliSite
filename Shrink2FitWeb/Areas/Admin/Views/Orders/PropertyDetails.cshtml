@@ -1,0 +1,14 @@
+﻿@model Shrink2FitDAL.VModels.PropertyDetailsVM
+@{
+    Layout = "";
+}
+
+<table class="table table-striped table-advance table-hover">
+    <tr>
+        <td>Entrance Date: </td><td> @Model.EntranceMonth / @Model.EntranceYear</td>
+        
+    </tr>
+    <tr>
+        <td>Current Rent: </td><td> @(Model.CurrentRent != null ? Model.CurrentRent.ToString() : "NA")</td>
+    </tr>
+</table>

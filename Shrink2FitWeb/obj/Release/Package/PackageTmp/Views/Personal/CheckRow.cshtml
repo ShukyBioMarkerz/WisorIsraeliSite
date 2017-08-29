@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+}
+<tr class="loanRoutes value-rows">
+    <td class="remove-tr-col"><span class="removeRecycleTr">X</span></td>
+    <td>
+        <input type="text" value="" class="number-input loanSum reqiured"  /></td>
+    <td style="width:220px;">
+        <select class="routeType loan-track reqiured PMT-value">
+            <option disabled selected style="display: none"></option>
+            @foreach (var listtrack in ViewBag.ListedTracks)
+            {
+                <option value="@listtrack.ID">@listtrack.Name</option>
+            }
+        </select>
+    </td>
+    <td>
+       <select class="recycleTime track-period">
+        </select>
+    </td>
+    <td>
+
+        <select class="time-left PMT-value months">
+            <option disabled selected style="display: none"></option>
+            @*@for (int i = 1; i <= 360; i++)
+            {
+                <option value="@i">@(i) @(i%12 == 0 ? Html.Raw("(" + i/12 + ")") : Html.Raw(""))</option>
+            }*@
+        </select>
+    </td>
+    <td>
+        <input type="text" value="" class="interest percentage reqiured PMT-value rate" /></td>
+
+    <td class="wider">
+       <input type="text" value="" class="number-input remaining-sum total-sum-part reqiured PMT-value amount" />
+
+    </td>
+    <td>
+        <input type="text" value="" class="number-input fines total-sum-part reqiured PMT-value" />
+        
+
+    </td>
+    <td>
+        <input type="text" value="" class="number-input total-remaining " disabled="disabled" />
+        
+
+    </td>
+    <td>
+        <input type="text" value="" class="number-input PMT returnSum" disabled="disabled" />
+        
+
+    </td>
+    
+</tr>

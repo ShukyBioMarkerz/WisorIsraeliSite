@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <script src="~/scripts/jquery-1.11.1.min.js"></script>
+    <script src="~/Areas/Admin/js/Login.js"></script>
+</head>
+<body>
+    <div>
+        <form name="form" method="post">
+            <input name="email" placeholder="Enter E-mail" />
+            <input type="password" name="password" />
+            <input id="button" type="button" value="Login" onclick="return false;"/>
+        </form>
+        <p id="message"></p>
+    </div>
+</body>
+</html>

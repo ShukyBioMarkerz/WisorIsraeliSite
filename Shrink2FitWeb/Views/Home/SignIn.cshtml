@@ -1,0 +1,63 @@
+﻿       <div id="sign-in-up" class="sign-in-active" style="display: none;">
+                <div id="tabs">
+                    <div id="sign-in-tab">כניסה</div>
+                    <div id="sign-up-tab">הרשמה</div>
+                </div>
+                <div id="sign-in">
+                    <form id="sign-in-form" action="/" method="post">
+                        <input type="text" class="textbox" name="email" placeholder="דוא&quot;ל">
+						<!--<input type="text" class="textbox" name="username" placeholder="שם משתמש">-->
+                        <input type="password" class="textbox" name="password" placeholder="סיסמא">
+                        <span id="verification" style="display:none;">כתובת המייל אינה מאומתת. לחץ <a href="javascript:void(0)">כאן</a> לקבלת מייל אימות לדוא"ל שלך</span>
+                        <br />
+                        <img class="facebook-login" src="@Url.Content("~/images/facebook-button.png")" alt="">
+						<br /> <br />
+                        <div id="lost-password-text">
+                            <a href="#">שכחת ססמא?</a>
+                        </div>
+                        <input type="image" src="@Url.Content("~/images/sign-in-button.png") " alt="כניסה">
+                    </form>
+                </div>
+                <div id="sign-up">
+                    <form id="register-form" action="/" method="post">
+                        <input type="text" id="mail" class="textbox" name="email" placeholder="בחר/י כתובת דוא&quot;ל">
+						@*<input type="text" id="name" class="textbox" name="username" placeholder="שם משתמש">*@
+                        <div id="passwords">
+                            <input type="password" class="textbox" name="password" placeholder="בחר/י ססמא">
+                            <input type="password" class="textbox" name="confirmpassword" placeholder="אמת/י ססמא">
+                        </div>
+                        <div id="facebook">
+                            או, חסכו זמן ע"י<br>
+                            הרשמה באמצעות<br>
+                            חשבון פייסבוק:
+                            <span id="sign-up-via"><span>הרשמה דרך</span></span>
+                            <img class="facebook-login" id="sign-up-button" src="@Url.Content("~/images/facebook-button.png")" alt="">
+                        </div><br>
+						<div id="agree-wrap">
+							<input type="checkbox" name="agree" id="agree">
+							<label id="agreeLabel" for="agree">
+								אני מאשר/ת כי קראתי והבנתי את<br>
+								<span id="terms-usage-links"><a href="/Home/TOS">תנאי השימוש</a> <a href="/Home/TOS">ותקנון האתר</a></span>
+							</label>
+						</div>
+						
+						<div id="errors" class ="registErrors">
+
+						</div>
+						
+                        <input class="register-button" type="image" src="@Url.Content("~/images/sign-up-button.png")" alt="הרשמה">
+                        <span class="verify-sent" style="display:none;">מייל נשלח לכתובת הדוא"ל בכדי לאמת אותה</span>
+                    </form>
+                </div>
+                <div id="lost-password">
+                    <p>הכנס/י מייל לאיפוס הסיסמא</p>
+                    <form action="/" method="post">
+                        <input style="margin-bottom:63px;" type="text" class="textbox" name="email" placeholder="מייל">			
+								
+                        <p>תודה רבה. מייל ישלח אליך מיד</p>
+                        <br />
+                        <br />
+                        <input type="submit" value="שליחה">
+                    </form>
+                </div>
+            </div>

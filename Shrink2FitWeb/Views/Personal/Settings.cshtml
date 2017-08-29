@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "Settings";
+    Layout = "~/Views/Personal/PersonalLayout.cshtml";
+}
+
+<div style="height:98px;">&nbsp;</div>
+  
+<div id="account-settings">
+                            <h1>הגדרות חשבון</h1>
+                            <div>
+								<br />
+                                <p>
+                                    תאריך יצירת חשבון: @ViewBag.CreationDate
+                                </p>
+                               
+                                כתובת דוא"ל עיקרית (זיהוי משתמש): <span id="MainMail">@ViewBag.MainEmail </span>    <div id="EditMainMailBtn" class="green-button" onclick="EditMainMail()">עריכה</div> 
+								<br />
+								<div id="MainMailEdit" style="display:none;">
+									<span style="color:red;">לאחר שינוי כתובת הדוא"ל העיקרית יש להתחבר מחדש למערכת</span>
+									<br />
+									<input type="text" id="newMainMail" /> <span style="color:red;" id="mainmailerror"></span>
+									<br />
+                                	<div class="green-button" onClick="UpdateMainMail()">אישור</div>
+                                	<div class="gray-button" onClick="hideAddMainMail()">ביטול</div>
+									
+                                </div>
+                                @*<div style="width:110%">
+                                    <span style="float:right;">כתובת דוא"ל משנית: </span>
+                                    <span id="secondaryExist" style="float:right;">
+                                        @ViewBag.SecondaryEmail
+                                    </span>
+
+                                    <div class="green-button" id="accountAddMailButton" onclick="showAddSubMail()" style="float:right;">@(ViewBag.SecondaryEmail == "" ? "הוספה" : "עריכה")</div>
+                                    <div id="accountAddMail">
+                                        <input type="text" name="newSubMail" value="@ViewBag.SecondaryEmail"/>
+                                        
+                                        
+                                        <div class="green-button" onclick="UpdateSecondaryMail()">אישור</div>
+                                        <div class="gray-button" onclick="hideAddSubMail()">ביטול</div>
+                                        <span style="color: red;" id="secondarymailerror"></span>
+                                    </div>
+                                </div>
+								<br />*@
+                                
+                                <br />
+                                <div id="changePassButton">
+                               	 <div class="green-button" onclick="showChangePass()">עדכון סיסמא</div>
+                               	 </div>
+                                <div id="accountChangePassword">
+                                <form id="newpasswordform" action="">
+						          <table>
+									<tr>
+                                		<td>
+										סיסמא נוכחית:
+										</td>
+										<td>
+										<input type="text" name="currentPass" />
+										</td>
+										<td>
+											<span style="color:red;" id="currentPassError"></span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+										סיסמא חדשה:
+										</td>
+										<td>
+										<input type="password" name="newPass" />
+										</td>
+										<td>
+										<span style="color:red;" id="passlength"></span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+										אימות סיסמא:
+										</td>
+										<td>
+										<input type="password" name="validPass" />
+										</td>
+										<td>
+											<span style="color:red;" id="mismatch"></span>
+										</td>
+									</tr>
+									<tr>
+									  <td>
+											<div class="green-button" onclick="$('#newpasswordform').submit()">אישור</div>
+                                			<div class="gray-button" onClick="hideChangePass()">ביטול</div>
+										 </td>
+									</tr>
+                                </table>
+                                </form>
+
+                                		
+                                </div>
+								<!--
+								<div id="editName">
+
+									שם משתמש: <span id="UserName">@ViewBag.UserName</span> 
+									<br />
+	                                <div class="green-button" id="editUserName" onClick="showEditUserName()">@(ViewBag.UserName == "" ? "הוספה" : "עריכה")</div>
+
+									<div id="accountEditUserName">
+										<input type="text" id="newUserName" name="newUSerName" /> <span style="color:red;" id="namelength"></span>
+										<br />
+                                		<div class="green-button" onClick="updateUserName()">אישור</div>
+                                		<div class="gray-button" onClick="hideUserName()">ביטול</div>
+									</div>
+
+								</div> -->
+                            </div>
+						<div id="messages"></div>	
+                        </div>

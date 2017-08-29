@@ -1,0 +1,143 @@
+﻿@model List<Shrink2FitDAL.VModels.OfferVM>
+@{
+    Layout = "";
+    var t = ViewBag.Type;
+}
+@foreach (var entry in Model)
+{
+    <div class="panel panel-default">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+            <div class="panel-heading">
+                <h4>@( ViewBag.Type == 1 ? "Price Offer" : "Refinance Check")</h4>
+            </div>
+        </a>
+        <div id="collapseOne" class="panel-collapse collapse in">
+            <!-- make sure that the href paramater on :
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+							is identical to the id pramater on:
+							<div id="collapseOne" class="panel-collapse collapse in">
+							-->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="panel">
+                                    <a href="#" class="btn btn-primary col-xs-12">Save</a>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3">
+                                <div class="panel">
+                                    <a href="#" class="btn btn-primary col-xs-12">Undo</a>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3">
+                                <div class="panel">
+                                    <a href="#" class="btn btn-primary col-xs-12">Redo</a>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3">
+                                <div class="panel">
+                                    <a href="#" class="btn btn-primary col-xs-12">Edit</a>
+                                </div>
+
+                            </div>
+                            <hr />
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered datatables hebTable" id="editable">
+                                <thead>
+                                    <tr>
+                                        <th>קרן</th>
+                                        <th>ריבית שולמה</th>
+                                        <th>סה"כ שולם</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX">
+                                        <td>השקעות</td>
+                                        <td>5%</td>
+                                        <td>100000</td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>השקעות</td>
+                                        <td>5%</td>
+                                        <td>100000</td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>השקעות</td>
+                                        <td>5%</td>
+                                        <td>100000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <table class="hebTable" style="width: 100%; border: 1px solid black; direction: rtl; background-color: lightgrey;">
+                            <tr>
+                                <th style="">בנק</th>
+                                <th>
+                                    <input type="text" style="width:100%;" value="@entry.BankName" /></th>
+                                <th style="">תאריך הצעה</th>
+                                <th>
+                                    <input type="text" style="width: 100%;" value="February 12,2014" /></th>
+                            </tr>
+                        </table>
+                        <hr>
+                        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered datatables hebTable" id="editable">
+                            <thead>
+                                <tr>
+                                    <th>סכום בש"ח</th>
+                                    @if (ViewBag.Type != 1)
+                                    {
+                                        <th>זמן התחלה</th>
+                                        
+                                    }
+                                    <th>סוג המסלול</th>
+                                    <th>ריבית</th>
+                                    <th>הצמדה</th>
+                                    <th>תקופה</th>
+                                    <th>החזר חודשי</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var offer in entry.Tracks)
+                                {
+                                    <tr class="odd gradeX">
+                                        <td>
+                                            <input type="text" value="@offer.Amount" /></td>
+                                        @if(ViewBag.Type != 1 ){
+                                            <td>
+                                            <input type="text" value="@offer.YearTaken / @offer.MonthTaken" /></td>
+                                        }
+                                        <td>
+                                            <input type="text" value="@offer.TrackTypeName" /></td>
+                                        <td>
+                                            <input type="text" value="@offer.Rate" /></td>
+                                        <td>
+                                            <input type="checkbox" @(offer.Inflation ? "checked=checked" : "") disabled/></td>
+                                        <td>
+                                            <input type="text" value="@offer.Time חודשים" /></td>
+                                        <td>
+                                            <input type="text" value="@offer.PMT" /></td>
+                                    </tr>
+                                         }
+
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+                        }

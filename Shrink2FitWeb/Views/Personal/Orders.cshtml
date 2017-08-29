@@ -1,0 +1,36 @@
+﻿@model List<Shrink2FitDAL.VModels.OrderVM>
+
+@{
+	ViewBag.Title = "Orders";
+	Layout = "~/Views/Personal/PersonalLayout.cshtml";
+}
+<script src="~/scripts/Orders.js"></script>
+<div style="height: 98px;">&nbsp;</div>
+
+<div id="orders">
+	<h1>פירוט הזמנות:</h1>
+
+	<table class="mainOrderTable">
+		<thead>
+			<tr>
+				<th>מספר הזמנה</th>
+				<th>תאריך פתיחה</th>
+				<th>סוג עסקה</th>
+				<th>מצב הזמנה</th>
+				<th class="transparent-td"></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var order in Model)
+   {
+				<tr>
+					<td>@order.Label</td>
+					<td>@order.CreatedOn.ToShortDateString()</td>
+					<td>@order.DealName</td>
+					<td>@order.StatusName</td>
+					<td class="transparent-td"><a href="/Personal/Profit"><div class="green-button">כמה חסכתי  </div></a></td>
+				</tr>
+   }
+		</tbody>
+	</table>
+</div>

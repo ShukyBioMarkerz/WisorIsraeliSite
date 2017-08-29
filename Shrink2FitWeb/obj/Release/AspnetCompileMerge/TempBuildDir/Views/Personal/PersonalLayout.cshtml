@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Wisor - Personal Page";
+    ViewBag.IsPersonal = true;
+	Layout = "~/views/shared/_Layout.cshtml";
+}
+
+<script src="~/scripts/Personal.js"></script>
+<script src="~/scripts/PersonalValidate.js"></script>
+<script src="~/scripts/jquery.tablescroll.js"></script>
+
+<script type="text/javascript">
+        $(window).on('beforeunload ',function() {        	 
+        if(params.stepId != 0 )
+        	return "רגע..... \n האם את/ה בטוח/ה שאת/ה רוצה לעזוב באמצע יצירת הזמנה?";        	
+			});
+  
+        </script>
+	
+   <div class="page" id="personal">
+            <div class="container">
+                <div id="side-section">
+                    <p id="hello">שלום, @ViewBag.UserName</p>
+                    <div id="last-visit">
+                        כניסה אחרונה:<br />
+                        @ViewBag.lastEntrance					
+                    </div>
+                    <nav>
+                        <div id="side-nav">
+                            <ul>
+                                <li class="@(ViewBag.CurrentTab == "index" ||  ViewBag.CurrentTab == "NewOrder"? "current-tab" : null)" id="side-nav-accordion" ><a href="/Personal/NewOrder" >יצירת הזמנה חדשה</a></li>
+                                <li class="@(ViewBag.CurrentTab == "Profit" ? "current-tab" : null)" id="side-nav-profit" ><a href="/Personal/Profit" >כמה חסכתי?</a></li>
+                                <li class="@(ViewBag.CurrentTab == "Orders" ? "current-tab" : null)" id="side-nav-orders"><a href="/Personal/Orders">פירוט הזמנות</a></li>
+                                <li class="@(ViewBag.CurrentTab == "Payments" ? "current-tab" : null)" id="side-nav-payments" ><a href="/Personal/Payments" >פירוט תשלומים</a></li>
+                                <li class="@(ViewBag.CurrentTab == "Settings" ? "current-tab" : null)" id="side-nav-account-settings" ><a href="/Personal/Settings" >הגדרות חשבון</a></li>
+                                <li id="side-nav-logout"><a href="/Personal/LogOut" >התנתקות</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div id="content">
+                <div id="steps">
+                        <div class="step current-step">
+                            <span>1</span>
+                            יצירת הזמנה
+                        </div>
+                        <div class="step">
+                            <span>2</span>
+                            ביצוע חישוב
+                        </div>
+                        <div class="step">
+                            <span>3</span>
+                            כמה חסכתי?
+                        </div>
+                        <div class="step">
+                            <span>4</span>
+                            ביצוע תשלום
+                        </div>
+                        <div class="step">
+                            קבלת הרכב<br />
+                            <span>מכווץ</span>
+                        </div>
+                    </div>				
+                    <!--<div id="inner-content" class="accordion-active">     		-->
+                    <div id="inner-content" >     		
+
+							 @RenderBody()
+                    </div>
+                </div>
+            </div><br class="clear" />
+        </div>
+
+@Html.Partial("Constants")
+

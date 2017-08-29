@@ -1,0 +1,21 @@
+﻿@model List<Shrink2FitDAL.VModels.ObligationFutureVM>
+@{
+    Layout = "";
+}
+<table class="table table-striped table-advance table-hover">
+    <thead>
+        <tr>
+            <th>Amount</th>
+            <th>End Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var entry in Model)
+        {
+            <tr>
+                <td>@entry.Amount</td>
+                <td>@entry.EndMonth / @entry.EndYear</td>
+            </tr>
+        }
+    </tbody>
+</table>

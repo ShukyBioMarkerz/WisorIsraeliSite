@@ -1,0 +1,221 @@
+﻿@model Shrink2FitDAL.VModels.CompatibilityVM
+@{
+    Layout = "";
+    bool IsSingleBorrower = (1 == Model.NumberOfBorrowers);
+    // for single borrower: LTV > 60% or PTI > 40% are breakers.
+    // for multi borrower: LTV > 75% or PTI > 40% are breakers.
+    var MaxLTV = (IsSingleBorrower ? 0.6 : 0.75);
+    var MaxPTI = 0.4;
+    var LegalLTV = (IsSingleBorrower ? 0.5 : 0.6);
+    var LegalPTI = 0.3;
+    var promptLTV = (IsSingleBorrower ? 0.6 : 0.7);
+    var promptPTI = 0.35;
+    // bool canContinue = (Model.LVT <= 0.8 && Model.ReturnRatio <= 0.40) && Model.InRange && Model.IsAgeAppropriate;
+    bool canContinue = (Model.LVT <= MaxLTV && Model.ReturnRatio <= MaxPTI) && Model.InRange && Model.IsAgeAppropriate;
+    bool IsLegal = (Model.LVT <= LegalLTV && Model.ReturnRatio <= LegalPTI) && Model.InRange && Model.IsAgeAppropriate;
+    var returnRatio = Model.ReturnRatio > 0.35 ? "35%" : "30%";
+    var LVT = Model.LVT > 0.75 ? "75%" : "70%";
+}
+
+<div id="compatibility">
+    <div style="width: 430px; height: 250px; background-color: white; text-align: center; border: 2px solid #A1A1A1; padding: 30px 100px; background: #f7f7f7; background: -moz-linear-gradient(top, #f7f7f7 1%, #dbdbdb 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#f7f7f7), color-stop(100%,#dbdbdb)); background: -webkit-linear-gradient(top, #f7f7f7 1%,#dbdbdb 100%); background: -o-linear-gradient(top, #f7f7f7 1%,#dbdbdb 100%); background: -ms-linear-gradient(top, #f7f7f7 1%,#dbdbdb 100%); background: linear-gradient(to bottom, #f7f7f7 1%,#dbdbdb 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#dbdbdb',GradientType=0 );">
+    @if (IsLegal)
+    {
+        // do your job here....
+    }
+    else if (canContinue)
+    {
+        <div>
+            <span>בנתונים שהכנסת ישנן חריגות:</span>
+            <br />
+            @if (IsSingleBorrower)
+            {
+                if (Model.LVT <= MaxLTV && Model.LVT > LegalLTV)
+                {
+                    <span>בדרך כלל ניתן לקבל עד %50 משווי הנכס כהלוואה עבור לווה יחיד.  משווי הנכס! האם להמשיך בכל זאת?</span>
+                    <br />
+                }
+
+                @if (Model.ReturnRatio > LegalPTI && Model.ReturnRatio < promptPTI)
+                {
+                    <span>ההחזר החודשי הרצוי מהווה מעל %30 מסך ההכנסות! האם להמשיך בכל זאת?</span>
+                    <br />
+                }
+                else if (Model.ReturnRatio > promptPTI && Model.ReturnRatio < MaxPTI)
+                {
+                    <span>ההחזר החודשי הרצוי מהווה מעל %35 מסך ההכנסות וחורג מהמקובל!  האם להמשיך בכל זאת?</span>
+                    <br />
+                }
+
+            }
+            else // multiple borrowers
+            {
+                if (Model.LVT <= promptLTV && Model.LVT > LegalLTV)
+                {
+                    <span>בסכום ההלוואה הרצוי גדול ביחס לשווי הנכס.! האם להמשיך בכל זאת?</span>
+                    <br />
+                }
+                else if (Model.LVT > promptLTV && Model.LVT < MaxLTV)
+                {
+                    <span>
+                        שיעור המימון המוזן מעל %70 משווי הנכס.
+                        בדרך כלל ניתן לקבל עד %70 משווי הנכס כהלוואה
+                        האם להמשיך בכל זאת?
+                    </span>
+                    <br />
+                }
+
+                @if (Model.ReturnRatio > LegalPTI && Model.ReturnRatio < promptPTI)
+                {
+                    <span>ההחזר החודשי הרצוי מהווה מעל %30 מסך ההכנסות!  האם להמשיך בכל זאת?</span>
+                    <br />
+                }
+                else if (Model.ReturnRatio > promptPTI && Model.ReturnRatio < MaxPTI)
+                {
+                    <span>ההחזר החודשי הרצוי מהווה מעל %35 מסך ההכנסות וחורג מהמקובל!  האם להמשיך בכל זאת?</span>
+                    <br />
+                }
+            }
+            <div id="confirm-exception" class="green-small-button">אישור</div>
+        </div>
+
+        @*<div>
+                <span>בנתונים שהכנסת ישנן חריגות:</span>
+                <br />
+                @if(Model.LVT > 0.7)
+                {
+
+                <span>ההחזר החודשי הרצוי מהווה מעל @(LVT) משווי הנכס! האם להמשיך בכל זאת?</span>
+                <br />
+                }
+                @if (Model.ReturnRatio > 0.3)
+                {
+
+                <span>ההחזר החודשי הרצוי מהווה מעל @(returnRatio) מההכנסה נטו! האם להמשיך בכל זאת?</span>
+                <br />
+                }
+            <span>לחיצה על אישור מהווה הסכמה כי הינך מבין את החריגות ומבקש להמשיך בתהליך ההזמנה</span>
+                <br />
+                <div id="confirm-exception" class="green-small-button">אישור</div>
+            </div>*@
+    }
+    else // can't continue with those details. U should fix them. Now.
+    {
+        <div>
+        <span>בנתונים שהכנסת ישנן חריגות:</span>
+            <br />
+
+            @if (IsSingleBorrower)
+            {
+                if (Model.LVT > MaxLTV)
+                {
+                    <span>
+                        שיעור המימון המוזן חורג מהמקובל עבור לווה יחיד!
+                        יש לעדכן את סכום ההלוואה הרצויה.
+                        אנו ממליצים להגביל את שיעור המימון ל-%50.
+                    </span>
+                    <br />
+                }
+                @if (Model.ReturnRatio > MaxPTI)
+                {
+                    <span>
+                        ההחזר החודשי הרצוי גדול מדי ביחס להכנסות המוזנות!
+                        יש לבחור החזר חודשי נמוך יותר
+                        אנו ממליצים לא יותר מ-%30 מסך ההכנסות
+                    </span>
+                    <br />
+                }
+
+            }
+            else // multiple borrowers
+            {
+                if (Model.LVT > MaxLTV)
+                {
+                    <span>
+                        שיעור המימון המוזן חורג מהמקובל !
+                        יש לעדכן את סכום ההלוואה הרצויה.
+                        אנו ממליצים להגביל את שיעור המימון ל-%60.
+                    </span>
+                    <br />
+                }
+                @if (Model.ReturnRatio > MaxPTI)
+                {
+                    <span>
+                        ההחזר החודשי הרצוי גדול מדי ביחס להכנסות המוזנות!
+                        יש לבחור החזר חודשי נמוך יותר
+                        אנו ממליצים לא יותר מ-%30 מסך ההכנסות
+                    </span>
+                    <br />
+                }
+
+                <span>אנא תקן את החריגות בכדי שתוכל להמשיך את ההזמנה</span>
+                <br />
+            }
+            <div id="confirm-exception" class="green-small-button">אישור</div>
+        </div>
+
+            @*if (Model.LVT >= 0.8 || Model.ReturnRatio >= 0.40)
+            {
+                <span>בנתונים שהכנסת ישנן חריגות שמונעות המשך התהליך:</span>
+                <br />
+                if (Model.LVT >= 0.8)
+                {
+
+                <span>סכום ההלוואה מהווה מעל 80% משווי הנכס!</span>
+                <br />
+                <span>על מנת להמשיך בבדיקה יש להזין סכום הלוואה נמוך יותר עבור הנכס הנבחר </span>
+                <br />
+                }
+                if (Model.ReturnRatio >= 0.40)
+                {
+                <span>ההחזר החודשי הרצוי מהווה מעל 40% מההכנסה!</span>
+                <br />
+                <span>על מנת להמשיך בבדיקה יש להזין החזר חודשי נמוך יותר עבור ההכנסה המוזנת</span>
+                <br />
+                }
+
+                @*<span>אנא תקן את החריגות בכדי שתוכל להמשיך את ההזמנה</span>
+                <br />*@
+
+            }
+            else
+            {*@
+
+                if (Model.IsAgeAppropriate)
+                {
+                    if(Model.ReturnSum > Model.HighestPossible){
+                        <span>החזר חודשי רצוי גדול מדי עבור לסכום ההלוואה הרצויה</span>
+                    }
+                    else{
+                        <span>החזר חודשי רצוי קטן מדי עבור לסכום ההלוואה הרצויה</span>
+                    }
+
+                    <br />
+                    <span>על מנת להמשיך בבדיקה יש להזין החזר בין @(Model.LowestPossible) ו- @(Model.HighestPossible) שקלים</span>
+                }
+                else{
+                    <span>החזר חודשי רצוי קטן מדי עבור לסכום ההלוואה הרצויה בגלל מגבלת גיל הלווים בהלוואה</span>
+                    <br />
+                    <span>על מנת להמשיך בבדיקה יש להזין החזר בין @(Model.LowestPossible) ו- @(Model.HighestPossible) שקלים</span>
+                }
+                <br />
+            @*}*@
+            <div id="close-exception" class="green-small-button">סגור</div>
+        }
+    </div>
+
+@*</div>*@
+
+<script>
+	$(document).on("click", '#confirm-exception', function () {		
+	    closePopup();
+	    $("#popups").hide();
+        $('#check-ratio').hide();
+        $('#continue-checked').show();
+	});
+
+	$(document).on("click", '#close-exception', function () {
+	    closePopup();
+	    $("#popups").hide();
+	});
+</script>

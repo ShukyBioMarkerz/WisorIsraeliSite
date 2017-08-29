@@ -1,0 +1,23 @@
+﻿@model List<Shrink2FitDAL.VModels.BankVM>
+@{
+    Layout = "";
+}
+<table class="table table-striped table-advance table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Bank Number</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var entry in Model)
+        {
+            <tr>
+                <td>@entry.Name</td>
+                <td>@entry.BankNumber</td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

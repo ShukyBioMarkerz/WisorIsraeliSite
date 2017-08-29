@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+  <script type="text/javascript">
+  	$(window).on('beforeunload ', function () {
+  		if (params.stepId != 0)
+  			return "רגע..... \n האם את/ה בטוח/ה שאת/ה רוצה לעזוב באמצע יצירת הזמנה?";
+  	});
+
+        </script>
+	
+   <div class="page" id="personal">
+            <div class="container">
+                <div id="side-section">
+                    <p id="hello">שלום, @ViewBag.UserName</p>
+                    <div id="last-visit">
+                        כניסה אחרונה:<br />
+                        @ViewBag.lastEntrance					
+                    </div>
+                    <nav>
+                        <div id="side-nav">
+                            <ul>
+                                <li id="side-nav-accordion" ><a href="/Personal/NewOrder" url="/personal/NewOrder">יצירת הזמנה חדשה</a></li>
+
+                                <li id="side-nav-profit" ><a href="/Personal/Profit" url="/personal/Profit">כמה חסכתי?</a></li>
+
+                                <li id="side-nav-orders"><a href="javascript:void(0)" url="/personal/Orders">פירוט הזמנות</a></li>
+                                <li id="side-nav-payments" ><a href="javascript:void(0)" url="/personal/Payments">פירוט תשלומים</a></li>
+                                <li id="side-nav-account-settings" ><a href="javascript:void(0)" url="/personal/Settings">הגדרות חשבון</a></li>
+                                <li id="side-nav-logout"><a href="javascript:void(0)" url="/personal/LogOut">התנתקות</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div id="content">
+                <div id="steps">
+                        <div class="step current-step">
+                            <span>1</span>
+                            יצירת הזמנה
+                        </div>
+                        <div class="step">
+                            <span>2</span>
+                            ביצוע חישוב
+                        </div>
+                        <div class="step">
+                            <span>3</span>
+                            כמה חסכתי?
+                        </div>
+                        <div class="step">
+                            <span>4</span>
+                            ביצוע תשלום
+                        </div>
+                        <div class="step">
+                            קבלת הרכב<br />
+                            <span>מכווץ</span>
+                        </div>
+                    </div>				
+                    <!--<div id="inner-content" class="accordion-active">     		-->
+                    <div id="inner-content" >     		
+
+							
+                    </div>
+                </div>
+            </div><br class="clear" />
+        </div>

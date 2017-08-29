@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>@(ViewBag.Title == null ? Html.Raw("Home") : Html.Raw(ViewBag.Title))</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Avant">
+	<meta name="author" content="The Red Team">
+
+    <!-- <link href="assets/less/styles.less" rel="stylesheet/less" media="all">  -->
+    
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    <link href="~/Areas/Admin/assets/css/styles.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/assets/demo/variations/default.css" rel="stylesheet" type='text/css' media='all' id='styleswitcher'/>
+    <link href="~/Areas/Admin/assets/demo/variations/default.css" rel="stylesheet" type='text/css' media='all' id='headerswitcher'/>
+    <link href="~/Areas/Admin/assets/plugins/form-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/assets/plugins/form-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/assets/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" />
+       
+       
+    
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries. Placeholdr.js enables the placeholder attribute -->
+	<!--[if lt IE 9]>
+        <link rel="stylesheet" href="assets/css/ie8.css">
+		<script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/charts-flot/excanvas.min.js"></script>
+	<![endif]-->
+
+	<!-- The following CSS are included as plugins and can be removed if unused-->
+    <link href="~/Areas/Admin/assets/plugins/codeprettifier/prettify.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/assets/plugins/form-toggle/toggles.css" rel="stylesheet" />
+
+
+<!-- <script type="text/javascript" src="assets/js/less.js"></script> -->
+</head>
+<body>
+    <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+        <a id="leftmenu-trigger" class="tooltips" data-toggle="tooltip" data-placement="right" title="Toggle Sidebar" style="margin-left:210px"></a>
+        
+
+
+        
+        	<div class="dropdown" style="float:right;">
+        		<a href="#" class="dropdown-toggle username" data-toggle="dropdown"  ><span class="hidden-xs">John McCartney <i class="fa fa-caret-down"></i></span>@*<img src="assets/demo/avatar/dangerfield.png" alt="Dangerfield" />*@</a>
+        		<ul class="dropdown-menu userinfo arrow username-menu">
+        			<li class="username">
+                        <a href="#">
+        				    
+        				    <div class="pull-right"><small>Logged in as <span>john2751212121</span></small></div>
+                        </a>
+        			</li>
+        			<li class="userlinks">
+        				<ul class="dropdown-menu" >
+        					
+        					<li><a href="#">Profile <i class="pull-right fa fa-cog"></i></a></li>
+        					
+        					<li class="divider"></li>
+        					<li><a href="#" class="text-right">Logout</a></li>
+        				</ul>
+        			</li>
+        		</ul>
+        	</div>
+        	<div class="nav" style="float: left;display: inline-block;height: 40px;padding: 4px;margin-left: 163px;">
+        	<div class="dropdown">
+        		<a href="#" class="hasnotifications dropdown-toggle" data-toggle='dropdown'><i class="fa fa-envelope"></i><span class="badge">1</span></a>
+        		<ul class="dropdown-menu messages arrow">
+        			<li class="dd-header">
+        				<span>You have 6 pending tasks</span>
+        				<span><a href="#">Mark all as done</a></span>
+        			</li>
+                    <div class="scrollthis">
+    			        <li><a href="#" class="active">
+    			        	<span class="time">6 mins</span>
+    			        	
+    			        	<div><span class="msg">Please mail me the files by tonight.</span></div>
+    			        </a></li>
+    			        <li><a href="#">
+    			        	<span class="time">12 mins</span>
+    			        		
+    			        	<div><span class="msg">Uploaded all the files to server. Take a look.</span></div>
+    			        </a></li>
+    			        <li><a href="#">
+    			        	<span class="time">9 hrs</span>
+    			        	<div><span class="msg">talk with dave about a new pen.</span></div>
+    			        </a></li>
+    			        <li><a href="#">
+    			        	<span class="time">2 days</span>
+
+    			        	<div><span class="msg">talk with george about a new pan.</span></div>
+    			        </a></li>
+                        <li><a href="#">
+                            <span class="time">6 mins</span>
+                            @*<img src="assets/demo/avatar/doyle.png" alt="avatar" />*@
+                            <div><span class="name">Alan Doyle</span><span class="msg">Please mail me the files by tonight.</span></div>
+                        </a></li>
+                        <li><a href="#">
+                            <span class="time">12 mins</span>
+                            @*<img src="assets/demo/avatar/paton.png" alt="avatar" />*@
+                            <div><span class="name">Polly Paton</span><span class="msg">Uploaded all the files to server. Take a look.</span></div>
+                        </a></li>
+                    </div>
+        			<li class="dd-footer"><a href="#">View All tasks</a></li>
+        		</ul>
+        	</div>
+        	<div class="dropdown">
+        		<a href="#" class="hasnotifications dropdown-toggle" data-toggle='dropdown'><i class="fa fa-bell"></i><span class="badge">3</span></a>
+        		<ul class="dropdown-menu notifications arrow">
+        			<li class="dd-header">
+        				<span>You have 3 new notification(s)</span>
+        				<span><a href="#">Mark all Seen</a></span>
+        			</li>
+                    <div class="scrollthis">
+    				    <li>
+    				    	<a href="#" class="notification-user active">
+    				    		<span class="time">4 mins</span>
+    				    		<i class="fa fa-user"></i>
+    				    		<span class="msg">New user Registered. </span>
+    				    	</a>
+    				    </li>
+    				    <li>
+    				    	<a href="#" class="notification-danger active">
+    				    		<span class="time">20 mins</span>
+    				    		<i class="fa fa-bolt"></i>
+    				    		<span class="msg">CPU at 92% on server#3! </span>
+    				    	</a>
+    				    </li>
+    				    <li>
+    				    	<a href="#" class="notification-success active">
+    				    		<span class="time">1 hr</span>
+    				    		<i class="fa fa-check"></i> 
+    				    		<span class="msg">Server#1 is live. </span>
+    				    	</a>
+    				    </li>
+    				    <li>
+    				    	<a href="#" class="notification-warning">
+    				    		<span class="time">2 hrs</span>
+    				    		<i class="fa fa-exclamation-triangle"></i> 
+    				    		<span class="msg">Database overloaded. </span>
+    				    	</a>
+    				    </li>
+    				    <li>
+    				    	<a href="#" class="notification-order">
+    				    		<span class="time">10 hrs</span>
+    				    		<i class="fa fa-shopping-cart"></i> 
+    				    		<span class="msg">New order received. </span>
+    				    	</a>
+    				    </li>
+    				    <li>
+    				    	<a href="#" class="notification-failure">
+    				    		<span class="time">12 hrs</span>
+    				    		<i class="fa fa-times-circle"></i>
+    				    		<span class="msg">Application error!</span>
+    				    	</a>
+    				    </li>
+    				    <li>
+    				    	<a href="#" class="notification-fix">
+    				    		<span class="time">12 hrs</span>
+    				    		<i class="fa fa-wrench"></i>
+    				    		<span class="msg">Installation Succeeded.</span>
+    				    	</a>
+    				    </li>
+    				    <li>
+    				    	<a href="#" class="notification-success">
+    				    		<span class="time">18 hrs</span>
+    				    		<i class="fa fa-check"></i>
+    				    		<span class="msg">Account Created. </span>
+    				    	</a>
+    				    </li>
+                    </div>
+        			<li class="dd-footer"><a href="#">View All Notifications</a></li>
+				</ul>
+			</div>
+			</div>
+            
+		
+    </header>
+    <div id="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <nav id="page-leftbar" role="navigation">
+            <!-- BEGIN SIDEBAR MENU -->
+            <ul class="acc-menu" id="sidebar">
+                <li id="search">
+                    <a href="javascript:;"><i class="fa fa-search opacity-control"></i></a>
+                    <form>
+                        <input type="text" class="search-query" placeholder="Search...">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </li>
+                <li class="divider"></li>
+                <li id="home"><a href="/admin/home/index"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
+                <li id="users"><a href="/admin/users/users"><i class="fa fa-group"></i><span>Users</span> </a>
+                </li>
+                <li><a href="javascript:;"><i class="fa fa-times"></i><span>Mail</span> </a>
+                </li>
+                <li><a href="/admin/orders/orders"><i class="fa fa-tasks"></i><span>Orders</span> </a>
+                </li>
+                <li><a href="/admin/offers/offers"><i class="fa fa-dollar"></i><span>Price Offers</span></a>
+                </li>
+                <li><a href="/admin/Results/Results"><i class="fa fa-pencil"></i><span>Results</span></a>
+
+                </li>
+                <li><a href="javascript:;"><i class="fa fa-times"></i><span>Billing</span></a>
+                </li>
+                <li><a href="calendar.htm"><i class="fa fa-times"></i><span>Instances</span></a></li>
+                <li><a href="gallery.htm"><i class="fa fa-times"></i><span>Files</span> </a></li>
+                <li><a href="javascript:;"><i class="fa fa-times"></i><span>Database</span> </a>
+                </li>
+                <li><a href="javascript:;"><i class="fa fa-times"></i><span>Tasks</span> </a>
+                </li>
+                <li><a href="javascript:;"><i class="fa fa-times"></i><span>Personnel</span></a>
+                </li>
+                <li><a href="notifications.html"><i class="fa fa-user"></i><span>Notifications</span></a>
+                </li>
+            </ul>
+            <!-- END SIDEBAR MENU -->
+        </nav>
+        <div id="page-content">
+            @RenderBody()
+        </div>
+    </div>
+    <footer role="contentinfo">
+        <div class="clearfix">
+            <ul class="list-unstyled list-inline pull-left">
+                <li>AVANT &copy; 2014</li>
+            </ul>
+            <button class="pull-right btn btn-inverse-alt btn-xs hidden-print" id="back-to-top"><i class="fa fa-arrow-up"></i></button>
+        </div>
+    </footer>
+    <script src="~/Areas/Admin/assets/js/jquery-1.10.2.min.js"></script>
+    <script src="~/Areas/Admin/assets/js/jqueryui-1.10.3.min.js"></script>
+    <script src="~/Areas/Admin/assets/js/bootstrap.min.js"></script>
+    <script src="~/Areas/Admin/assets/js/enquire.js"></script>
+    <script src="~/Areas/Admin/assets/js/jquery.cookie.js"></script>
+    <script src="~/Areas/Admin/assets/js/jquery.nicescroll.min.js"></script>
+    <script src="~/Areas/Admin/assets/plugins/codeprettifier/prettify.js"></script>
+    <script src="~/Areas/Admin/assets/plugins/easypiechart/jquery.easypiechart.min.js"></script>
+    <script src="~/Areas/Admin/assets/plugins/sparklines/jquery.sparklines.min.js"></script>
+    <script src="~/Areas/Admin/assets/plugins/form-toggle/toggle.min.js"></script>
+    <script src="~/Areas/Admin/assets/js/placeholdr.js"></script>
+    <script src="~/Areas/Admin/assets/js/application.js"></script>
+    <script src="~/Areas/Admin/assets/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <script src="~/Areas/Admin/assets/plugins/form-daterangepicker/daterangepicker.min.js"></script>
+    <script src="~/Areas/Admin/assets/plugins/form-daterangepicker/moment.min.js"></script>
+    <script src="~/Areas/Admin/assets/plugins/charts-flot/jquery.flot.min.js"></script>
+    <script src="~/Areas/Admin/assets/plugins/charts-flot/jquery.flot.resize.min.js"></script>
+    <script src="~/Areas/Admin/assets/plugins/charts-flot/jquery.flot.orderBars.js"></script>
+    <script src="~/Areas/Admin/assets/plugins/pulsate/jQuery.pulsate.min.js"></script>
+    <script src="~/Areas/Admin/assets/demo/demo.js"></script>
+    @*<script src="~/Areas/Admin/assets/demo/demo-index.js"></script>*@
+    <script src="~/Areas/Admin/assets/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/Areas/Admin/assets/plugins/jquery-editable/jquery.editable.js"></script>
+    <script src="~/Areas/Admin/assets/plugins/bootbox/bootbox.min.js"></script>
+    <script src="~/Areas/Admin/js/AdminPagination.js"></script>
+    @RenderSection("JS",false)
+</body>
+</html>

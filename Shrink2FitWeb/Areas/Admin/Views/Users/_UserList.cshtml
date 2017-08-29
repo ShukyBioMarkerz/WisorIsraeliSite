@@ -1,0 +1,17 @@
+﻿@model List<Shrink2FitDAL.VModels.UserVM>
+@{
+
+}
+@foreach (var user in Model)
+{
+    <tr>
+        <td><span>
+            <input type="checkbox"></span></td>
+        <td>@user.ID</td>
+        <td class="hidden-xs">@user.Email</td>
+        <td class="hidden-xs">@user.SecondaryEmail</td>
+        <td>@user.CreatedOn</td>
+        <td>@user.LastLogin</td>
+        <td>@user.Status</td>
+    </tr>   
+}

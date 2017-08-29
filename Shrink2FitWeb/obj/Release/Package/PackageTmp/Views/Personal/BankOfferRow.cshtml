@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+} 
+<tr class="bidTr value-rows">
+	<td><input type="text" value="" class="number-input bidSum PMT-value amount" onkeyup="updateTotalLoanSum()" /></td>
+	<td>
+		<select class="bidType loan-track">
+		<option disabled selected style="display:none"></option>
+		    @foreach (var listtrack in ViewBag.ListedTracks)
+            {
+				<option value="@listtrack.ID">@listtrack.Name</option>
+            }	
+		</select>
+	</td>
+	<td><input type="text" value="" class="bankoffers-interest percentage PMT-value rate" /></td>
+		           
+	<td>
+	<select class="bidTime track-period PMT-value months">
+		<option disabled selected style="display:none"></option>
+								
+												                  	
+	</select>
+		                                             
+	</td>
+	<td><input style="float:right;" type="text" value="" class="number-input PMT returnSum" disabled="disabled"/> <span class="removeBankBidTr">X</span> </td>
+												
+</tr>

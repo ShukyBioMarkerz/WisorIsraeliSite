@@ -1,0 +1,37 @@
+﻿@model List<Shrink2FitDAL.VModels.InvoiceVM>
+@{
+	ViewBag.Title = "Payments";
+	Layout = "~/Views/Personal/PersonalLayout.cshtml";
+}
+<script src="~/scripts/Payments.js"></script>
+<div style="height: 98px;">&nbsp;</div>
+
+<div id="payments">
+	<h1>להלן פירוט כל התשלומים בחשבונך</h1>
+	<table class="mainPaymentsTable">
+		<thead>
+			<tr>
+				<th>מספר הזמנה</th>
+				<th>תאריך פתיחה</th>
+				<th>סוג עסקה</th>
+				<th>תאריך תשלום</th>
+				<th class="transparent-td"></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var entry in Model)
+   {
+				<tr>
+					<td>@entry.Label</td>
+					<td>@entry.OrderCreation.ToString("dd/MM/yyyy")</td>
+					<td>@entry.DealType</td>
+					<td>@entry.CreatedOn.ToString("dd/MM/yyyy")</td>
+					<td class="transparent-td">
+						<div class="green-button">כמה חסכתי</div>
+					</td>
+				</tr>
+   }
+
+		</tbody>
+	</table>
+</div>

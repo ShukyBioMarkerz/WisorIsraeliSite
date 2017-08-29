@@ -1,0 +1,94 @@
+﻿	
+@model List<Shrink2FitDAL.VModels.ResultVM>
+@{
+    int i = 0;
+}
+<div class="item item-shrink-to-fit" id="item-shrink-to-fit">
+        <div class="item-title">הרכב מכווץ - הרכבים מומלצים</div>
+        <div class="item-content">
+            <h1>תוכנת חישוב</h1>
+
+@foreach (var res in Model)
+{
+
+    
+        i++;
+   
+            <div class="bankContainer">
+            <h2>הרכב @(Model.Count > 0 ? i.ToString() : "")</h2>
+            <table class="tableRight">
+                <thead>
+                <tr>
+                    <th>סכום בש"ח</th>
+                    <th>סוג המסלול</th>
+                    <th>ריבית</th>
+                    @*<th>הצמדה</th>*@
+                    <th>זמן</th>
+                    <th>החזר</th>
+                </tr>
+                    </thead>
+                <tbody>
+				@foreach (var offer in res.Options) 
+				{ 
+					<tr>
+						<td>@offer.Amount</td>
+						<td class="justify-right">@offer.TrackName</td>
+						<td>@string.Format("{0:0.00}",offer.Rate)%</td>
+						@*<td>
+							@if  (@offer.Inflation == true)
+								{<text>יש</text>}
+								else
+								{
+								<text>אין</text>
+								}
+
+						</td>*@
+						<td>@offer.Time</td>
+						<td>@offer.PMT</td>
+					</tr>
+				}               
+                </tbody>
+            </table>
+                                       
+            <table class="tableLeft">
+                <thead>
+                <tr>
+                    <th>קרן שולמה</th>
+                    <th>ריבית שולמה</th>
+                    <th>סה"כ שולם</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var row in res.Options)
+				{
+					<tr>
+										
+                        <td>@string.Format("{0}", (int)row.Summation.PrincipalPay)</td>
+                        <td>@string.Format("{0}", (int)row.Summation.RatePayed)</td>
+                        <td>@string.Format("{0}", row.Summation.TotalPay)</td>
+
+					</tr>
+		   
+								
+                }
+                <tr>
+                    <td>@string.Format("{0}", res.Options.Sum(t => (int)t.Summation.PrincipalPay))</td>
+                    <td>@string.Format("{0}", res.Options.Sum(t => (int)t.Summation.RatePayed))</td>
+                    <td>@string.Format("{0}", res.Options.Sum(t => t.Summation.TotalPay))</td>
+                    @*<td>@res.Options.Sum(t => t.Summation.PrincipalPay)</td>
+                    <td>@string.Format("{0:0.00}",res.Options.Sum(t => t.Summation.RatePayed))</td>
+                    <td>@res.Options.Sum(t => t.Summation.TotalPay)</td>*@
+                </tr>         
+                </tbody>
+               
+            </table>
+            </div><br />
+}
+            <p>
+                כל הרכב מציג שילוב שונה של מסלולים, ומשקף רמת סיכון שונה.<br />
+לאחר בחירת ההרכב הרצוי, מוחקים את הריביות וניגשים לבנקים עם אותו הרכב לקבל הצעות ריבית.<br />
+הבנק שמציע את הריביות הטובות ביותר עבור ההרכב, זהו הבנק הזול ביותר !
+            </p>
+            <div style="display:none" class="orange-button">צפייה בניתוח התוצאות</div>
+        </div>
+    </div>

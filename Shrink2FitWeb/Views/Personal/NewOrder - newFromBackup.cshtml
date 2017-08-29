@@ -1,0 +1,706 @@
+﻿@model List<Shrink2FitDAL.VModels.BankVM>	
+@{
+    ViewBag.Title = "NewOrder";
+    Layout = "~/Views/Personal/PersonalLayout.cshtml";
+    string[] months = { "ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר" };
+}
+<script>
+    var tracks = [];
+    tracks = @Html.Raw(Json.Encode(ViewBag.ListedTracks));
+</script>
+
+
+
+
+				<div id="accordion" class="accordion">
+                    <div class="item item-deal-type open" id="item-deal-type">
+                        <div class="item-title">בחירת סוג עסקה</div>
+                        <div class="item-content">
+                            <span class="bold">האם הבדיקה היא עבור משכנתא חדשה או משכנתא קימת ?</span>
+
+                            <input class="ShowCb deal-choice" data-attr="buy-hand" type="checkbox" name="deal-hand" value="0" id="buy-property"  />
+                            <label for="buy-property">משכנתא חדשה לרכישת נכס</label><br />
+
+							<div id="buy-hand" state="close" style="display:none;">
+								<input class="ShowCb deal-choice" data-attr="buy-first-hand-details"  type="radio" name="deal-type" value="1" id="buy-first-hand"  />
+								<label for="buy-first-hand">נכס יד ראשונה</label><br />
+									<div id="buy-first-hand-details" style="display:none">
+										<label>כניסה משוערת לנכס</label>
+										 <select class="selectMonth" id="buy-first-hand-details-selectMonth">
+                                                
+                                                @for (var i = DateTime.Now.Month; i < 12; i++)
+                                                {
+                                                    <option value="@i">@months[i]</option>
+                                                }
+                                                
+                                            </select>
+                                        
+                                            <select  class="selectYear" id="buy-first-hand-details-selectYear">
+                                                   @for (var i = DateTime.Now.Year; i < DateTime.Now.Year + 31; i++)
+                                                   {
+													<option value="@i">@i</option>
+                                                   }   
+                                            </select>
+
+											<br />
+
+											<label for="buy-first-hand-details-currentrent">שכירות חודשית עד כניסה לנכס</label>
+											<input type="text" name="buy-first-hand-details-currentrent" id="buy-first-hand-details-currentrent" value="" class="number-input" />
+																				
+											<input type="checkbox" name="buy-first-hand-details-hasrent" value="buy-first-hand" id="buy-first-hand-details-hasrent" />
+											<label for="buy-first-hand-details-hasrent">אין</label>
+									</div>
+									<div id="second-hand">
+										<input class="HideCb deal-choice" data-attr="buy-first-hand-details" type="radio" name="deal-type" value="2" id="buy-second-hand" />
+										<label for="buy-second-hand">נכס יד שניה</label><br />
+									</div>
+							</div>
+    
+                            <input class="HideCb deal-choice" data-attr="buy-hand" type="radio" name="deal-type" value="3" id="recycle" />
+                            <label for="recycle">בדיקת מיחזור של משכנתא קימת</label>
+                            @*<div id="recycle-checked">
+                                <input type="radio" name="include-recycle-check" value="1" id="include" checked="checked" />
+                                <label for="include">כולל בדיקת כדאיות מיחזור</label><br />
+    
+                                <input type="radio" name="include-recycle-check" value="0" id="not-include" />
+                                <label for="not-include">ללא בדיקת כדאיות מיחזור</label>
+                            </div>*@
+                            <div>
+                                <div id="phase-chooseDealType" class="green-small-button next-item">המשך</div>
+                            </div>
+                            <br class="clear" />
+                        </div>
+                    </div>
+                    <div class="item item-unabled item-borrowers-details" id="item-borrowers-details">
+                        <div class="item-title">השלמת פרטי לווים</div>
+                        <div id="" class="item-content item-borrowers-details-plaster">
+                            <span class="bold">כדי לעזור לנו בחישוב אנו זקוקים לכמה נתונים אישים :</span><br />
+
+                            <label for="num-of-borrowers">מספר לווים בעסקה</label>
+                            <select name="num-of-borrowers" id="num-of-borrowers">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>                                
+                            </select>
+
+                            <label for="youngest-borrower">גיל הלווה הצעיר ביותר</label>
+                            <select name="youngest-borrower" id="youngest-borrower">
+
+                                @for (var i = 18; i < 72; i++)
+                                {
+									<text>
+                                    <option value="@i">@i</option>;
+									</text>
+                                }
+                                    	
+                            </select>                        
+                           
+                            <div id="relations" style="display:none">
+							<label for="loaners-relation">קשר בין הלווים</label>													     
+							
+							<select class="bankName" name="loaners-relation" id="loaners-relation">
+								
+								@foreach (var relationship in ViewBag.RelationshipTypes)
+        {
+									<option value="@relationship.ID">@relationship.RelationsName</option>
+        }
+								
+							</select>
+							</div>
+							
+
+                            <label for="neto-sum">סה"כ הכנסות החודשיות נטו בש"ח של <span class="bold">כל</span> הלווים בעסקה</label>
+                            <input type="text" name="neto-sum" id="neto-sum" value="" class="number-input" /><br />
+                            
+							<label class="text-label">האם ישנן הלואות קימות נוספות (הלואה לרכב, הלואת סטודנט וכדומה) ?</label>
+                            <input class="ShowCb" data-attr="tbl_must_container" type="radio" name="has-musts" value="1" id="has-musts" />
+                            <label for="has-musts">כן</label>
+
+                            <input class="HideCb" data-attr="tbl_must_container" type="radio" name="has-musts" value="0" id="doesnt-have-musts" checked="checked" />
+                            <label for="doesnt-have-musts" value="0">לא</label><br />
+
+                            <div class="table-after-checkbox" id="tbl_must_container">
+                                <table id="tbl_must">
+                                    <tr>
+                                        <th>סכום בש"ח</th>
+                                        <th>חודש סיום</th>
+                                        <th>שנת סיום</th>
+                                                
+                                    </tr>
+                                    <tr class="mustTr value-rows">
+                                        <td><input type="text" value="" class="number-input numberDebt" onKeyUp="checkMustTable();" /></td>
+                                        <td>
+                                            <select class="selectMonth">
+                                                <option disabled selected style="display:none"></option>
+                                                <option value="1">ינואר</option>
+                                                <option value="2">פברואר</option>
+                                                <option value="3">מרץ</option>
+                                                <option value="4">אפריל</option>
+                                                <option value="5">מאי</option>
+                                                <option value="6">יוני</option>
+                                                <option value="7">יולי</option>
+                                                <option value="8">אוגוסט</option>
+                                                <option value="9">ספטמבר</option>
+                                                <option value="10">אוקטובר</option>
+                                                <option value="11">נובמבר</option>
+                                                <option value="12">דצמבר</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="selectYear">
+                                                <option disabled selected style="display:none"></option>
+												@for (var i = DateTime.Now.Year; i <= (DateTime.Now.Year + 30); i++)
+            {
+													<option value="@i">@i</option>
+            }                                              
+                                            </select>
+                                           <!-- <span class="removeContainingTr removeMustTr"> -->
+											<span class="removeMustTr" style="display:none">
+                                            הסרה
+                                            </span>
+                                        </td>
+                                                
+                                    </tr>
+                                    
+                                </table>
+    
+                                <div onclick="AddTr($(this),'must')" class="plus" id="addMustTr">+</div>
+                                <span>הוספת התחייבות</span>
+                            </div>
+
+                            <label class="text-label">האם ידוע על סכומי כסף שיהיו פנוים בעתיד (קרן השתלמות, קופת גמל וכדומה)?</label>
+                            <input class="ShowCb" data-attr="tbl_Release_container" type="radio" name="has-money" value="1" id="has-money" />
+                            <label for="has-money">כן</label>
+
+                            <input  class="HideCb"  data-attr="tbl_Release_container" type="radio" name="has-money" id="doesnt-have-money" value="0" checked="checked" />
+                            <label for="doesnt-have-money">לא</label><br />
+
+                            <div class="table-after-checkbox" id="tbl_Release_container">
+                                <table id="tbl_release">
+                                    <tr>
+                                        <th>סכום בש"ח</th>
+                                        <th>חודש שחרור</th>
+                                        <th>שנת שחרור</th>
+                                    </tr>
+                                    <tr class="releaseTr value-rows">
+                                        <td><input type="text" value="" class="numberRelease number-input" onkeyup="checkReleaseTable()" /></td>
+                                        <td>
+                                            <select class="selectMonth">
+                                                <option disabled selected style="display:none"></option>
+                                                <option value="1">ינואר</option>
+                                                <option value="2">פברואר</option>
+                                                <option value="3">מרץ</option>
+                                                <option value="4">אפריל</option>
+                                                <option value="5">מאי</option>
+                                                <option value="6">יוני</option>
+                                                <option value="7">יולי</option>
+                                                <option value="8">אוגוסט</option>
+                                                <option value="9">ספטמבר</option>
+                                                <option value="10">אוקטובר</option>
+                                                <option value="11">נובמבר</option>
+                                                <option value="12">דצמבר</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="selectYear">
+                                                <option disabled selected style="display:none"></option>
+                                               @for (var i = DateTime.Now.Year; i <= (DateTime.Now.Year + 30); i++)
+                                               {
+													<option value="@i">@i</option>
+                                               }   
+                                            </select>                                         
+                                            <span class="removeReleaseTr" style="display:none">
+
+                                            הסרה
+                                            </span>
+                                        </td>
+                                    </tr>
+                                       
+                                </table>
+    
+                                <div onclick="AddTr($(this),'release')" class="plus" id="addReleaseTr">+</div>
+                                <span>הוספת שחרור עתידי</span>
+                            </div>
+							
+							<label class="text-label">האם ישנם חסכנות חודשים קבועים ?</label>
+                            <input class="ShowCb" data-attr="tbl_Savings_container" type="radio" name="has-savings" value="1" id="has-savings" />
+                            <label for="has-savings">כן</label>
+
+                            <input  class="HideCb"  data-attr="tbl_Savings_container" type="radio" name="has-savings" id="doesnt-have-savings" value="0" checked="checked" />
+                            <label for="doesnt-have-savings">לא</label><br />
+
+                            <div class="table-after-checkbox" id="tbl_Savings_container">
+                                <table id="tbl_Savings">
+                                    <tr>
+                                        <th>סכום בש"ח</th>
+										<th>סוג חיסכון</th>
+                                        <th>תשואה ממוצעת</th>
+                                        <th>נזיל?</th>
+                                    </tr>
+                                    <tr class="savingsTr value-rows">
+                                        <td>
+											<input type="text" value="" class="numberSavings number-input savingSum"  />
+                                        </td>
+                                        <td>
+                                            <select class="indexation">
+                                                <option disabled selected style="display:none"></option>
+                                                 @foreach (var savingstype in ViewBag.SavingsTypes)
+                                                 {
+																<option value="@savingstype.ID">@savingstype.SavingTypeName</option>
+                                                 }	
+                                            </select>
+                                        </td>
+                                        <td>
+
+                                           <input  maxlength="6" type="text" value="" class="numberSavings avarageIncome percentage"  />
+                                        </td>
+										<td style="width:115px;">
+											<select class="indexation liquidity">
+                                                <option value="1">כן</option>
+                                                <option value="0">לא</option>
+                                                <option value="null">לא יודע</option>
+                                            </select>
+
+											 <span class="removeSavingsTr" style="display:none">
+
+                                            הסרה
+                                            </span>
+										</td>
+                                    </tr>			
+									 									
+                                      
+                                </table>
+    
+                                <div onclick="AddTr($(this),'savings')" class="plus" id="addSavingsTr">+</div>
+                                <span>הוספת חסכון</span>
+                            </div>							
+                                        
+                            <div>
+                                <div class="gray-button prev-item">חזור</div>
+                                <div class="green-small-button next-item">המשך</div>
+                            </div><br class="clear" />
+                        </div>
+                    </div>
+                            
+                    <div class="item item-unabled item-loan-details" id="item-loan-details">
+                        <div class="item-title">השלמת פרטי הלוואה</div>
+                        <div class="item-content">
+                            <span class="bold">אנו נצטרך לדעת את פרטי ההלואה לבדיקה :</span><br />
+                                    
+                            <div id="contain-recycle-loan-details" style="display:none;">
+                                    <table class="input-table">
+                                        <tr>
+		                                <td><label for="property-value-recycle">מה שוי הנכס הממושכן ב-₪</label></td>
+		                                <td><input type="text" name="property-value-recycle" id="property-value-recycle" value="" class="number-input" /></td>
+                                            </tr>
+		                                @*<tr>
+		                                <td><label for="loan-left">מה יתרת ההלואה (כול עמלות וקנסות) ב-₪</label></td>
+		                                <td><input type="text" name="loan-left" id="loan-left" value="" class="number-input" /></td>
+                                            </tr>
+		                                <tr>
+		                                <td><label for="wanted-return-recycle">מה ההחזר החודשי הרצוי ב-₪ עבור ההלואה החדשה</label></td>
+		                                <td><input type="text" name="wanted-return-recycle" id="wanted-return-recycle" value="" class="number-input" /></td>
+                                            </tr>*@
+                                    </table>
+                                    
+                                    
+
+                                <div class="item-content">
+                                    @*<span class="bold">נא למלא את כל השדות:</span><br />*@
+                                    <label for="has-money">האם ידוע הרכב ההלואה המקורית כפי שנלקחה ?</label>
+                                    <input class="ShowCb" data-attr="loan-details" type="radio" name="has-loan-details" value="1" id="has-loan-details" checked="checked" />
+                                    <label for="has-loan-details">כן</label>
+
+                                    <input class="HideCb" data-attr="loan-details" type="radio" name="has-loan-details" id="doesnt-have-loan-details" value="0" />
+                                    <label for="doesnt-have-loan-details">לא</label><br />
+                                    <input id="has-loan-check" type="hidden" value="true" />
+                                    <div id="loan-details">
+
+
+
+
+
+                                        <span class="bankOffersTable" style="width: 85%; display: table; margin: 0 auto;">
+                                            <label>בנק: </label>
+                                            <select name="bank-name-recycle" id="bank-name-recycle">
+                                                <option disabled selected style="display: none"></option>
+                                                @foreach (var bank in Model)
+                                                {
+                                                    <option value="@bank.ID">@bank.Name</option>									
+                                                }
+                                            </select><br />
+                                            <table id="allLoansTable" >
+                                                <tr>
+                                                    <th class="remove-tr-col"></th>
+                                                    <th>סכום נלקח
+                                                        <br />
+                                                        במקור</th>
+                                                    <th style="width: 220px;">סוג מסלול</th>
+                                                    <th>התקופה
+                                                        <br />
+                                                        המקורית 
+                                                        <br />
+                                                        בחודשים</th>
+                                                    <th>תקופה
+                                                        <br />
+                                                        נותרה
+                                                        <br />
+                                                        בחודשים</th>
+                                                    <th>ריבית<br />
+                                                        כיום</th>
+
+                                                    <th>יתרת קרן<br />
+                                                        (ללא קנסות)</th>
+                                                    <th>קנסות/<br />
+                                                        עמלות<br />
+                                                        לתשלום</th>
+                                                    <th>סה"כ<br />
+                                                        יתרה
+                                                        <br />
+                                                        למיחזור</th>
+                                                    <th>החזר
+                                                        <br />
+                                                        חודשי
+                                                        <br />
+                                                        כיום</th>
+                                                </tr>
+                                               @* @Html.Action("CheckRow")*@
+
+                                            </table>
+                                            <span class="plusBox" id="addLoanRoute">
+                                                <div class="plus">+</div>
+                                                <span>הוספת מסלול</span><br />
+                                            </span>
+                                        </span>
+                                        <br />
+                                        <label for="originalLoanSum">סכום הלוואה מקורית ב-₪</label>
+                                        <input type="text" disabled="disabled" id="originalLoanSum" />
+
+                                        <br />
+
+                                        <label for="startMonthReturn">החזר חודשי כיום ב-₪</label>
+                                        <input type="text" disabled="disabled" id="startMonthReturn" style="margin-right: 36px;" />
+
+                                        <br />
+                                    </div>
+                                    <div class="loan-general">
+                                        
+
+                                        <label for="loan-left" class="with-details">יתרת הלוואה למיחזור ב-₪</label>
+                                        <label for="loan-left" style="display:none;" class="no-details">מה יתרת ההלוואה (כולל עמלות וקנסות) ב-₪</label>
+                                        <input type="text" name="loan-left" id="loan-left" value="" class="number-input" disabled="disabled"/>
+
+                                        
+                                        <label for="fines" class="with-details">מתוך זה עמלות לתשלום ב-₪</label>
+                                        <input type="text" disabled="disabled" id="fines" class="with-details"/>
+                                        <br class="with-details"/>
+                                        <br class="with-details"/>
+
+                                        <label for="wanted-return-recycle">מהו ההחזר החודשי הרצוי ב-₪ עבור ההלוואה החדשה </label>
+                                        <input type="text" name="wanted-return-recycle" id="wanted-return-recycle" value="" class="number-input" />
+                                        <br />
+                                        <br />
+
+                                        <div>
+                                            <span><strong>חשוב!</strong></span>
+                                            <p style="width: 77%;">
+                                                ההחזר החודשי הרצוי הוא הפרמטר החשוב ביותר, ובעל ההשפעה הגדולה ביותר
+                                            על התשלום הסופי עבור ההלואה. חשוב להציב יעד של החזר אותו לא עוברים,
+                                            ולא להתפתות להחזיר יותר מהיכולת
+
+                                            </p>
+                                        </div>
+
+                                        <br class="clear" />
+                                    </div>
+                                </div>
+
+                                    
+                            </div>
+                                    
+                            <div id="contain-buy-loan-details" style="display:none;">
+                                <br />
+                               
+                                    <table class="input-table">
+                                        <tr>
+                                            <td><label for="property-value-buy">מה שוי הנכס הנרכש ב-₪</label></td>
+		                                <td><input type="text" onkeyup="updateMoneyHave();" name="property-value-buy" id="property-value-buy" value="" class="number-input" /></td>
+		                                </tr>
+                                        <tr>
+		                                <td><label for="loan-desire">מה סכום ההלואה הרצויה ב-₪</label></td>
+		                                <td><input type="text" onkeyup="updateMoneyHave();" name="loan-desire" id="loan-desire" value="" class="number-input" /></td>
+                                            </tr>
+                                        <tr>
+		 									    <td><label for="money-have">הון עצמי קים ב-₪</label></td>
+		                                <td><input type="text" name="money-have" id="money-have" value="" class="number-input" disabled ="disabled" /></td>
+                                            </tr>
+		                                <tr>
+		                                <td><label for="wanted-return-buy">מה ההחזר החודשי הרצוי ב-₪ עבור ההלוואה</label></td>
+		                                <td><input type="text" name="wanted-return-buy" id="wanted-return-buy" value="" class="number-input" /></td>
+                                            </tr>
+                                    </table>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <div>
+                                        <span><strong>חשוב!</strong></span>
+                                        <p style="width: 77%;">ההחזר החודשי הרצוי הוא הפרמטר החשוב ביותר, ובעל ההשפעה הגדולה ביותר
+                                            על התשלום הסופי עבור ההלואה. חשוב להציב יעד של החזר אותו לא עוברים,
+                                            ולא להתפתות להחזיר יותר מהיכולת
+
+                                        </p>
+                                    </div>
+		                        </div>
+                                   
+                            <div id="checking">
+                                <div id="cubes" style="position:relative;">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <p>
+                                    המערכת מבצעת בדיקת התאמה<br />
+                                    בין סכום והחזר הרצוים
+                                </p> 
+                                <div>
+                                    <div class="gray-button prev-item">חזור</div>
+                                    <div id="continue-checked" class="green-small-button next-item" style="display:none">המשך</div>
+                                    <div id="check-ratio" class="green-small-button" onclick="PersonalValidate.Compatibilty();">המשך</div>
+                                </div>
+                            </div><br class="clear" />
+                        </div>
+                    </div>
+                   
+                    <div class="item item-unabled item-confirmation" id="item-confirmation">
+                        <div class="item-title">קיום אישור עקרוני</div>
+                        <div class="item-content">
+
+                            <span class="label-select">
+							<input type="checkbox" class="bank-account-management" name="agree-main-account" id="agree-main-account" />
+                            <label for="agree-main-account"><span>חשבון העו"ש העיקרי מנוהל בנק (אופציונלי)</span></label> 
+
+							     <select id="agree-main-account-bank" name="bank-name[]" class="bankName" disabled="disabled">
+									<option disabled selected style="display:none"></option>		
+                                     @foreach (var bank in Model)
+                                     {
+												 <option value="@bank.ID">@bank.Name</option>									
+                                     }   		                                   
+		                                </select><br />
+                           </span>
+                            <span class="label-select">
+							<input type="checkbox" class="bank-account-management" name="agree-secondary-account" id="agree-secondary-account" />
+                            <label for="agree-secondary-account"><span>חשבון עו"ש נוסף מנוהל בנק (אופציונלי)</span></label>
+
+							     <select id="agree-secondary-account-bank" name="bank-name[]" class="bankName" disabled="disabled">
+									<option disabled selected style="display:none"></option>		
+                                     @foreach (var bank in Model)
+                                     {
+												 <option value="@bank.ID">@bank.Name</option>									
+                                     }   		                                   
+		                                </select><br />
+                            </span>
+                            <br />
+                            <div>
+                                
+                                <p style="width: 77%;">על מנת להתקדם ביצוע בדיקה עבור ההלואה, אנו צריכים לודא שקים אישור עקרוני
+                                        עבור אותה הלואה, לפחות מבנק אחד למשכנתאות :
+
+                                </p>
+                            </div>
+                            <br />
+                            <input type="checkbox" name="agree-confirmation" id="agree-confirmation" />
+                            <label for="agree-confirmation"><span class="bold">אני מאשר/ת כי בידיי קיים אישור עקרוני עבור ההזמנה המדוברת מבנק למשכנתאות.</span></label><br />
+                            <div id="checkboxes" class="checkboxesBanks">
+								
+								@{
+                                    int rowTotal = Model.Count / 2 + Model.Count % 2;
+								}
+								    
+								@for (int i = 0; i < Model.Count; i = i + 2)
+        {
+                                    <span>
+                                        <input type="checkbox" value="@Model[i].ID" id="@Model[i].Name"  />
+                                        <label class="right-side" for="@Model[i].Name"><span>@Model[i].Name</span></label>
+                                        <input type="checkbox" value="@Model[i + 1].ID" id="@Model[i + 1].Name"  />
+                                        <label class="left-side" for="@Model[i + 1].Name"><span>@Model[i + 1].Name</span></label>
+                                    </span>
+
+                                    
+																	
+        }                              
+									
+								<input type="checkbox" value="0" id="אחר"  />
+								<label for="אחר">אחר</label>
+                                @*<input type="checkbox" name="bank-other" value="0" id="אחר" />
+                                <label for="bank-other">אחר <input id="bank-other-name" type="text" disabled="disabled" /></label>*@<br />
+                            </div>
+                            <div>
+                                <div class="gray-button prev-item">חזור</div>
+                                <div class="green-small-button next-item">המשך</div>
+                            </div><br class="clear" />
+                        </div>
+                    </div>
+                    <div class="item item-unabled item-offers" id="item-offers">
+                        <div class="item-title">הצעות מחיר</div>
+                        <div class="item-content">
+                            <div>
+								<span class="bold text-label">
+									<br />
+									מומלץ להזין הצעות מחיר שהתקבלו כדי לקבל השואה של ההצעות - זה חינם !<br />
+									האם כבר התקבלו הצעות מחיר עבור בדיוק אותה ההלואה ?
+								</span>
+                                        
+                                <input type="radio" name="has-offers" id="has-offers" value ="1" checked="checked" />
+                                <label for="has-offers">כן</label>
+    
+                                <input type="radio" name="has-offers" value="0" id="doesnt-have-offers" />
+                                <label for="doesnt-have-offers">לא</label>
+                            </div>
+                            <div id="banksContainer">
+
+							 
+
+                            
+                            @*@Html.Action("BankOfferTable")*@
+							 <span onclick="AddBank(event)" class="plusBox addBank">
+                                <div class="plus">+</div>
+                                <span>הוספת בנק</span>
+                              </span>
+
+                            </div>
+                            <div>
+                                <div class="gray-button prev-item">חזור</div>
+                                <div class="green-small-button next-item">המשך</div>
+                            </div><br class="clear" />
+                        </div>
+                    </div>
+                    <div class="item item-unabled item-adaptations" id="item-adaptations">
+                        <div class="item-title">התאמות אישיות </div>
+                        <div class="item-content">
+                            <span class="bold">הנתונים הבאים יעזרו לנו להתאים את תוצאות החישוב בצורה הטובה ביותר :</span><br />
+
+                            <h2>זמן אחזקה בנכס</h2><br />
+                            <input type="radio" name="planning" value="קצר" id="planning-short" />
+                            <label for="planning-short">התכנון הוא למכור את הנכס תוך 5 שנים</label>
+
+                            <input type="radio" name="planning" value="בינוני" id="planning-medium" checked="checked" />
+                            <label for="planning-medium">התכנון הוא למכור את הנכס תוך 5 - 10 שנים</label>
+
+                            <input type="radio" name="planning" value="ארוך" id="planning-long" />
+                            <label for="planning-long">התכנון הוא למכור את הנכס לפחות אחרי 10 שנים או לא למכור בכלל</label>
+
+                            <h2>יציבות ונזילות </h2><br />
+                            <input type="radio" name="stability" value="יציבות" id="stability-quite" checked="checked" />
+                            <label for="stability-quite">
+                                העדפה לשקט נפשי, החזר יציב ולא הרבה שינוים לאורך הזמן
+                            </label>
+
+                            <input type="radio" name="stability" value="נזילות" id="stability-danger" />
+                            <label for="stability-danger">
+                                העדפה לביצוע יותר שינוים, עם יותר סיכון לשינוים בריבית לאורך הזמן
+                            </label>
+
+                            <h2>שינויים</h2><br />
+                            <input type="radio" name="changes" value="0" id="doesnt-have-changes" checked="checked" />
+                            <label for="doesnt-have-changes">אין צפי לשינוים ביכולת ההחזר בעתיד הנראה לעין</label>
+
+                            <input type="radio" name="changes" value ="1" id="has-changes" />
+                            <label for="has-changes">יש צפי לשינוים ביכולת ההחזר בעתיד:</label>
+                            <div id="has-changes-checked">
+                                <span class="bold">נא לסמן אחת משתי האפשרויות לבחירה:</span><br />
+                                <input type="radio" name="changes-options" value="monthlyReturn" id="changes-quite" />
+                                <label for="changes-quite" class="changes-options-label" style="display:inline-block;">
+                                    התכנון הוא להחזיר-
+                                    </label>
+                                    <input type="text" value="" id="monthlyReturnSum" class="number-input" />
+                                    ₪ בעוד -
+                                    <select id="monthlyReturnTime">
+                                         @for (var i = 2; i < 21; i++)
+                                         {
+												                
+											<text><option value="@i">@i</option></text>;
+
+                                         }
+                                    </select>
+                                    שנים
+                                <br />
+
+                                <input type="radio" name="changes-options" value="fullOut" id="changes-danger" checked="checked" />
+                                <label for="changes-danger" class="changes-options-label" style="display:inline-block;">
+                                    התכנון הוא לסגור לגמרי את ההלואה בתוך-
+                                    </label>
+                                    <select id="fullOutTime">
+                                         @for (var i = 2; i < 21; i++)
+                                         {
+												                
+											<text><option value="@i">@i</option></text>;
+
+                                         }
+                                    </select>
+                                    שנים
+                                        
+                            </div><br />
+                            <div>
+                                <div class="gray-button prev-item">חזור</div>
+                                <div class="green-small-button next-item">המשך</div>
+                            </div><br class="clear" />
+                        </div>
+                    </div>
+                    <div class="item item-unabled item-summary" id="item-summary">
+                        <div class="item-title">סיכום הזמנה</div>
+                        <div class="item-content">
+                            מספר הזמנה :
+                                <span class="autoUpdate" id="ODlabel"></span><br />
+                            סוג עסקה :
+                                <span class="autoUpdate" id="ODdealType"></span><br />
+                            שווי נכס משועבד :
+                                <span class="autoUpdate" id="ODpropertyValue"></span> ש"ח<br />
+                            סכום הלוואה רצוי :
+                                <span class="autoUpdate" id="ODloanSum"> </span>ש"ח <br />
+                            החזר חודשי רצוי :
+                                <span class="autoUpdate" id="ODwantedReturn"></span> ש"ח<br />
+                            סה"כ הכנסות נטו :
+                                <span class="autoUpdate" id="ODnetoSum"></span> ש"ח<br />
+                            <br />
+                            התחייבויות קיימות :
+                                <span class="autoUpdate" id="ODisDebt" style="margin-left:200px;"></span>
+                            שיעור מימון :
+                                <span class="autoUpdate" id="ODloanPercent"></span><br />
+                            שיחרורים עתידיים :
+                                <span class="autoUpdate" id="ODisRelease" style="margin-left:200px;"></span>
+                            יחס החזר מההכנסה :
+                                <span class="autoUpdate" id="ODreturnPercent"></span><br />
+                            חסכונות קבועים :
+                                <span class="autoUpdate" id="ODhasSavings" style="margin-left:200px;"></span>
+                            <br />
+                            <br />
+                            קיים אישור עקרוני מ: 
+                            <span class="autoUpdate" id="ODbanksAuth"></span><br />
+                            הצעות מחיר מבנקים: 
+                            <span class="autoUpdate" id="ODbanksOffers"></span><br />
+                            תכנון הלוואה -
+                                <span class="autoUpdate"  id="ODplanning"></span><br />
+                            תכנון יציבות ונזילות -
+                                <span class="autoUpdate"  id="ODstability"></span><br />
+                            תכנון שינויים -
+                                <span class="autoUpdate"  id="ODchanges"></span><br />
+                            <div id="last-buttons-div">
+
+                                <div id="change-details-button" class="gray-button prev-item">שינוי פרטי הזמנה</div>או
+                                <div id="submitButton" class="green-small-button" onclick="Orderobj.submit();">התחל חישוב</div>
+
+								@*<span class="ShowGif">
+									<!-- gif -->
+									<img src="@Url.Content("~/images/ajax-loader%20(1).gif")" alt="" />
+								</span>	*@
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+<div id="messages"></div>	
+
+   

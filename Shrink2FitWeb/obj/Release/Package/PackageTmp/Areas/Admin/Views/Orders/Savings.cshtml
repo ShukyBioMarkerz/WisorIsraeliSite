@@ -1,0 +1,25 @@
+﻿@model List<Shrink2FitDAL.VModels.SavingVM>
+@{
+    Layout = "";
+}
+<table class="table table-striped table-advance table-hover">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Amount Saved</th>
+            <th>Liquidity</th>
+            <th>Yield</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var entry in Model)
+        {
+            <tr>
+                <td>@entry.SavingsType</td>
+                <td>@entry.AmountSaved</td>
+                <td><input type="checkbox" @(entry.Liquidity != null && (bool)entry.Liquidity ? "checked='checked'" : "") disabled/></td>
+                <td>@entry.Yield</td>
+            </tr>
+        }
+    </tbody>
+</table>

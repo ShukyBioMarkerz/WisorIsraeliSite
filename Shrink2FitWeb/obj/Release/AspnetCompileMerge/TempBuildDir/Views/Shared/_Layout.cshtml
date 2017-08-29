@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/style/style.css" rel="stylesheet" />
+    <link href="~/style/nivo-slider.css" rel="stylesheet" />
+    <link href="~/style/normalize.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/images/Wisor_Favicon_PNG.png" />
+    <script src="~/scripts/jquery-1.11.1.min.js"></script>
+    <script src="~/scripts/jquery-ui.min.js"></script>
+    <script src="~/scripts/carouFredSel.js"></script>
+    <script src="~/scripts/customSelect.js"></script>
+    <script src="~/scripts/disableScroll.js"></script>
+    <script src="~/scripts/easing.js"></script>
+    <script src="~/scripts/jquery-number.js"></script>
+    <script src="~/scripts/lavalamp.js"></script>
+    <script src="~/scripts/nivo.js"></script>
+    <script src="~/scripts/posXhack.js"></script>
+    <script src="~/scripts/script.js"></script>
+    <script src="~/scripts/scrollTo.js"></script>
+	<script src="~/scripts/errormessages.js"></script>
+	<script src="~/scripts/popUps.js"></script>
+    <script src="~/scripts/facebook.js"></script>
+	<script src="~/scripts/Profit.js"></script>
+	<script src="~/scripts/getOrder.js"></script>
+	<script src="~/scripts/accountsettings.js"></script>
+    <script src="~/scripts/contact.js"></script>
+    <script src="~/scripts/analytics.js"></script>
+    <script src="~/scripts/jquery.tablescroll.js"></script>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-43867231-3', 'auto');
+        ga('send', 'pageview');
+   </script>
+    @RenderSection("GA",false);
+</head>
+<body>
+   
+   
+    <header>
+        <div id="header">
+            <div id="top-header">
+                <div class="container">
+                    <div id="logo">
+                        <img src="@Url.Content("~/images/logo.png")" alt="" /><br />
+                        התוכנה שמכווצת את המשכנתא שלך
+                    </div>
+                    <nav>
+                        <div id="menu" @(ViewBag.IsPersonal == null ? "" : "class=personal-menu")>
+                            <ul>
+                                <li id="menu-home" class="@(ViewBag.CurrentPage == "index" ? "current-page" : null)" ><a href="/Home/Index">דף הבית</a></li>
+                                <li id="menu-about" class="@(ViewBag.CurrentPage == "about" ? "current-page" : null)"><a href="/Home/About">על המערכת</a></li>
+                                
+                                <li id="menu-login"><a href="#">כניסה</a></li>
+                                
+                                <li id="menu-register"><a href="#">הרשמה</a></li>
+                              
+                                <li id="menu-contact"><a href="#">יצירת קשר</a></li>
+                               
+                                
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div>
+        @RenderBody()
+        
+    </div>
+    <footer>
+        <div id="footer">
+            <div class="container">
+                <div id="up-arrow">
+                    <a  href="#"></a>
+                </div>
+                <div id="links">
+                    <a href="/Home/About">על המערכת</a><span>|</span>
+                    <a href="/Home/TOS">תנאי שימוש</a><span>|</span>
+                    <a href="/Home/privacy">פרטיות</a><span>|</span>
+                    <a href="#">שותפים עיסקיים</a><span>|</span>
+                    <a href="#" class="footer-contact">יצירת קשר</a><span>|</span>
+                    <a href="#">עקבו אחרינו בפייסבוק</a>
+                </div>
+                <p>כל האמור באתר זה כתוב בלשון זכר לצורכי נוחיות בלבד, ומתייחס גם ללשון נקבה</p>
+                <div id="copyright">
+                    כל הזכויות שמורות <a href="#">Wisor</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+                        עיצוב אתר <a target="_blank" href="http://shortiz.co.il/">GEVALD</a>
+                    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                        פיתוח <a target="_blank" href="http://sergata.net/">Sergata .Net</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+	<div id="popups">
+
+	</div>	
+</body>
+    
+</html>

@@ -1,0 +1,2380 @@
+@font-face {
+    font-family: 'Alef';
+    src: url('../fonts/Alef-Regular.eot');
+    src: url('../fonts/Alef-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Alef-Regular.woff') format('woff'),
+    url('../fonts/Alef-Regular.ttf') format('truetype'),
+    url("../fonts/Alef-Regular.svg#alefregular") format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Alef';
+    src: url('../fonts/Alef-Bold.eot');
+    src: url('../fonts/Alef-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Alef-Bold.woff') format('woff'),
+    url('../fonts/Alef-Bold.ttf') format('truetype'),
+    url('../fonts/Alef-Bold.svg#alefbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+html, body {
+    direction: rtl;
+    text-align: right;
+    margin: 0;
+    font-family: alef, arial;
+    color: #616161;
+    min-width: 1233px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1135px;
+}
+
+#header {
+    background: url("../images/gray-bg.png") repeat bottom center;
+    padding-top: 155px;
+} 
+#header > #top-header {
+    background: url("../images/top-header-bg.png") repeat-x;
+    padding: 0;
+    z-index: 110;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+#header > #top-header > .container {
+    height: 109px;
+    margin-top: 23px;
+}
+#header > #top-header #logo {
+    float: right;
+    text-align: left;
+    font-weight: bold;
+    font-size: 13px;
+    color: #111010;
+    letter-spacing: 0.2px;
+}
+#header > #top-header #logo > img {
+    margin-bottom: -4px;
+}
+#header > #top-header #menu {
+    float: left;
+    height: 69px;
+    margin-top: -5px;
+}
+#header > #top-header #menu > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#header > #top-header #menu > ul > li {
+    float: right;
+    margin: 0;
+    padding: 0 0 4px;
+    list-style: none;
+    border-bottom: 0 solid #39b54a;
+}
+#header > #top-header #menu > ul > li.disabled {
+    border-bottom: 0 solid #c3c3c3;
+}
+#header > #top-header #menu > ul > li > a {
+    display: block;
+    font-size: 18px;
+    color: #c3c3c3;
+    font-family: alef;
+    text-align: center;
+    padding: 44px 0 17px;
+}
+#header > #top-header #menu > ul > li:hover > a {
+    color: #616161;
+}
+#header > #top-header #menu > ul > li#menu-home.current-page,
+#header > #top-header #menu > ul > li#menu-home:hover {
+    background: url("../images/menu-home.png") no-repeat 32px 11px;
+}
+#header > #top-header #menu > ul > li#menu-home {
+    background: url("../images/menu-home.png") no-repeat 32px -79px;
+}
+#header > #top-header #menu > ul > li#menu-home > a {
+    width: 100px;
+}
+#header > #top-header #menu > ul > li#menu-about.current-page,
+#header > #top-header #menu > ul > li#menu-about:hover {
+    background: url("../images/menu-about.png") no-repeat 48px 11px;
+}
+#header > #top-header #menu > ul > li#menu-about {
+    background: url("../images/menu-about.png") no-repeat 48px -79px;
+}
+#header > #top-header #menu > ul > li#menu-about > a {
+    width: 132px;
+}
+#header > #top-header #menu > ul > li#menu-login.current-page,
+#header > #top-header #menu > ul > li#menu-login:hover {
+    background: url("../images/menu-login.png") no-repeat center 13px;
+}
+#header > #top-header #menu > ul > li#menu-login {
+    background: url("../images/menu-login.png") no-repeat center -77px;
+}
+#header > #top-header #menu > ul > li#menu-login > a {
+    width: 89px;
+    text-align: center;
+}
+#header > #top-header #menu > ul > li#menu-register.current-page,
+#header > #top-header #menu > ul > li#menu-register:hover {
+    background: url("../images/menu-register.png") no-repeat 28px 13px;
+}
+#header > #top-header #menu > ul > li#menu-register {
+    background: url("../images/menu-register.png") no-repeat 28px -77px;
+}
+#header > #top-header #menu > ul > li#menu-register > a {
+    width: 94px;
+    text-align: center;
+}
+#header > #top-header #menu > ul > li#menu-contact.current-page,
+#header > #top-header #menu > ul > li#menu-contact:hover {
+    background: url("../images/menu-contact.png") no-repeat center 10px;
+}
+#header > #top-header #menu > ul > li#menu-contact {
+    background: url("../images/menu-contact.png") no-repeat center -80px;
+}
+#header > #top-header #menu > ul > li#menu-contact > a {
+    width: 125px;
+    text-align: center;
+}
+#header > #top-header #menu > ul > li.current-page > a {
+    font-weight: bold;
+    color: #39b54a;
+}
+#header #navigator {
+    text-align: center;
+    padding: 11px 10px 10px 0;
+    margin-top: -37px;
+    font-size: 0;
+    position: fixed;
+    z-index: 109;
+    width: 100%;
+    border-bottom: 3px solid #ffffff;
+    background: url("../images/gray-bg.png") repeat bottom center;
+}
+#header #navigator > a {
+    font-size: 16px;
+    display: inline-block;
+    width: 108px;
+    color: #616161;
+    letter-spacing: 0.1px;
+    text-align: center;
+}
+#header #navigator > a:hover {
+    font-weight: bold;
+    color: #39b54a;
+}
+#header #navigator > a:nth-of-type(2) {
+    padding-left: 2px;
+    width: 127px;
+}
+#header #navigator > a:nth-of-type(3) {
+    padding-left: 3px;
+    width: 100px;
+}
+#header #navigator > a:nth-of-type(4) {
+    padding-left: 4px;
+    width: 150px;
+}
+#header #navigator > a + span {
+    font-size: 16px;
+}
+
+.page {
+    font-size: 20px;
+}
+.page h1 {
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: 30px;
+    display: inline-block;
+    color: #39b54a;
+    border-bottom: 2px solid #39b54a;
+    font-weight: normal;
+    letter-spacing: 0.4px;
+    line-height: 46px;
+    white-space: nowrap;
+}
+.page h2 {
+    font-size: 24px;
+    color: #39b54a;
+    margin: 27px 0 25px;
+    padding: 0;
+    font-weight: normal;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+.page p {
+    line-height: 23.6px;
+    margin: 0;
+    padding: 0;
+}
+.page#about {
+    background: url("../images/page-about-bg.png");
+    border-top: 3px solid #ffffff;
+    margin-top: 6px;
+}
+.page#about > .container {
+    padding: 63px 400px 53px 0;
+    width: 735px;
+    background: url("../images/screen.png") no-repeat 833px 61px;
+}
+.page#tech {
+    padding-right: 8px;
+    line-height: 8px;
+    border-top: 3px solid #ffffff;
+    background: url("../images/gray-bg.png");
+}
+.page#tech > .container {
+    padding: 38px 2px 100px 468px;
+    width: 665px;
+    background: url("../images/page-tech-side-bg.png") no-repeat 4px bottom;
+}
+.page#tech h1 {
+    line-height: 42px;
+    margin-bottom: 24px;
+}
+.page#tech h2:nth-of-type(2) {
+    margin-top: 25px;
+    margin-bottom: 22px;
+}
+.page#tech p {
+    line-height: 20px;
+}
+.page#tech .pros2 {
+    margin-top: 3px;
+}
+.page#tech .pros3 {
+    margin-top: 12px;
+}
+.page#services {
+    border-top: 3px solid #ffffff;
+    background: url("../images/page-services-bg.png");
+    padding-left: 6px;
+}
+.page#services > .container {
+    padding: 44px 405px 43px 65px;
+    width: 665px;
+    background: url("../images/circles.png") no-repeat 763px 111px;
+}
+.page#services h1 {
+    margin-bottom: 11px;
+    margin-top: -1px;
+}
+.page#services p {
+    line-height: 20px;
+}
+.page#services .services-p2 {
+    margin-top: -11px;
+}
+.page#faq {
+    border-top: 3px solid #ffffff;
+    background: url("../images/gray-bg.png");
+}
+.page#faq > .container {
+    width: 1000px;
+    padding: 57px 4px 62px 0;
+}
+.page#faq h1 {
+    background: url("../images/green-dot.png") repeat-x center center;
+    display: block;
+    border: none;
+    text-align: center;
+    margin: 0 1px 0 2px;
+}
+.page#faq h1 > span {
+    display: inline-block;
+    width: 275px;
+    margin: 0 auto 1px;
+    text-align: center;
+    background: url("../images/gray-bg.png");
+}
+.page#faq #questions {
+    margin-top: 15px;
+}
+.page#faq .question {
+    margin-top: 4px;
+    font-size: 20px;
+    background-color: #d8d8d8;
+}
+.page#faq .question:nth-child(2n) {
+    background-color: #f7f7f7;
+}
+.page#faq .question > .item-title {
+    cursor: pointer;
+    background: url("../images/arrow.png") no-repeat 963px 18px;
+    width: 922px;
+    padding: 10px 63px 8px 15px;
+}
+.page#faq .question.open > .item-title {
+    background-image: url("../images/green-arrow-down.png");
+    /* font-weight: bold; */
+}
+.page#faq .question > .item-content {
+    padding: 0 63px 20px 15px;
+    width: 922px;
+    display: none;
+}
+#start-button-box {
+    background-color: #aeaeae;
+    text-align: center;
+    padding-top: 70px;
+    height: 124px;
+}
+#start-button-box > .start-button {
+    margin: 0 auto;
+}
+#start-button-box.hp {
+    background: url("../images/lines-bg.png") #ffffff;
+    padding-top: 102px;
+    height: 111px;
+}
+.start-button {
+    background: url("../images/start-button.png") no-repeat -224px 0;
+    width: 224px;
+    cursor: pointer;
+    height: 75px;
+}
+.start-button > div {
+    background: url("../images/start-button.png") no-repeat 0 0;
+    width: 224px;
+    height: 75px;
+}
+
+#shrink.page.hp {
+    padding-top: 86px;
+    background: url("../images/lines-bg.png") #f4f1f1;
+    margin-top: -38px;
+    height: 435px;
+}
+#shrink.page.hp > .container > #right-content {
+    background: url("../images/gray-arrow.png") no-repeat  89px 149px;
+    width: 411px;
+    display: inline-block;
+}
+#shrink.page.hp > .container > #right-content > h1 {
+    font-size: 38px;
+    color: #2e2e2e;
+    text-shadow: 3px 2px #bebcbc;
+    border: none;
+    line-height: normal;
+    letter-spacing: 0.3px;
+    margin: 2px -2px 12px 0
+}
+#shrink.page.hp > .container > #right-content > p {
+    font-size: 25px;
+    margin: 0 0 87px;
+    line-height: 30px;
+}
+#shrink.page.hp .start-button {
+    margin-right: 1px;
+    background: url("../images/start-button.png") no-repeat -211px 0;
+    background-size: 422px 72px;
+    width: 211px;
+    height: 72px;
+}
+#shrink.page.hp .start-button > div {
+    background-size: 422px 72px;
+    width: 211px;
+    height: 72px;
+}
+#shrink.page.hp > .container > #imac {
+    float: left;
+    position: relative;
+    margin-top: 13px;
+    background: url("../images/imac.png");
+    width: 534px;
+    height: 431px;
+    text-align: left;
+}
+#shrink.page.hp > .container > #imac > #light {
+    opacity: 0.12;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 90;
+    background: url("../images/imac-light.png") no-repeat;
+    width: 242px;
+    height: 350px;
+}
+#shrink.page.hp > .container > #imac > #slider {
+    margin: 23px 22px 0 23px;
+    position: relative;
+    overflow-x: hidden;
+    height: 254px;
+    width: 489px;
+}
+#shrink.page.hp > .container > #imac > #slider > img {
+    height: 254px;
+    width: 489px;
+}
+#how-does-it-work.page.hp {
+    background: url("../images/how-does-it-work-bg.png");
+    border-top: 7px solid #e5e4e4;
+    border-bottom: 1px solid #d6d7d9;
+}
+#how-does-it-work.page.hp > .container {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 86px;
+}
+#how-does-it-work.page.hp > .container > #page-title {
+    position: absolute;
+    right: 0;
+    top: -51px;
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+    background: url("../images/how-does-it-work-bg.png");
+    width: 218px;
+    height: 34px;
+    padding-top: 10px;
+    border-radius: 10px 10px 0 0;
+}
+#how-does-it-work.page.hp > .container > #steps {
+    background: url("../images/steps-vertical-arrow.png") no-repeat 183px 54px;
+    height: 223px;
+    white-space: nowrap;
+}
+#how-does-it-work.page.hp > .container > #steps > .step {
+    width: 169px;
+    height: 223px;
+    float: right;
+    padding-right: 71px;
+}
+#how-does-it-work.page.hp > .container > #steps > .step:first-child {
+    padding-right: 0;
+}
+#how-does-it-work.page.hp > .container > #steps > .step > div {
+    width: 153px;
+    height: 153px;
+    border: 8px solid #c6c5c5;
+    border-radius: 153px;
+}
+#how-does-it-work.page.hp > .container > #steps > .step:nth-child(1) > div {
+    background: url("../images/steps-arrow.png") no-repeat 50px center;
+}
+#how-does-it-work.page.hp > .container > #steps > .step:nth-child(1) {
+    background: url("../images/num-1.png") no-repeat 143px 163px;
+}
+#how-does-it-work.page.hp > .container > #steps > .step:nth-child(2) > div {
+    background: url("../images/steps-disk.png") no-repeat 35px center;
+}
+#how-does-it-work.page.hp > .container > #steps > .step:nth-child(2) {
+    background: url("../images/num-2.png") no-repeat 166px 163px;
+}
+#how-does-it-work.page.hp > .container > #steps > .step:nth-child(3) > div {
+    background: url("../images/steps-screen.png") no-repeat 35px center;
+}
+#how-does-it-work.page.hp > .container > #steps > .step:nth-child(3) {
+    background: url("../images/num-3.png") no-repeat 153px 163px;
+}
+#how-does-it-work.page.hp > .container > #steps > .step:nth-child(4) > div {
+    background: url("../images/steps-eye.png") no-repeat 26px center;
+}
+#how-does-it-work.page.hp > .container > #steps > .step:nth-child(4) {
+    background: url("../images/num-4.png") no-repeat 153px 163px;
+}
+#how-does-it-work.page.hp > .container > #steps > .step:nth-child(5) > div {
+    background: url("../images/steps-bottle.png") no-repeat center center;
+    border-color: #39b54a;
+    margin-left: 0;
+}
+#how-does-it-work.page.hp > .container > #steps > .step:nth-child(5) {
+    background: url("../images/num-5.png") no-repeat 160px 163px;
+}
+#how-does-it-work.page.hp > .container > #steps > .step > p {
+    font-size: 18px;
+    color: #2d2b2b;
+    margin-top: 8px;
+    margin-right: 29px;
+}
+#how-does-it-work.page.hp > .container > p {
+    text-align: center;
+    line-height: 37px;
+    margin-top: 73px;
+    font-size: 29px;
+    letter-spacing: 0.3px;
+}
+#how-does-it-work.page.hp > .container > #little-triangle {
+    position: absolute;
+    bottom: -70px;
+    left: 405px;
+    width: 325px;
+    height: 69px;
+    background: url("../images/little-triangle.png") no-repeat;
+}
+
+#personal.page {
+    background-color: #f6f5f5;
+    padding-top: 30px;
+    min-height: 850px;
+    padding-bottom: 50px;
+    margin-top: -37px;
+}
+#personal.page > .container > #side-section {
+    margin-top: 8px;
+    padding-left: 63px;
+    width: 225px;
+    float: right;
+}
+#personal.page > .container > #side-section > #hello {
+    margin-right: 2px;
+    color: #4d4d4d;
+    font-size: 20px;
+    letter-spacing: 0.1px;
+}
+#personal.page > .container > #side-section > #last-visit {
+    margin-right: 2px;
+    margin-top: 11px;
+    font-size: 16px;
+    letter-spacing: 0.1px;
+    padding-top: 8px;
+    height: 53px;
+    line-height: 20px;
+    /*padding-right: 68px;
+    background: url("../images/account-card-big.png") no-repeat 165px top;*/
+}
+#personal.page > .container > #side-section > nav > #side-nav {
+    margin-top: 20px;
+}
+#personal.page > .container > #side-section > nav > #side-nav > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#personal.page > .container > #side-section > nav > #side-nav > ul > li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #d4d4d4;
+    border-top-width: 0;
+}
+#personal.page > .container > #side-section > nav > #side-nav > ul > li:first-child {
+    border-top-width: 1px;
+}
+#personal.page > .container > #side-section > nav > #side-nav > ul > li > a {
+    padding: 13px 59px 0 15px;
+    background : #f6f5f5 no-repeat 175px center;
+    font-size: 18px;
+    letter-spacing: 0.1px;
+    color: #949494;
+    display: block;
+    height: 41px
+}
+#personal.page > .container > #side-section > nav > #side-nav > ul > li > a:hover {
+    color: #39b54a;
+}
+#personal.page > .container > #side-section > nav > #side-nav > ul > li.current-tab > a {
+    background-color: #ffffff;
+}
+#personal.page > .container > #side-section > nav > #side-nav > ul > li#side-nav-accordion > a {
+    background-image: url("../images/new-order.png");
+}
+#personal.page > .container > #side-section > nav > #side-nav > ul > li#side-nav-profit > a {
+    background-image: url("../images/shekel.png");
+	color: #39B54A;
+}
+#personal.page > .container > #side-section > nav > #side-nav > ul > li#side-nav-orders > a {
+    background-image: url("../images/orders.png");
+}
+#personal.page > .container > #side-section > nav > #side-nav > ul > li#side-nav-payments > a {
+    background-image: url("../images/payments.png");
+}
+#personal.page > .container > #side-section > nav > #side-nav > ul > li#side-nav-account-settings > a {
+    background-image: url("../images/account-card-small.png");
+}
+#personal.page > .container > #side-section > nav > #side-nav > ul > li#side-nav-logout > a {
+    background-image: url("../images/lock.png");
+}
+#personal.page > .container > #content {
+    float: right;
+    width: 841px;
+}
+#personal.page > .container > #content > #steps {
+    width: 662px;
+    margin: 0 auto;
+    background: url("../images/steps-vertical-arrow-personal.png") no-repeat 111px center;
+    height: 98px;
+}
+#personal.page > .container > #content > #steps > .step {
+    width: 89px;
+    height: 89px;
+    border-radius: 89px;
+    border: #eae9e9 solid 4px;
+    color: #2d2b2b;
+    text-align: center;
+    font-size: 11px;
+    float: right;
+    margin-right: 42px;
+}
+#personal.page > .container > #content > #steps > .step:first-child {
+    margin: 0;
+}
+#personal.page > .container > #content > #steps > .step > span {
+    color: #cecdcd;
+    font-size: 55px;
+    line-height: 57px;
+    display: block;
+}
+#personal.page > .container > #content > #steps > .step.current-step {
+    border-color: #676666;
+}
+#personal.page > .container > #content > #steps > .step.current-step > span {
+    color: #676666;
+}
+#personal.page > .container > #content > #steps > .step:last-child {
+    border: 6px solid #39b54a;
+    padding-top: 31px;
+    height: 58px;
+    font-size: 17px;
+    line-height: 10px;
+    margin-right: 46px;
+}
+#personal.page > .container > #content > #steps > .step:last-child > span {
+    font-size: 21px;
+    color: #676666;
+    line-height: normal;
+}
+#personal.page > .container > #content > #inner-content {
+    margin-top: 25px;
+}
+#personal.page > .container > #content > #inner-content > div {
+    display: none;
+}
+#personal.page > .container > #content > #inner-content.account-settings-active > #account-settings,
+#personal.page > .container > #content > #inner-content.profit-active > #profit,
+#personal.page > .container > #content > #inner-content.accordion-active > #accordion,
+#personal.page > .container > #content > #inner-content.orders-active > #orders,
+#personal.page > .container > #content > #inner-content.payments-active > #payments {
+    display: block;
+}
+#personal.page > .container > #content > #inner-content > #account-settings {
+    padding-right: 38px;
+}
+#personal.page > .container > #content > #inner-content > #account-settings > h1 {
+    font-weight: bold;
+    font-size: 25px;
+    color: #2d2d2d;
+    margin: 3px 0;
+    display: block;
+    border: none;
+    letter-spacing: 0;
+    line-height: normal;
+    padding-right: 22px;
+    background: url("../images/arrow.png") no-repeat right center;
+}
+#personal.page > .container > #content > #inner-content > #account-settings > div {
+    font-size: 20px;
+    color: #4d4d4d;
+}
+#personal.page > .container > #content > #inner-content > #account-settings > div > p {
+    margin: 0 0 19px;
+}
+.green-button {
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    color: #ffffff;
+    display: inline-block;
+    width: 86px;
+    height: 28px;
+    background: url("../images/green-button-bg.png") no-repeat center center;
+    cursor: pointer;
+    padding-top: 5px;
+}
+.green-small-button {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+    display: inline-block;
+    width: 98px;
+    height: 39px;
+    background: url("../images/green-small-button-bg.png") no-repeat center center;
+    cursor: pointer;
+    padding-top: 4px;
+}
+.orange-button {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+    display: inline-block;
+    width: 224px;
+    height: 55px;
+    background: url("../images/orange-button-bg.png") no-repeat center center;
+    cursor: pointer;
+    padding-top: 14px;
+}
+.orange-big-button {
+    line-height: 23px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+    display: inline-block;
+    width: 224px;
+    height: 74px;
+    background: url("../images/orange-big-button-bg.png") no-repeat center center;
+    cursor: pointer;
+    padding-top: 5px;
+}
+.gray-button {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+    display: inline-block;
+    width: 98px;
+    height: 39px;
+    background: url("../images/gray-button-bg.png") no-repeat center center;
+    cursor: pointer;
+    padding-top: 4px;
+}
+#personal.page > .container > #content > #inner-content > #account-settings > div > div:nth-of-type(2) {
+    margin-top: 11px;
+}
+#personal.page > .container > #content > #inner-content > #profit {
+    white-space: nowrap;
+    overflow: visible;
+}
+#personal.page > .container > #content > #inner-content > #profit * {
+    white-space: normal;
+}
+#personal.page > .container > #content > #inner-content > #profit > h1 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #4d4d4d;
+    margin: 0 23px 0 0;
+    display: block;
+    border: none;
+    letter-spacing: 0;
+    line-height: normal;
+    padding-right: 22px;
+    background: url("../images/arrow.png") no-repeat right center;
+}
+#personal.page > .container > #content > #inner-content > #profit > table,
+#personal.page > .container > #content > #inner-content > #profit > .accordion  .item > .item-content > table,  #profit .accordion table {/**/
+   /* height: 86px;
+    width: 789px;*/
+    border: 2px solid #b2b2b2;
+    border-radius: 3px;
+    border-collapse: separate;
+    border-spacing: 0;
+    /*margin-top: 24px;
+    float: right;*/
+    white-space: nowrap;
+}
+#personal.page > .container > #content > #inner-content > #profit > .accordion  .item > .item-content > table ,  #profit .accordion table{/**/
+    border-width: 2px 1px;
+   /* width: 785px;*/
+}
+#personal.page > .container > #content > #inner-content > #profit > table tr td,
+#personal.page > .container > #content > #inner-content > #profit > .accordion  .item > .item-content > table tr td,  #profit .accordion table tr td{/**/
+    vertical-align: middle;
+    text-align: center;
+    font-size: 18px;
+    height: 30px;
+    color: #191919;
+    background-color: #edebeb;
+    border: 1px solid #b2b2b2;
+    border-width: 0 0 2px 2px;
+    border-spacing: 0;
+    padding: 0;
+}
+#personal.page > .container > #content > #inner-content > #profit > table tr td:nth-child(1),
+#personal.page > .container > #content > #inner-content > #profit > .accordion  .item > .item-content > table tr td:nth-child(1) {
+    width: 131px
+}
+#personal.page > .container > #content > #inner-content > #profit > table tr td:nth-child(2),
+#personal.page > .container > #content > #inner-content > #profit > .accordion  .item > .item-content > table tr td:nth-child(2) {
+    width: 110px
+}
+#personal.page > .container > #content > #inner-content > #profit > table tr td:nth-child(3),
+#personal.page > .container > #content > #inner-content > #profit > .accordion  .item > .item-content > table tr td:nth-child(3) {
+    width: 116px
+}
+#personal.page > .container > #content > #inner-content > #profit > table tr td:nth-child(4),
+#personal.page > .container > #content > #inner-content > #profit > .accordion  .item > .item-content > table tr td:nth-child(4)  {
+    width: 114px
+}
+#personal.page > .container > #content > #inner-content > #profit > table tr td:nth-child(5),
+#personal.page > .container > #content > #inner-content > #profit > .accordion  .item > .item-content > table tr td:nth-child(5)  {
+    width: 110px
+}
+#personal.page > .container > #content > #inner-content > #profit > table tr td:nth-child(6),
+#personal.page > .container > #content > #inner-content > #profit > .accordion  .item > .item-content > table tr td:nth-child(6)  {
+    width: 85px
+}
+#personal.page > .container > #content > #inner-content > #profit > table tr td:nth-child(7),
+#personal.page > .container > #content > #inner-content > #profit > .accordion  .item > .item-content > table tr td:nth-child(7)  {
+    width: 89px
+}
+#personal.page > .container > #content > #inner-content > #profit > table tr td:last-child,
+#personal.page > .container > #content > #inner-content > #profit > .accordion  .item > .item-content > table tr td:last-child, , #profit .accordion table tr td:last-child {
+    border-left: none;
+    overflow: visible;
+}
+#personal.page > .container > #content > #inner-content > #profit > table tr:last-child td,
+#personal.page > .container > #content > #inner-content > #profit > .accordion  .item > .item-content > table tr:last-child td, #profit .accordion table tr:last-child td {
+    border-bottom: none;
+}
+#personal.page > .container > #content > #inner-content > #profit > table tr:nth-child(2n) td,
+#personal.page > .container > #content > #inner-content > #profit > .accordion  .item > .item-content > table tr:nth-child(2n) td, #profit .accordion table tr:nth-child(2n) td{
+    background-color: #ffffff;
+}
+#personal.page > .container > #content > #inner-content > #profit > table tr:first-child,
+#personal.page > .container > #content > #inner-content > #profit > .accordion  .item > .item-content > table tr:first-child, #profit > .accordion table tr:first-child {
+    height: 22px;
+    background-color: #737373;
+    border-bottom: 2px solid #b2b2b2;
+    color:white;
+    font-weight:400;
+    font-family:Ariel;
+    font-size:14px;
+    text-align:right;
+}
+#personal.page > .container > #content > #inner-content > #profit > #table-buttons {
+    margin-top: 47px;
+    white-space: nowrap;
+}
+#personal.page > .container > #content > #inner-content > #profit > #table-buttons > .green-button {
+    margin-right: -3px;
+    margin-bottom: -3px;
+}
+#personal.page .accordion {
+    border: #b2b2b2 2px solid;
+    border-radius: 2px;
+    width: 783px;
+}
+#personal.page .accordion .item {
+    border-top: 2px solid #b2b2b2;
+    background-color: #ffffff;
+}
+#personal.page .accordion .item:first-child {
+    border: none;
+}
+#personal.page .accordion .item > .item-title {
+    border-bottom: 0 solid #b2b2b2;
+    font-size: 22px;
+    font-weight: bold;
+    color: #b6b6b5;
+    padding: 5px 55px 0;
+    height: 37px;
+    background: #edebeb url("../images/gray-tiny-arrow.png") no-repeat 754px center;
+    cursor: pointer;
+}
+#personal.page .accordion .item.open > .item-title {
+    border-bottom-width: 2px;
+    color: #ffffff;
+    background: #737373 url("../images/green-arrow-down.png") no-repeat 754px center;
+}
+#personal.page .accordion .item > .item-content {
+    display: none;
+}
+#personal.page .item.open > .item-content {
+    display: block;
+}
+#personal.page > .container > #content > #inner-content > #profit > .accordion .item.item-compare > .item-content {
+    text-align: center;
+}
+#personal.page > .container > #content > #inner-content > #profit > .accordion .item.item-compare > .item-content > table {
+    margin-right: -1px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+#personal.page > .container > #content > #inner-content > #profit > .accordion .item.item-compare > .item-content > h1 {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: right;
+    display: block;
+    border: 0;
+    color: #4d4d4d;
+    padding: 2px 54px 7px;
+    height: 31px;
+}
+#personal.page > .container > #content > #inner-content > #profit > .accordion .item.item-compare > .item-content > p {
+    text-align: center;
+    font-size: 16px;
+    color: #5e5e5e;
+}
+#personal.page > .container > #content > #inner-content > #profit > .accordion .item.item-compare > .item-content > .orange-big-button {
+    margin: 19px auto;
+}
+#personal.page > .container > #content > #inner-content > #profit > .accordion .item.item-compare > .item-content > .orange-big-button > span {
+    font-size: 30px;
+    font-weight: bold;
+}
+#personal.page > .container > #content > #inner-content > #profit > .accordion .item.item-shrink-to-fit > .item-content {
+    text-align: center;
+}
+#personal.page > .container > #content > #inner-content > #profit > .accordion .item.item-shrink-to-fit > .item-content > table {
+    margin-right: -1px;
+    margin-top: 0;
+    margin-bottom: 19px;
+}
+#personal.page > .container > #content > #inner-content > #profit > .accordion .item.item-shrink-to-fit > .item-content > h1 {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: right;
+    display: block;
+    border: 0;
+    color: #4d4d4d;
+    padding: 4px 45px 0;
+    height: 38px;
+}
+#personal.page > .container > #content > #inner-content > #profit > .accordion .item.item-shrink-to-fit > .item-content > p {
+    text-align: center;
+    font-size: 16px;
+    color: #5e5e5e;
+}
+#personal.page > .container > #content > #inner-content > #profit > .accordion .item.item-shrink-to-fit > .item-content > .orange-button {
+    margin: 24px auto;
+}
+
+#personal.page > .container > #content > #inner-content > #accordion > .item > .item-title,
+#personal.page > .container > #content > #inner-content > #accordion-after-order .accordion .item-title {
+    background-position: 797px center;
+}
+#personal.page > .container > #content > #inner-content > #accordion,
+#personal.page > .container > #content > #inner-content > #accordion-after-order .accordion {
+    width: 835px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-deal-type > .item-content {
+    padding-right: 63px;
+    font-size: 20px;
+    color: #4d4d4d;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-deal-type > .item-content > .bold {
+    margin-top: 5px;
+    margin-right: -40px;
+    display: block;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-deal-type > .item-content label {
+    line-height: 40px;
+    cursor: pointer;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-deal-type > .item-content label input {
+    margin-right: 20px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-deal-type > .item-content > div {
+    float: left;
+    margin-left: 10px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-deal-type > .item-content #recycle + label {
+    width: 700px;
+    display: inline-block;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-deal-type > .item-content #recycle + label + #recycle-checked {
+    display: none;
+    float: none;
+    margin: 0 20px 0 0;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item > .item-content .table-after-checkbox {
+    display: none;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details  > .item-content > select {
+    margin-top: 20px;
+    font-size: 17px !important;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details  > .item-content > .customSelect {
+    width: 85px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details  > .item-content > label {
+    margin-left: 7px;
+    vertical-align: bottom;
+    cursor: pointer;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details  > .item-content > label[for="youngest-borrower"] {
+    margin-right: 70px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details  > .item-content > label > .bold {
+    font-size: 20px !important;
+    letter-spacing: -0.4px !important;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-loan-details > .item-content,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content,
+#personal.page > .container > #content > #inner-content > #accordion > .item-confirmation > .item-content {
+    padding: 15px 11px 0 5px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-loan-details > .item-content label,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content label {
+    display: inline-block;
+    margin-top: 18px;
+    color: #4d4d4d;
+    font-size: 20px;
+    letter-spacing: -0.4px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item > .item-content span.bold {
+    color: #4d4d4d;
+    font-size: 22px;
+    letter-spacing: 0.2px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-loan-details > .item-content input[type="text"],
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content input[type="text"]{
+    text-align: center;
+    color: #4d4d4d;
+    width: 156px;
+    height: 24px;
+    border: 1px solid #b2b2b2;
+    margin-right: 10px;
+    outline: none;
+	font-size: 17px;
+	font-family: "Alef";
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-loan-details > .item-content #checking {
+    float: left;
+    margin-top: -75px;
+    padding-top: 5px;
+    margin-right: 7px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-loan-details > .item-content #checking > #cubes {
+    float: none;
+    margin: 0;
+    text-align: center;
+    opacity: 0;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-loan-details > .item-content #checking > #cubes > div {
+    display: inline-block;
+    margin-right: 4px;
+    margin-top: -17px;
+    width: 37px;
+    height: 37px;
+    border-radius: 5px;
+    background-color: #33b64c;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-loan-details > .item-content #checking > #cubes > div:nth-child(2) {
+    opacity: 0.63;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-loan-details > .item-content #checking > #cubes > div:nth-child(3) {
+    opacity: 0.31;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-loan-details > .item-content #checking > p {
+    text-align: center;
+    color: #39b54a;
+    font-size: 16px;
+    font-family: alef, arial;
+    line-height: 17px;
+    margin-top: 10px;
+    opacity: 0;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-loan-details > .item-content #checking > div {
+    margin-top: 65px;
+    float: left;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-confirmation > .item-content label {
+    cursor: pointer;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-confirmation > .item-content > #checkboxes {
+    margin-top: 10px;
+    margin-right: 35px;
+    display: none;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-confirmation > .item-content > #checkboxes > label {
+    margin-right: 15px;
+    margin-top: 7px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-confirmation > .item-content > #checkboxes > label:nth-of-type(2n+1) {
+    width: 250px;
+    display: inline-block;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-confirmation > .item-content > #checkboxes > label > input[type="text"] {
+    margin-right: 5px;
+    border: 2px solid #8e9094;
+    border-width: 0 0 2px;
+    outline: none;
+    padding: 0 5px 1px;
+    color: #616161;
+    background-color: transparent;
+    font-family: alef, arial;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-confirmation > .item-content > #checkboxes > label > input[type="text"]:disabled {
+    border-color: #e5e4e4;
+    color: #e5e4e4;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content label {
+    cursor: pointer;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content span {
+    color: #191919;
+    font-size: 17px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item .plus {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    background-color: #39b54a;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+/*#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content .plus {
+    margin-right: 44px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content .plus:first-of-type {
+    float: left;
+}*/
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content .table-after-checkbox > span:first-child {
+    float: left;
+    display: inline-block;
+    margin: 0 10px 0 12px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content .table-after-checkbox > label {
+    margin-right: 44px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content .plus {
+    margin-right: 45px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content > div:first-child {
+    padding-right: 44px;
+    font-size: 20px;
+    color: #4d4d4d;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content #selects {
+    display: inline-block;
+    width: 185px;
+    vertical-align: top;
+    font-size: 25px;
+    margin-top: -5px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content #selects > select {
+    margin-top: 7px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content .table-after-checkbox {
+    display: block;
+    margin-top: 10px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content > div:last-of-type,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content > div:last-of-type,
+#personal.page > .container > #content > #inner-content > #accordion > .item-confirmation > .item-content > div:last-of-type,
+#personal.page > .container > #content > #inner-content > #accordion > .item-adaptations > .item-content > div:last-of-type {
+    float: left;
+    margin-left: 10px;
+    margin-top: 33px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table, .bankOffersTable table {
+    width: 100%;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table,.bankOffersTable table,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table {
+    border: 2px solid #b2b2b2;
+    border-width: 2px 0;
+    border-radius: 3px;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 14px 0 7px;
+    white-space: nowrap;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table {
+    border-width: 2px;
+    margin-right: 45px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr td,.bankOffersTable table tr td,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table tr td {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 18px;
+    height: 30px;
+    color: #191919;
+    background-color: #edebeb;
+    border: 1px solid #b2b2b2;
+    border-width: 0 0 2px 2px;
+    border-spacing: 0;
+    padding: 0;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr td > input,
+.bankOffersTable table input,.bankOffersTable table select,.bankOffersTable table .customSelect,
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr td > select,
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr td > .customSelect,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table tr td > input,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table tr td > select,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table tr td > .customSelect {
+    display: block;
+    width: 100%;
+    vertical-align: top;
+    border: none;
+    height: 30px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr td > input,
+.bankOffersTable table input,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table tr td > input {
+    text-align: center;
+    font-family: alef, arial;
+    outline: none !important;
+    color: #191919 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    margin: 0 !important;
+    background-color: transparent !important;
+    font-size: 17px !important;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr td > .customSelect,
+.bankOffersTable table .customSelect,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table tr td > .customSelect{
+    height: 32px;
+    background-size: 25px 32px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr td .customSelectInner, .bankOffersTable table .customSelectInner,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table tr td .customSelectInner{
+    padding-top: 7px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr td:nth-child(1),
+.bankOffersTable table tr td:nth-child(1),
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table tr td:nth-child(1) {
+    width: 155px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr td:nth-child(2),
+.bankOffersTable table tr td:nth-child(2),
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr td:nth-child(2) > select,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table tr td:nth-child(2),
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table tr td:nth-child(2) > select {
+    width: 169px !important;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr td:nth-child(3), .bankOffersTable table tr td:nth-child(3),  {
+    width: 127px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr td:nth-child(4),
+.bankOffersTable table tr td:nth-child(4),
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr td:nth-child(4) > select,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table tr td:nth-child(3),
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table tr td:nth-child(3) > select {
+    width: 111px !important;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr td:nth-child(5),
+.bankOffersTable table tr td:nth-child(4)  {
+    width: 82px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr td:nth-child(6), .bankOffersTable table tr td:nth-child(6)  {
+    width: 125px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr td:last-child,
+ .bankOffersTable table tr td:last-child ,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table tr td:last-child {
+    border-left: none;
+    width: 0;
+    overflow: visible;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr:last-child td,
+ .bankOffersTable table  tr:last-child td,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table tr:last-child td {
+    border-bottom: none;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr:nth-child(2n) td,
+ .bankOffersTable table tr:nth-child(2n) td,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table tr:nth-child(2n) td {
+    background-color: #ffffff;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr:first-child,
+ .bankOffersTable table tr:first-child,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table tr:first-child {
+    height: 19px;
+    background-color: #737373;
+    border-bottom: 2px solid #b2b2b2;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-offers > .item-content table tr th,
+ .bankOffersTable table tr th,
+#personal.page > .container > #content > #inner-content > #accordion > .item-borrowers-details > .item-content table tr th {
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: normal;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-adaptations > .item-content {
+    padding: 15px 11px 0 5px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-adaptations > .item-content > h2 {
+    color: #4d4d4d;
+    margin: 5px 0;
+    font-weight: bold;
+    font-size: 28px;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-adaptations > .item-content label {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-adaptations > .item-content > #has-changes-checked {
+    margin-right: 20px;
+    display: none;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-adaptations > .item-content > #has-changes-checked > .bold {
+    font-size: 20px;
+    display: inline-block;
+    margin: 5px 0;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-adaptations > .item-content > #has-changes-checked input[type="text"] {
+    text-align: center;
+    color: #191919;
+    width: 156px;
+    height: 24px;
+    border: 1px solid #b2b2b2;
+    margin-right: 10px;
+    outline: none;
+}
+#personal.page > .container > #content > #inner-content > #accordion > .item-adaptations > .item-content > #has-changes-checked select,
+#personal.page > .container > #content > #inner-content > #accordion > .item-adaptations > .item-content > #has-changes-checked .customSelect {
+    width: 85px !important;
+}
+#personal.page > .container > #content > #inner-content .accordion .item-summary > .item-content {
+    padding: 15px 11px 0 5px;
+    background: url("../images/black-V.png") no-repeat 100px 35px;
+}
+#personal.page > .container > #content > #inner-content .accordion .item-summary > .item-content .bold {
+    display: inline-block;
+    margin-left: 80px;
+    font-size: 20px !important;
+}
+#personal.page > .container > #content > #inner-content .accordion .item-summary > .item-content > div:last-of-type {
+    margin: 60px auto 0;
+    padding-bottom: 10px;
+    width: 640px;
+}
+#personal.page > .container > #content > #inner-content .accordion .item-summary > .item-content > div:last-of-type > div {
+    width: 250px;
+    background-size: 250px 43px;
+    font-size: 26px;
+    padding-top: 0px;
+    height: 46px;
+    margin-right: 27px;
+}
+#personal.page > .container > #content > #inner-content .accordion .item-summary > .item-content > div:last-of-type > .gray-button {
+    margin-left: 30px;
+    margin-right: 0;
+}
+#personal.page > .container > #content > #inner-content > #accordion-after-order {
+    position: relative;
+    text-align: center;
+}
+#personal.page > .container > #content > #inner-content > #accordion-after-order .accordion {
+    text-align: right;
+}
+#personal.page > .container > #content > #inner-content > #accordion-after-order > img {
+    position: absolute;
+    right: -50px;
+}
+#personal.page > .container > #content > #inner-content > #accordion-after-order > h2 {
+    color: #4d4d4d;
+    font-weight: bold;
+    font-size: 25px;
+    padding-bottom: 30px;
+    border-bottom: 3px solid #aeaeae;
+    margin: -5px -50px 0 0;
+}
+#personal.page > .container > #content > #inner-content > #accordion-after-order > span {
+    display: inline-block;
+    font-size: 20px;
+    margin-right: -50px;
+    background-color: #f6f5f5;
+    position: relative;
+    top: -17px;
+    padding: 0 5px;
+}
+#personal.page > .container > #content > #inner-content > #accordion-after-order > .orange-button {
+    margin-right: -50px;
+    font-size: 22px;
+    height: 59px;
+    padding-top: 10px;
+}
+#personal.page > .container > #content > #inner-content > #orders {
+    margin-top: 71px;
+    padding-right: 11px;
+    width: 805px;
+}
+#personal.page > .container > #content > #inner-content > #orders > table {
+    border-bottom: 2px solid #b2b2b2;
+    border-radius: 3px;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 14px 0 7px;
+    white-space: nowrap;
+    width: 792px;
+}
+#personal.page > .container > #content > #inner-content > #orders > table tr td {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 18px;
+    height: 30px;
+    color: #191919;
+    background-color: #edebeb;
+    border: 1px solid #b2b2b2;
+    border-width: 0 0 2px 2px;
+    border-spacing: 0;
+    padding: 0;
+}
+#personal.page > .container > #content > #inner-content > #orders > table tr td:nth-child(1) {
+    border-right: 2px solid #b2b2b2;
+    width: 206px;
+}
+#personal.page > .container > #content > #inner-content > #orders > table tr td:nth-child(2) {
+    width: 121px;
+}
+#personal.page > .container > #content > #inner-content > #orders > table tr td:nth-child(3)  {
+    width: 103px;
+}
+#personal.page > .container > #content > #inner-content > #orders > table tr td:nth-child(4) {
+    width: 119px;
+}
+#personal.page > .container > #content > #inner-content > #orders > table tr td:nth-child(5)  {
+    width: 105px;
+}
+#personal.page > .container > #content > #inner-content > #orders > table tr td:nth-child(6)  {
+    width: 116px;
+}
+#personal.page > .container > #content > #inner-content > #orders > table tr td:last-child {
+    border-left-width: 2px;
+    width: 0;
+    overflow: visible;
+}
+#personal.page > .container > #content > #inner-content > #orders > table tr:last-child td {
+    border-bottom: none;
+}
+#personal.page > .container > #content > #inner-content > #orders > table tr:nth-child(2n) td{
+    background-color: #ffffff;
+}
+#personal.page > .container > #content > #inner-content > #orders > table tr:first-child {
+    height: 19px;
+    background-color: #737373;
+    border-bottom: 2px solid #b2b2b2;
+}
+#personal.page > .container > #content > #inner-content > #orders > table tr th {
+    text-align: center;
+    border: none;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: normal;
+    padding-bottom: 4px;
+}
+#personal.page > .container > #content > #inner-content > #payments > table {
+    border-bottom: 2px solid #b2b2b2;
+    border-radius: 3px;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 14px 0 7px;
+    white-space: nowrap;
+    width: 732px;
+}
+#personal.page > .container > #content > #inner-content > #payments > table tr td {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 18px;
+    height: 30px;
+    color: #191919;
+    background-color: #edebeb;
+    border: 1px solid #b2b2b2;
+    border-width: 0 0 2px 2px;
+    border-spacing: 0;
+    padding: 0;
+}
+
+#personal.page > .container > #content > #inner-content > #payments > table tr td:nth-child(1) {
+    border-right: 2px solid #b2b2b2;
+    width: 155px;
+}
+#personal.page > .container > #content > #inner-content > #payments > table tr td:nth-child(2) {
+    width: 169px;
+}
+#personal.page > .container > #content > #inner-content > #payments > table tr td:nth-child(3)  {
+    width: 127px;
+}
+#personal.page > .container > #content > #inner-content > #payments > table tr td:nth-child(4) {
+    width: 111px;
+}
+#personal.page > .container > #content > #inner-content > #payments > table tr td:nth-child(5)  {
+    width: 82px;
+}
+#personal.page > .container > #content > #inner-content > #payments > table tr td:nth-child(6)  {
+    width: 125px;
+}
+#personal.page > .container > #content > #inner-content > #payments > table tr td:last-child {
+    border-left-width: 2px;
+    width: 0;
+    overflow: visible;
+}
+#personal.page > .container > #content > #inner-content > #payments > table tr:last-child td {
+    border-bottom: none;
+}
+#personal.page > .container > #content > #inner-content > #payments > table tr:nth-child(2n) td{
+    background-color: #ffffff;
+}
+#personal.page > .container > #content > #inner-content > #payments > table tr:first-child {
+    height: 19px;
+    background-color: #737373;
+    border-bottom: 2px solid #b2b2b2;
+}
+#personal.page > .container > #content > #inner-content > #payments > table tr th {
+    text-align: center;
+    border: none;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: normal;
+}
+#personal.page > .container > #content > #inner-content > #payments > h1 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #4d4d4d;
+    margin: 0 23px 0 0;
+    display: block;
+    border: none;
+    letter-spacing: 0;
+    line-height: normal;
+    padding-right: 22px;
+    background: url("../images/arrow.png") no-repeat right center;
+}
+
+#footer {
+    background-color: #3e3e3e;
+}
+#footer > .container {
+    position: relative;
+    font-size: 16px;
+    padding: 69px 0 83px;
+    text-align: center;
+}
+#footer > .container > #up-arrow {
+    position: absolute;
+    top: -33px;
+    right: 0;
+    background-image: url("../images/up-arrow.png");
+}
+#footer > .container > #up-arrow > a {
+    width: 70px;
+    height: 33px;
+    display: block;
+}
+#footer > .container, #footer > .container a {
+    color: #929292;
+}
+#footer > .container > #links {
+    font-size: 0;
+}
+#footer > .container > #links > a, #footer > .container > #links > span {
+    font-size: 21px;
+}
+#footer > .container > #links > a {
+    display: inline-block;
+    text-align: center;
+}
+#footer > .container > #links > a:hover {
+    font-weight: bold;
+}
+#footer > .container > #links > a:nth-of-type(1) {
+    width: 115px;
+}
+#footer > .container > #links > a:nth-of-type(2) {
+    width: 142px;
+}
+#footer > .container > #links > a:nth-of-type(3) {
+    width: 95px;
+}
+#footer > .container > #links > a:nth-of-type(4) {
+    width: 180px;
+}
+#footer > .container > #links > a:nth-of-type(5) {
+    width: 118px;
+}
+#footer > .container > #links > a:last-child {
+    background: url("../images/facebook.png") no-repeat left center;
+    padding-left: 20px;
+    width: 210px;
+}
+#footer > .container > p {
+    margin: 15px 0 17px;
+}
+#footer > .container > #copyright {
+    font-size: 16px;
+    letter-spacing: 0.2px;
+}
+#footer > .container > #copyright > a {
+    color: #ffffff;
+}
+
+#popups {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.19);
+    z-index: 100;
+    display: none;
+}
+#popups > #sign-in-up {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -223px;
+    margin-top: -172px;
+    background: -webkit-linear-gradient(#f6f6f6, #ebebeb);
+    background: -o-linear-gradient(#f6f6f6, #ebebeb);
+    background: -moz-linear-gradient(#f6f6f6, #ebebeb);
+    background: linear-gradient(#f6f6f6, #ebebeb);
+    box-shadow: #a3a3a3 5px 5px 5px 0;
+    border: 1px solid #d5d5d5;
+    width: 446px;
+    height: 343px
+}
+#popups > #sign-in-up > #tabs {
+    background-color: #f6f6f6;
+    font-weight: bold;
+    color: #bbb8b8;
+    height: 50px;
+    font-size: 0;
+}
+#popups > #sign-in-up > #tabs > div {
+    text-align: center;
+    width: 223px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 37px;
+}
+#popups > #sign-in-up.sign-in-active > #tabs > #sign-up-tab {
+    background-color: #d2d2d2;
+}
+#popups > #sign-in-up.sign-up-active > #tabs > #sign-in-tab {
+    background-color: #d2d2d2;
+}
+#popups > #sign-in-up > #sign-in, #popups > #sign-in-up > #sign-up, #popups > #sign-in-up > #lost-password {
+    display: none;
+}
+#popups > #sign-in-up.sign-in-active > #sign-in {
+    display: block;
+}
+#popups > #sign-in-up.sign-up-active > #sign-up {
+    display: block;
+}
+#popups > #sign-in-up > #sign-in {
+    height: 250px;
+    padding: 23px 17px 0;
+}
+#popups > #sign-in-up > #sign-in > form > input.textbox {
+    display: block;
+    font-family: alef;
+    font-size: 22px;
+    color: #d5d5d5;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    width: 342px;
+    height: 54px;
+    box-shadow: #dddddd 0 2px 5px 0 inset;
+    margin-top: 20px;
+    padding: 0 13px 0 55px;
+    outline: none;
+}
+#popups > #sign-in-up > #sign-in > form > input.textbox[type="text"] {
+    background: url("../images/textbox-man-icon.png") no-repeat 20px center #ffffff;
+}
+#popups > #sign-in-up > #sign-in > form > input.textbox[type="password"] {
+    background: url("../images/textbox-lock-icon.png") no-repeat 20px center #ffffff;
+    margin-bottom: 26px;
+}
+#popups > #sign-in-up > #sign-in > form > #lost-password-text {
+    float: right;
+    width: 203px;
+    padding-top: 19px;
+    padding-left: 14px;
+    text-align: left;
+}
+#popups > #sign-in-up > #sign-in > form > #lost-password-text > a {
+    font-size: 16px;
+    color: #9b9da0;
+    text-decoration: underline;
+}
+#popups > #sign-in-up > #sign-up {
+    height: 265px;
+    padding: 8px 12px 0 22px;
+}
+#popups > #sign-in-up > #sign-up > form input.textbox {
+    display: block;
+    font-family: alef;
+    font-size: 22px;
+    color: #d5d5d5;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    width: 342px;
+    height: 54px;
+    box-shadow: #dddddd 0 2px 5px 0 inset;
+    margin-top: 5px;
+    padding: 0 13px 0 55px;
+    outline: none;
+}
+#popups > #sign-in-up > #sign-up > form > input.textbox {
+    margin-bottom: 4px;
+    background: url("../images/textbox-letter-icon.png") no-repeat 10px center #ffffff;
+}
+#popups > #sign-in-up > #sign-up > form > #passwords {
+    width: 244px;
+    padding-left: 16px;
+    border-left: 1px solid #d2d2d2;
+    float: right;
+}
+#popups > #sign-in-up > #sign-up > form > #passwords > input.textbox {
+    width: 172px;
+}
+#popups > #sign-in-up > #sign-up > form > #passwords > input.textbox:first-child {
+    margin-top: 5px;
+    background: url("../images/textbox-lock-icon.png") no-repeat 10px center #ffffff;
+}
+#popups > #sign-in-up > #sign-up > form > #passwords > input[type="password"] + input {
+    background: url("../images/textbox-lock-icon.png") no-repeat 10px center #ffffff;
+}
+#popups > #sign-in-up > #sign-up > form > #facebook {
+    display: inline-block;
+    width: 130px;
+    height: 116px;
+    padding-right: 13px;
+    font-size: 16px;
+    padding-top: 6px;
+    line-height: 15px;
+    text-align: center;
+    color: #bababa;
+}
+#popups > #sign-in-up > #sign-up > form > #facebook > #sign-up-via {
+    color: #aeaeae;
+    display: block;
+    background: url("../images/gray-dot.png") repeat-x center center;
+    margin: 5px 3px 0;
+}
+#popups > #sign-in-up > #sign-up > form > #facebook > #sign-up-via > span {
+    display: inline-block;
+    width: 83px;
+    text-align: center;
+    margin-top: -3px;
+    background: #efefef;
+    letter-spacing: -0.7px;
+}
+#popups > #sign-in-up > #sign-up > form > #facebook img {
+    margin-top: 6px;
+    margin-right: -5px;
+    cursor: pointer;
+}
+#popups > #sign-in-up > #sign-up > form > input[type="checkbox"] {
+    float: right;
+    width: 13px;
+    height: 13px;
+    border-radius: 30px;
+    border: 1px solid #d5d5d5;
+    margin: 6px 1px 0 0;
+}
+#popups > #sign-in-up > #sign-up > form > label {
+    float: right;
+    display: inline-block;
+    padding-right: 8px;
+    padding-top: 5px;
+    width: 300px;
+    line-height: 14px;
+    color: #999999;
+    letter-spacing: -0.6px;
+}
+#popups > #sign-in-up > #sign-up > form > label > a {
+    text-decoration: underline;
+    color: #737373;
+}
+#popups > #sign-in-up > #sign-up > form > input[type="image"] {
+    margin: 14px auto 0;
+    display: block;
+    padding-top: 9px;
+}
+#popups > #sign-in-up.lost-password-active > #tabs > div {
+    visibility: hidden;
+}
+#popups > #sign-in-up.lost-password-active > #lost-password {
+    display: block;
+}
+#popups > #sign-in-up > #lost-password {
+    color: #a4a4a4;
+    padding: 20px 16px 0;
+    height: 229px;
+}
+#popups > #sign-in-up > #lost-password p {
+    margin: 0;
+}
+#popups > #sign-in-up > #lost-password > p {
+    font-size: 22px;
+    display:block;
+    padding-right: 6px;
+}
+#popups > #sign-in-up > #lost-password > form > input.textbox {
+    display: block;
+    font-family: alef;
+    font-size: 22px;
+    color: #d5d5d5;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    width: 342px;
+    height: 54px;
+    box-shadow: #dddddd 0 2px 5px 0 inset;
+    margin-top: 14px;
+    padding: 0 13px 0 55px;
+    outline: none;
+    background: url("../images/textbox-man-icon.png") no-repeat 20px center #ffffff;
+}
+#popups > #sign-in-up > #lost-password > form > p {
+    font-size: 21px;
+    color: #8e9094;
+    margin-top: 19px;
+    margin-bottom: 29px;
+    display: block;
+    text-align: center;
+    opacity: 0;
+}
+#popups > #sign-in-up > #lost-password > form > input[type="submit"] {
+    float: left;
+    background: url("../images/lost-password-button.png") no-repeat;
+    width: 195px;
+    height: 62px;
+    color: #ffffff;
+    padding-bottom: 13px;
+    font-weight: bold;
+    font-family: alef;
+    font-size: 31px;
+    border: none;
+    margin-left: 6px;
+}
+#popups > #contact {
+    background: -webkit-linear-gradient(#f6f6f6, #ebebeb);
+    background: -o-linear-gradient(#f6f6f6, #ebebeb);
+    background: -moz-linear-gradient(#f6f6f6, #ebebeb);
+    background: linear-gradient(#f6f6f6, #ebebeb);
+    box-shadow: #a3a3a3 5px 5px 5px 0;
+    border: 1px solid #d5d5d5;
+    width: 646px;
+    height: 515px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+#popups > #contact > div {
+    width: 528px;
+    height: 490px;
+    padding: 10px 59px 15px;
+}
+#popups > #contact > div > h1 {
+    margin: 5px;
+    padding: 0;
+    color: #39b54a;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+}
+#popups > #contact > div > h2 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+    border-bottom: #e6e6e6 solid 3px;
+    text-align: center;
+    color: #3c3c3c;
+    font-size: 20px;
+    font-weight: normal;
+}
+#popups > #contact > div > form > div {
+    width: 365px;
+    margin: 0 auto;
+}
+#popups > #contact > div > form > div > label {
+    font-size: 16px;
+    display: inline-block;
+    width: 77px;
+    margin-top: 9px;
+}
+#popups > #contact > div > form > div > label[for="subject"] {
+    width: 118px;
+}
+#popups > #contact > div > form > div > label[for="subject"]:last-of-type {
+    visibility: hidden;
+}
+#popups > #contact > div > form > div > input {
+    width: 261px;
+    font-size: 16px;
+    border: #b2b2b2 solid 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+    outline: none;
+    font-family: alef, arial;
+}
+#popups > #contact > div > form > div > select {
+    width: 242px !important;
+    height: 25px;
+    margin-top: 7px;
+    margin-right: -1px;
+}
+#popups > #contact > div > form > div > .customSelect {
+    width: 240px !important;
+    height: 24px;
+    background-color: #ffffff;
+}
+#popups > #contact > div > form > div .customSelectInner {
+    padding-top: 2px;
+}
+#popups > #contact > div > form > div > textarea {
+    outline: none;
+    font-size: 16px;
+    border: #b2b2b2 solid 1px;
+    width: 343px;
+    margin-top: 10px;
+    height: 140px;
+    font-family: alef, arial;
+    padding: 10px;
+}
+#popups > #contact > div > form > div > div:last-child {
+    margin-top: 17px;
+    text-align: center;
+}
+#popups > #contact > div > form > div > div:last-child > .orange-button {
+    margin: 0 auto;
+}
+#popups > #order-received {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -324px;
+    margin-top: -156px;
+    background: -webkit-linear-gradient(#f6f6f6, #ebebeb);
+    background: -o-linear-gradient(#f6f6f6, #ebebeb);
+    background: -moz-linear-gradient(#f6f6f6, #ebebeb);
+    background: linear-gradient(#f6f6f6, #ebebeb);
+    box-shadow: #a3a3a3 5px 5px 5px 0;
+    border: 1px solid #d5d5d5;
+    width: 647px;
+    height: 312px;
+    color: #3c3c3c;
+}
+#popups > #order-received > div {
+    background: url("../images/black-V.png") no-repeat;
+    width: 475px;
+    margin: 25px auto 0;
+    text-align: center;
+}
+#popups > #order-received h1, #popups > #order-received h2 {
+    margin: 0;
+    padding-top: 13px;
+    text-align: right;
+}
+#popups > #order-received h2 {
+    padding-top: 0;
+    font-weight: normal;
+    margin-top: 4px;
+}
+#popups > #order-received h2 > span {
+    font-weight: bold;
+}
+#popups > #order-received p {
+    font-size: 23px;
+    text-align: center;
+    margin: 13px 0 6px;
+}
+#popups > #order-received .green-small-button {
+    margin: 0 auto;
+    font-size: 21px;
+    width: 140px;
+    background-size: 140px;
+    font-weight: bold;
+}
+#popups > #dont-leave {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -322px;
+    margin-top: -62px;
+    background: -webkit-linear-gradient(#f6f6f6, #ebebeb);
+    background: -o-linear-gradient(#f6f6f6, #ebebeb);
+    background: -moz-linear-gradient(#f6f6f6, #ebebeb);
+    background: linear-gradient(#f6f6f6, #ebebeb);
+    box-shadow: #a3a3a3 5px 5px 5px 0;
+    border: 1px solid #d5d5d5;
+    width: 645px;
+    height: 125px;
+    color: #3c3c3c;
+    text-align: center;
+}
+#popups > #dont-leave > h1, #popups > #dont-leave > p {
+    margin: 0;
+}
+#popups > #dont-leave > p {
+    margin-bottom: 10px;
+}
+#popups > #dont-leave .gray-button {
+    margin-right: 15px;
+}
+#popups > #payment {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -302px;
+    margin-top: -185px;
+    background: -webkit-linear-gradient(#f6f6f6, #ebebeb);
+    background: -o-linear-gradient(#f6f6f6, #ebebeb);
+    background: -moz-linear-gradient(#f6f6f6, #ebebeb);
+    background: linear-gradient(#f6f6f6, #ebebeb);
+    box-shadow: #a3a3a3 5px 5px 5px 0;
+    border: 1px solid #d5d5d5;
+    width: 615px;
+    height: 400px;
+    color: #3c3c3c;
+}
+#popups > #payment > div {
+    width: 555px;
+    height: 370px;
+    padding: 15px 30px;
+}
+#popups > #payment > #payment-details-title {
+    border-bottom: 3px solid #e6e6e6;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+#popups > #payment h2 {
+    font-size: 25px;
+    font-weight: bold;
+    float: right;
+    margin: 0;
+    color: #3c3c3c;
+}
+#popups > #payment #order-num {
+    float: left;
+    display: inline-block;
+    margin-top: 8px;
+}
+#popups > #payment #order-num span {
+    font-weight: bold;
+}
+#popups > #payment #deal-type {
+    float: right;
+}
+#popups > #payment #deal-type span {
+    font-weight: bold;
+}
+#popups > #payment #creation-date {
+    float: left;
+}
+#popups > #payment > div > form {
+    display: block;
+    margin-top: 5px;
+    line-height: 50px;
+    text-align: center;
+    background: url("../images/payment-gray-arrow.png") no-repeat 70px 195px;
+}
+#popups > #payment > div > form * {
+    line-height: normal;
+}
+#popups > #payment label {
+    font-size: 22px;
+    vertical-align: middle;
+    text-align: right;
+}
+#popups > #payment select {
+    margin: 15px -1px 0 0;
+}
+#popups > #payment .customSelect {
+    background-color: #ffffff;
+}
+#popups > #payment #card-type {
+    width: 152px !important;
+}
+#popups > #payment #card-type + .customSelect {
+    width: 150px !important;
+}
+#popups > #payment label[for="card-num"] {
+    display: inline-block;
+    margin-right: 36px;
+}
+#popups > #payment #card-num {
+    width: 140px;
+}
+#popups > #payment #expiration-year, #popups > #payment #expiration-month {
+    width: 87px !important;
+}
+#popups > #payment #expiration-year + .customSelect, #popups > #payment #expiration-month + .customSelect {
+    width: 85px !important;
+}
+#popups > #payment label[for="cvc"] {
+    margin-right: 25px;
+}
+#popups > #payment #cvc {
+    width: 50px;
+}
+#popups > #payment label[for="num-of-payments"] {
+    margin-right: 38px;
+}
+#popups > #payment #num-of-payments {
+    width: 62px !important;
+}
+#popups > #payment #num-of-payments + .customSelect {
+    width: 60px !important;
+}
+#popups > #payment label[for="owners-id"] {
+    display: inline-block;
+    font-size: 11px;
+    vertical-align: text-top;
+    margin-top: -5px;
+}
+#popups > #payment label[for="owners-id"] > span {
+    font-size: 22px;
+    display: inline-block;
+    margin-bottom: -5px;
+}
+#popups > #payment #owners-id {
+    width: 150px;
+}
+#popups > #payment label[for="promo-code"] {
+    text-decoration: underline;
+    font-size: 16px;
+    margin-right: 15px;
+    width: 103px;
+    cursor: pointer;
+    display: inline-block;
+}
+#popups > #payment #promo-code {
+    width: 118px;
+    opacity: 0;
+    visibility: hidden;
+}
+#popups > #payment p {
+    text-align: center;
+    font-size: 20px;
+    margin: 0 0 20px;
+}
+#popups > #payment p span {
+    font-size: 36px;
+    font-weight: bold;
+    color: #39b54a;
+}
+#popups > #payment p span span {
+    font-size: 22px;
+}
+#popups > #payment p #maam {
+    font-size: 13px;
+    font-weight: normal;
+    color: #3c3c3c;
+}
+#popups > #payment .orange-big-button span {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 22px;
+}
+#popups > #payment button {
+    background: none;
+    border: none;
+    outline: none;
+    line-height: 23px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: alef, arial;
+}
+
+::-webkit-input-placeholder {
+    color: #d5d5d5;
+}
+:-moz-placeholder {
+    color: #d5d5d5;
+}
+::-moz-placeholder {
+    color: #d5d5d5;
+}
+:-ms-input-placeholder {
+    color: #d5d5d5;
+}
+
+.lavalamp-object {
+    border-bottom: 9px solid #39b54a;
+    height: 89px !important;
+}
+.clear {
+    clear:both;
+}
+.bold {
+    font-weight: bold;
+}
+.customSelect {
+    width: 181px;
+    height: 24px;
+    border: #b2b2b2 solid 1px;
+    background: url("../images/select-arrow-bg.png") no-repeat right center;
+}
+.customSelectInner {
+    white-space: nowrap;
+    font-size: 15px;
+    padding-right: 25px;
+    text-align: center;
+    width: auto !important;
+    height: 100%;
+    display: block !important;
+}
+
+input[type=radio]{
+	display: none;
+}
+
+input[type=radio] + label:before, input[type=checkbox] + label:before {
+    content: "";
+	width: 22px;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	display: inline-block;
+	border: 2px solid #dee6e0;
+	color: #39b54a;
+	position: relative;
+	top: 6px;
+	margin-left: 10px;
+	font-weight: bold;
+}
+
+input[type=radio]:checked + label:before,input[type=checkbox]:checked + label:before {
+    content: "\2713";
+	width: 22px;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	display: inline-block;
+	border: 2px solid #39b54a;
+	color: #39b54a;
+	position: relative;
+	top: 0;
+	margin-left: 10px;
+	font-weight: bold;
+}
+#personal.page > .container > #content > #inner-content > #orders, #personal.page > .container > #content > #inner-content > #payments  {
+max-height:600px;
+overflow-y:scroll;
+overflow-x: hidden;
+direction:ltr;
+padding-left:88px;
+position:relative;
+}
+#personal.page > .container > #content > #inner-content > #orders table, #personal.page > .container > #content > #inner-content > #payments table
+{
+direction:rtl;
+
+}
+#personal.page > .container > #content > #inner-content > #orders table .green-button, #personal.page > .container > #content > #inner-content > #payments table .green-button
+{
+position:absolute;
+left:5px;
+
+}
+#accountAddMail {
+display:none;
+}
+#account-settings .gray-button {
+text-align: center;
+font-weight: bold;
+font-size: 12px;
+color: #ffffff;
+display: inline-block;
+width: 86px;
+height: 28px;
+
+cursor: pointer;
+padding-top: 5px;
+}
+#accountChangePassword {
+display:none;
+}
+.plusBox .plus {
+	float:right;
+	margin-left: 2px;
+}
+.plusBox {
+margin-right:44px;
+float:right;
+}
+.item-unabled, .item-unabled .item-title {
+cursor:not-allowed !important;
+}
+.item-no-show {
+display:none;
+}
+input[type=checkbox] {
+display:none;
+}
+select:disabled + .customSelect {
+background-color:gray;
+}
+table.mainProfitTable tr th{
+color:white;
+font-family:Ariel;
+font-size: 13px;
+font-weight: 600;
+}
+#profit .accordion {
+margin-top:50px;
+display:none;
+}
+#profit {
+width:880px;
+margin-left:90px;
+position:relative;
+}
+table.mainProfitTable {
+
+	float:none !important;
+}
+table.mainProfitTable tr td .green-button {
+position:absolute;
+left:5px;
+}
+#profit .bankContainer {
+float: right;
+width: 100%;
+margin-bottom:20px;
+}
+#profit .bankContainer h2 {
+width: 100%;
+margin:4px;
+color:black;
+text-align:right;
+
+}
+.tableRight {
+	float:right;
+	width:60%;
+}
+.tableLeft {
+float:left;
+width:35%
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

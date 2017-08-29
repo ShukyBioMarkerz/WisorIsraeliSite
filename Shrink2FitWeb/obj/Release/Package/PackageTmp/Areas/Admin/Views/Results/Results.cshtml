@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Results";
+}
+@section JS{
+    <script src="~/Areas/Admin/js/Results.js"></script>
+    <script src="~/Areas/Admin/assets/plugins/plupload-2.1.2/js/plupload.full.min.js"></script>
+}
+<div id='wrap'>
+		<div id="page-heading">
+			
+			<div class="options">
+             <div class="btn-toolbar">
+                 <button class="btn btn-default" id="daterangepicker2">
+                     <i class="fa fa-calendar-o"></i> 
+                     <span class="hidden-xs hidden-sm">December 9, 2013 - January 8, 2014</span> <b class="caret"></b>
+                 </button>
+                 <div class="btn-group hidden-xs">
+                     <a href='#' class="btn btn-default dropdown-toggle" data-toggle='dropdown'><i class="fa fa-cloud-download"></i><span class="hidden-xs hidden-sm hidden-md"> Export</span> <span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                         <li><a href="#">Text File (*.txt)</a></li>
+                         <li><a href="#">Excel File (*.xlsx)</a></li>
+                         <li><a href="#">CSV File (*.csv)</a></li>
+                         <li><a href="#">PDF File (*.pdf)</a></li>
+                     </ul>
+                 </div>
+                 
+             </div>
+         </div>
+            <h1> Results /more info</h1>
+            
+            <ol class="breadcrumb">
+                <li class='active'><a href="index.htm">Home</a> > Results</li>
+            </ol>
+			
+		</div>
+		<div class="container">
+			<div class="row" style="margin-bottom:20px;">
+				<div class="col-md-3">
+				  <table style="width:100%;border:1px solid black;margin:3px;">
+					  <tr>
+                          <th style="">Insert Order ID</th>
+                          <th>
+                              <input id="orderid" type="text" style="width:100%;" value="@(ViewBag.OrderID != null ? ViewBag.OrderID : "")"/>
+
+
+
+                          </th>
+                          <th style="padding-left: 10px; width: 45px;">
+                              <button id="search-result" type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                          </th>
+					  </tr>        
+				  </table>
+        		</div>
+				
+				<div class="col-md-6">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6" id="upload-file"><button id="pickfiles"  type="button" class="btn btn-primary"><i class="fa fa-search"></i></button><button id="upload" onclick="return false;" >Upload file</button></div>
+				</div>
+				<div class="col-md-3">
+					<form class="form-inline" action="#" style="width:100%;">
+				     <div class="input-group">
+				        <input type="text" placeholder="Search messages..." class="form-control">
+				        <div class="input-group-btn">
+				        	<button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+				        </div>
+				     </div>
+				  </form>
+				</div>
+				
+        	</div>
+        <div class="row">
+				<div class="col-md-12">
+					<div class="panel-group panel-info" id="accordion">
+						 @if (ViewBag.OrderID != null)
+                        {
+                            Html.RenderAction("ResultList",new {id  = ViewBag.OrderID});
+                        }		
+						
+					</div>
+				</div>
+			</div>
+			
+
+		</div> <!-- container -->
+	</div> <!--wrap -->

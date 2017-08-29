@@ -1,0 +1,37 @@
+﻿
+
+<div id="contact" style="display: none;">
+                <div>
+                    <h1>שאלות? הערות?</h1>
+                    <h2>נא מלא את פרטיך ונחזור אליך במהירות</h2>
+
+                    <form id="contact-message" action="/" method="post">
+                        <div id="form-div">
+                            <label for="fullname">שם מלא</label>
+                            <input type="text" id="fullname">
+
+                            <label for="email">מייל</label>
+                            <input type="text" id="email"><span style="display:none" class="invalid-input">מייל לא תקין</span>
+
+                            <label id="subject-label">נושא הפנייה</label>
+                            <select id="subject" >
+                                @foreach (Shrink2FitWeb.Common.MessageSubjects entry in (Shrink2FitWeb.Common.MessageSubjects[])Enum.GetValues(typeof(Shrink2FitWeb.Common.MessageSubjects)))
+                                {
+                                    <option value="@(Shrink2FitWeb.Common.EnumExtensions.ToDescription(entry))">@(Shrink2FitWeb.Common.EnumExtensions.ToDescription(entry))</option>
+                                }
+                                
+                            </select><br>
+
+                            @*<label for="subject">נושא הפנייה</label>
+                            <select id="sub-subject" class="hasCustomSelect" style="-webkit-appearance: menulist-button; width: 242px; position: absolute; opacity: 0; height: 26px; font-size: 16px;">
+                                <option>תת נושא</option>
+                            </select><span class="customSelect" style="display: inline-block;"><span class="customSelectInner" style="width: 240px; display: inline-block;">תת נושא</span></span>*@
+
+                            <textarea id="message" placeholder="פרט את נושא הפנייה כאן..."></textarea>
+                            <div>
+                                <div class="orange-button" id="submit-message">שליחה</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>

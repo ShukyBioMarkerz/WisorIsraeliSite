@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Offers";
+}
+@section JS{
+    <script src="~/Areas/Admin/js/offers.js"></script>
+}
+
+<div id='wrap'>
+		<div id="page-heading">
+			
+			<div class="options">
+             <div class="btn-toolbar">
+                 <button class="btn btn-default" id="daterangepicker2">
+                     <i class="fa fa-calendar-o"></i> 
+                     <span class="hidden-xs hidden-sm">December 9, 2013 - January 8, 2014</span> <b class="caret"></b>
+                 </button>
+                 <div class="btn-group hidden-xs">
+                     <a href='#' class="btn btn-default dropdown-toggle" data-toggle='dropdown'><i class="fa fa-cloud-download"></i><span class="hidden-xs hidden-sm hidden-md"> Export</span> <span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                         <li><a href="#">Text File (*.txt)</a></li>
+                         <li><a href="#">Excel File (*.xlsx)</a></li>
+                         <li><a href="#">CSV File (*.csv)</a></li>
+                         <li><a href="#">PDF File (*.pdf)</a></li>
+                     </ul>
+                 </div>
+                 
+             </div>
+         </div>
+            <h1>Price Offers /more info</h1>
+            
+            <ol class="breadcrumb">
+                <li class='active'><a href="index.htm">Home</a> > Price Offers</li>
+            </ol>
+			
+		</div>
+		<div class="container">
+			<div class="row" style="margin-bottom:20px;">
+				<div class="col-md-3">
+				  <table style="width:100%;border:1px solid black;margin:3px;">
+					  <tr>
+					  	<th style="">Insert Order ID</th>
+					  	<th><input id="orderid" type="text" style="width:100%;" value="@(ViewBag.OrderID != null ? ViewBag.OrderID : "")"/>
+                              
+                                  
+                             
+                          </th>
+                          <th style="padding-left: 10px;width: 45px;"><button id="search-offer" type="button" class="btn btn-primary"><i class="fa fa-search"></i></button></th>
+					  </tr>        
+				  </table>
+                    <div class="input-group-btn">
+				        	
+				        </div>
+        		</div>
+				
+				<div class="col-md-6">
+				</div>
+				<div class="col-md-3">
+					<form class="form-inline" action="#" style="width:100%;">
+				     <div class="input-group">
+				        <input type="text" placeholder="Search messages..." class="form-control">
+				        <div class="input-group-btn">
+				        	<button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+				        </div>
+				     </div>
+				  </form>
+				</div>
+				
+        	</div>
+        <div class="row">
+				<div class="col-md-12">
+					<div class="panel-group panel-info" id="accordion">
+                        @if (ViewBag.OrderID != null)
+                        {
+                            Html.RenderAction("offersList",new {id  = ViewBag.OrderID});
+                        }
+						
+				    </div>
+			    </div>
+			
+
+		</div> <!-- container -->
+	</div> <!--wrap -->
+</div>
