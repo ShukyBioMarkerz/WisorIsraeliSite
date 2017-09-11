@@ -30,7 +30,7 @@
                                 <li class="@(ViewBag.CurrentTab == "index" ||  ViewBag.CurrentTab == "NewOrder"? "current-tab" : null)" id="side-nav-accordion" ><a href="/Personal/NewOrder" >יצירת הזמנה חדשה</a></li>
                                 <li class="@(ViewBag.CurrentTab == "Profit" ? "current-tab" : null)" id="side-nav-profit" ><a href="/Personal/Profit" >כמה חסכתי?</a></li>
                                 <li class="@(ViewBag.CurrentTab == "Orders" ? "current-tab" : null)" id="side-nav-orders"><a href="/Personal/Orders">פירוט הזמנות</a></li>
-                                <li class="@(ViewBag.CurrentTab == "Payments" ? "current-tab" : null)" id="side-nav-payments" ><a href="/Personal/Payments" >פירוט תשלומים</a></li>
+                                @*<li class="@(ViewBag.CurrentTab == "Payments" ? "current-tab" : null)" id="side-nav-payments" ><a href="/Personal/Payments" >פירוט תשלומים</a></li>*@
                                 <li class="@(ViewBag.CurrentTab == "Settings" ? "current-tab" : null)" id="side-nav-account-settings" ><a href="/Personal/Settings" >הגדרות חשבון</a></li>
                                 <li id="side-nav-logout"><a href="/Personal/LogOut" >התנתקות</a></li>
                             </ul>
@@ -51,10 +51,10 @@
                             <span>3</span>
                             כמה חסכתי?
                         </div>
-                        <div class="step">
+                        @*<div class="step">
                             <span>4</span>
                             ביצוע תשלום
-                        </div>
+                        </div>*@
                         <div class="step">
                             קבלת הרכב<br />
                             <span>מכווץ</span>
