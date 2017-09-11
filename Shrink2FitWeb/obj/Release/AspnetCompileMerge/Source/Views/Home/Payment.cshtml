@@ -1,93 +1,17 @@
-﻿            <div id="payment">
+﻿  <script type="text/javascript">
+
+  	$(window).load(function () {
+  	    trackEvent("paymentPopup_view");
+  	});
+
+  </script>
+            <div id="payment" style="width: 600px; height: 400px">
                 <div>
-                    <div id="payment-details-title">
-                        <h2>הזן פרטי אמצעי תשלום</h2>
-                        <div id="order-num">מספר הזמנה: <span>@ViewBag.Label</span></div>
-                        <br class="clear" />
-                    </div>
-                    <div id="deal-type">סוג עסקה: <span>מחזור כולל בדיקת כדאיות</span></div>
-                    <div id="creation-date">תאריך יצירה: 12/12/2013</div>
-                    <br class="clear" />
-    
-                    <form action="#" method="post">
-						
-                        <label for="card-type">סוג כרטיס</label>
-                        <select id="card-type" name="card-type">
-                        	
-                            <option>ויזה כאל</option>
-                            <option>מאסטרכארט</option>
-                        </select>
-                        <script type="text/javascript">
-                        	document.getElementById("card-type").selectedIndex = -1;
-                        </script>
-                        
-                        <label for="card-num">מספר כרטיס</label>
-                        <input type="text" id="card-num" name="card-num" /><br />
-    
-                        <label for="expiration-year">תוקף</label>
-                        <select id="expiration-year" name="expiration-year">
-                            <option disabled="disabled" selected="selected">שנה</option>
-                            <option>2015</option>
-                            <option>2016</option>
-                            <option>2017</option>
-                            <option>2018</option>
-                            <option>2019</option>
-                        </select><select id="expiration-month" name="expiration-month">
-                            <option disabled="disabled" selected="selected">חודש</option>
-                            <option>01</option>
-                            <option>02</option>
-                            <option>03</option>
-                            <option>04</option>
-                            <option>05</option>
-                            <option>06</option>
-                            <option>07</option>
-                            <option>08</option>
-                            <option>09</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                        </select>
-    
-                        <label for="cvc">CVC</label>
-                        <input type="text" id="cvc" name="cvc" />
-    
-                        <label for="num-of-payments">תשלומים</label>
-                        <select id="num-of-payments" name="num-of-payments">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                        </select><br />
-    
-                        <label for="owners-id">
-                            <span>ת"ז בעל כרטיס</span><br />
-                            כולל ספרת ביקורת
-                        </label>
-                        <input type="text" id="owners-id" name="owners-id" />
-    
-                        <label for="promo-code">הזן קוד פרומו</label>
-                        <input type="text" id="promo-code" name="promo-code" /><br />
-                        
-                        <p>סה"כ לתשלום עבור קבלת הרכב מכווץ <span>699.00<span> ₪</span></span> <span id="maam">כולל מע"מ</span></p>
-    						
-                       
-                    </form>
 
-					<div style="align-content:center;position: relative;left: -30%;top:  25%;">
-					 <button onclick="doPayment()" >
-                            <div class="orange-big-button">
-                                <!--בצע תשלום וחסוך<br />
-                                <span>400,000 ₪</span>-->
-								שלח נתונים לבדיקה
-                            </div>
-                        </button>
-					</div>
 
-					<div id="Sent" style="font-size:1.5em; color: green; align-content:center;position: relative;left: -30%;top:  25%; visibility:hidden;">
-						הנתונים נשלחו בהצלחה
-					</div>
+                    <iframe src="@ViewBag.PaymentIframeUrl" style="width: 550px; height: 450px; border-width: 0; padding-top: 40px">
+                    </iframe>
+
 
                 </div>
             </div>

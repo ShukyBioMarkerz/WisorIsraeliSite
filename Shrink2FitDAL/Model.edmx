@@ -4,149 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="ModelStoreContainer">
-          <EntitySet Name="BankOfIsraelInterestRates" EntityType="Model.Store.BankOfIsraelInterestRates" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="BankOfIsraelInterestTypes" EntityType="Model.Store.BankOfIsraelInterestTypes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ChangePreferences" EntityType="Model.Store.ChangePreferences" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CPITable" EntityType="Model.Store.CPITable" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Currencies" EntityType="Model.Store.Currencies" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="DealTypes" EntityType="Model.Store.DealTypes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Executions" EntityType="Model.Store.Executions" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ExecutionStatus" EntityType="Model.Store.ExecutionStatus" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="IndexTypes" EntityType="Model.Store.IndexTypes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Invoices" EntityType="Model.Store.Invoices" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ListBanks" EntityType="Model.Store.ListBanks" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ListedTracks" EntityType="Model.Store.ListedTracks" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="MailTemplates" EntityType="Model.Store.MailTemplates" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ObligationOrFutures" EntityType="Model.Store.ObligationOrFutures" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="OffersOrChecks" EntityType="Model.Store.OffersOrChecks" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="OrderApprovingBanks" EntityType="Model.Store.OrderApprovingBanks" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Orders" EntityType="Model.Store.Orders" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="OrderStatus" EntityType="Model.Store.OrderStatus" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="RelationshipTypes" EntityType="Model.Store.RelationshipTypes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ResultEntries" EntityType="Model.Store.ResultEntries" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Results" EntityType="Model.Store.Results" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ResultTracks" EntityType="Model.Store.ResultTracks" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Savings" EntityType="Model.Store.Savings" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="SavingsTypes" EntityType="Model.Store.SavingsTypes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TrackInterestRates" EntityType="Model.Store.TrackInterestRates" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Tracks" EntityType="Model.Store.Tracks" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Users" EntityType="Model.Store.Users" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="UserStatus" EntityType="Model.Store.UserStatus" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_BankOfIsraelInterestRates_BankOfIsraelInterestTypes" Association="Model.Store.FK_BankOfIsraelInterestRates_BankOfIsraelInterestTypes">
-            <End Role="BankOfIsraelInterestTypes" EntitySet="BankOfIsraelInterestTypes" />
-            <End Role="BankOfIsraelInterestRates" EntitySet="BankOfIsraelInterestRates" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChangePreferences_Orders" Association="Model.Store.FK_ChangePreferences_Orders">
-            <End Role="Orders" EntitySet="Orders" />
-            <End Role="ChangePreferences" EntitySet="ChangePreferences" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CPITable_IndexTypes" Association="Model.Store.FK_CPITable_IndexTypes">
-            <End Role="IndexTypes" EntitySet="IndexTypes" />
-            <End Role="CPITable" EntitySet="CPITable" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Executions_ExecutionStatus" Association="Model.Store.FK_Executions_ExecutionStatus">
-            <End Role="ExecutionStatus" EntitySet="ExecutionStatus" />
-            <End Role="Executions" EntitySet="Executions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Executions_Orders" Association="Model.Store.FK_Executions_Orders">
-            <End Role="Orders" EntitySet="Orders" />
-            <End Role="Executions" EntitySet="Executions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Invoices_Currencies" Association="Model.Store.FK_Invoices_Currencies">
-            <End Role="Currencies" EntitySet="Currencies" />
-            <End Role="Invoices" EntitySet="Invoices" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Invoices_Orders" Association="Model.Store.FK_Invoices_Orders">
-            <End Role="Orders" EntitySet="Orders" />
-            <End Role="Invoices" EntitySet="Invoices" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ObligationFutures_Orders" Association="Model.Store.FK_ObligationFutures_Orders">
-            <End Role="Orders" EntitySet="Orders" />
-            <End Role="ObligationOrFutures" EntitySet="ObligationOrFutures" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrderApprovingBanks_ListBanks" Association="Model.Store.FK_OrderApprovingBanks_ListBanks">
-            <End Role="ListBanks" EntitySet="ListBanks" />
-            <End Role="OrderApprovingBanks" EntitySet="OrderApprovingBanks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrderApprovingBanks_Orders" Association="Model.Store.FK_OrderApprovingBanks_Orders">
-            <End Role="Orders" EntitySet="Orders" />
-            <End Role="OrderApprovingBanks" EntitySet="OrderApprovingBanks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Orders_DealTypes" Association="Model.Store.FK_Orders_DealTypes">
-            <End Role="DealTypes" EntitySet="DealTypes" />
-            <End Role="Orders" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Orders_ListBanks" Association="Model.Store.FK_Orders_ListBanks">
-            <End Role="ListBanks" EntitySet="ListBanks" />
-            <End Role="Orders" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Orders_ListBanks1" Association="Model.Store.FK_Orders_ListBanks1">
-            <End Role="ListBanks" EntitySet="ListBanks" />
-            <End Role="Orders" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Orders_OrderStatus" Association="Model.Store.FK_Orders_OrderStatus">
-            <End Role="OrderStatus" EntitySet="OrderStatus" />
-            <End Role="Orders" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Orders_RelationshipTypes" Association="Model.Store.FK_Orders_RelationshipTypes">
-            <End Role="RelationshipTypes" EntitySet="RelationshipTypes" />
-            <End Role="Orders" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Orders_Users" Association="Model.Store.FK_Orders_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Orders" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RefinanceCheckForOrders_Orders" Association="Model.Store.FK_RefinanceCheckForOrders_Orders">
-            <End Role="Orders" EntitySet="Orders" />
-            <End Role="OffersOrChecks" EntitySet="OffersOrChecks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ResultEntries_Orders" Association="Model.Store.FK_ResultEntries_Orders">
-            <End Role="Orders" EntitySet="Orders" />
-            <End Role="ResultEntries" EntitySet="ResultEntries" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Results_Executions" Association="Model.Store.FK_Results_Executions">
-            <End Role="Executions" EntitySet="Executions" />
-            <End Role="Results" EntitySet="Results" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ResultTracks_ListedTracks" Association="Model.Store.FK_ResultTracks_ListedTracks">
-            <End Role="ListedTracks" EntitySet="ListedTracks" />
-            <End Role="ResultTracks" EntitySet="ResultTracks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ResultTracks_ResultEntries" Association="Model.Store.FK_ResultTracks_ResultEntries">
-            <End Role="ResultEntries" EntitySet="ResultEntries" />
-            <End Role="ResultTracks" EntitySet="ResultTracks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Savings_Orders" Association="Model.Store.FK_Savings_Orders">
-            <End Role="Orders" EntitySet="Orders" />
-            <End Role="Savings" EntitySet="Savings" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Savings_SavingsTypes" Association="Model.Store.FK_Savings_SavingsTypes">
-            <End Role="SavingsTypes" EntitySet="SavingsTypes" />
-            <End Role="Savings" EntitySet="Savings" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TrackInterestRates_ListBanks" Association="Model.Store.FK_TrackInterestRates_ListBanks">
-            <End Role="ListBanks" EntitySet="ListBanks" />
-            <End Role="TrackInterestRates" EntitySet="TrackInterestRates" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TrackInterestRates_ListedTracks" Association="Model.Store.FK_TrackInterestRates_ListedTracks">
-            <End Role="ListedTracks" EntitySet="ListedTracks" />
-            <End Role="TrackInterestRates" EntitySet="TrackInterestRates" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Tracks_ListedTracks" Association="Model.Store.FK_Tracks_ListedTracks">
-            <End Role="ListedTracks" EntitySet="ListedTracks" />
-            <End Role="Tracks" EntitySet="Tracks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Tracks_OffersOrChecks" Association="Model.Store.FK_Tracks_OffersOrChecks">
-            <End Role="OffersOrChecks" EntitySet="OffersOrChecks" />
-            <End Role="Tracks" EntitySet="Tracks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Users_UserStatus" Association="Model.Store.FK_Users_UserStatus">
-            <End Role="UserStatus" EntitySet="UserStatus" />
-            <End Role="Users" EntitySet="Users" />
-          </AssociationSet>
-        </EntityContainer>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BankOfIsraelInterestRates">
           <Key>
             <PropertyRef Name="Year" />
@@ -155,21 +13,21 @@
           </Key>
           <Property Name="Year" Type="int" Nullable="false" />
           <Property Name="Month" Type="int" Nullable="false" />
-          <Property Name="Value" Type="decimal" Nullable="false" />
+          <Property Name="Value" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="BOIIndexType" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="BankOfIsraelInterestTypes">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="BOIIndexType" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BOIIndexType" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="ChangePreferences">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="NewPredictedPayment" Type="int" />
           <Property Name="TimeOfChange" Type="int" />
@@ -183,37 +41,37 @@
           </Key>
           <Property Name="Year" Type="int" Nullable="false" />
           <Property Name="BaseYear" Type="int" Nullable="false" />
-          <Property Name="Multiplier" Type="decimal" Nullable="false" />
+          <Property Name="Multiplier" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="Month" Type="int" Nullable="false" />
-          <Property Name="Value" Type="decimal" Nullable="false" />
+          <Property Name="Value" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="IndexType" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Currencies">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="CurrencySign" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="CurrencyName" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CurrencySign" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CurrencyName" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="DealTypes">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="DealType" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DealType" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="Executions">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="CreatedOn" Type="date" Nullable="false" />
           <Property Name="InNewInstance" Type="bit" Nullable="false" />
           <Property Name="InstanceCreatedOn" Type="date" Nullable="false" />
-          <Property Name="InstanceType" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="InstanceID" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="InstanceType" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="InstanceID" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="ExecutionStatus" Type="int" Nullable="false" />
           <Property Name="DateSoftwareLaunch" Type="datetime" Nullable="false" />
           <Property Name="CalculationStartedOn" Type="datetime" Nullable="false" />
@@ -221,31 +79,31 @@
           <Property Name="DateSoftwareClosed" Type="datetime" />
           <Property Name="DateInstanceClosed" Type="datetime" />
           <Property Name="SoftwareRunNumber" Type="int" Nullable="false" />
-          <Property Name="VMCostPerHour" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="VMCostPerHour" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="ExecutionStatus">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="IndexTypes">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="IndexType" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IndexType" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="Invoices">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="IsBilling" Type="bit" Nullable="false" />
           <Property Name="CreatedOn" Type="date" Nullable="false" />
-          <Property Name="Amount" Type="decimal" Scale="2" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
           <Property Name="NumberOfPayments" Type="int" Nullable="false" />
           <Property Name="CurrencyID" Type="int" Nullable="false" />
           <Property Name="Link" Type="nvarchar" MaxLength="500" />
@@ -254,9 +112,9 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="BankNumber" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="PrimaryOption" Type="bit" Nullable="false" />
           <Property Name="Available" Type="bit" Nullable="false" />
         </EntityType>
@@ -264,8 +122,8 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Inflated" Type="bit" Nullable="false" />
           <Property Name="MinTimeMonths" Type="int" Nullable="false" />
           <Property Name="MaxTimeMonth" Type="int" Nullable="false" />
@@ -275,7 +133,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Subject" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" />
           <Property Name="MultiLine" Type="nvarchar(max)" />
@@ -284,7 +142,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="Type" Type="int" Nullable="false" />
           <Property Name="Amount" Type="int" Nullable="false" />
@@ -295,7 +153,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Type" Type="int" Nullable="false" />
           <Property Name="ApprovingBank" Type="int" />
           <Property Name="OrderID" Type="int" Nullable="false" />
@@ -312,8 +170,8 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Label" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Label" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="CreatedOn" Type="datetime" Nullable="false" />
@@ -339,27 +197,29 @@
           <Property Name="EntranceMonth" Type="int" />
           <Property Name="EntranceYear" Type="int" />
           <Property Name="CurrentRent" Type="int" />
-          <Property Name="InitialCalculatedTotal" Type="decimal" />
+          <Property Name="InitialCalculatedTotal" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="PlanningValue" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="StabilityValue" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="OrderStatus">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="RelationshipTypes">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="RelationsName" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RelationsName" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="ResultEntries">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ExecutionID" Type="int" Nullable="false" />
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="CreatedOn" Type="datetime" />
@@ -368,7 +228,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ExecutionID" Type="int" Nullable="false" />
           <Property Name="CreatedOn" Type="datetime" Nullable="false" />
           <Property Name="RefinancePoint" Type="int" Nullable="false" />
@@ -381,13 +241,13 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ResultEntryID" Type="int" Nullable="false" />
           <Property Name="Amount" Type="int" Nullable="false" />
           <Property Name="TrackType" Type="int" Nullable="false" />
           <Property Name="Time" Type="int" Nullable="false" />
           <Property Name="Inflation" Type="bit" Nullable="false" />
-          <Property Name="Rate" Type="decimal" Nullable="false" Scale="4" />
+          <Property Name="Rate" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="PMT" Type="int" Nullable="false" />
           <Property Name="TotalPay" Type="int" Nullable="false" />
         </EntityType>
@@ -395,19 +255,19 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="AmountSaved" Type="int" Nullable="false" />
           <Property Name="SavingsType" Type="int" Nullable="false" />
-          <Property Name="Yield" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="Yield" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Liquidity" Type="bit" />
         </EntityType>
         <EntityType Name="SavingsTypes">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="SavingTypeName" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SavingTypeName" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="TrackInterestRates">
           <Key>
@@ -415,16 +275,16 @@
             <PropertyRef Name="TrackID" />
             <PropertyRef Name="Period" />
           </Key>
-          <Property Name="BankID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BankID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TrackID" Type="int" Nullable="false" />
           <Property Name="Period" Type="int" Nullable="false" />
-          <Property Name="Rate" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="Rate" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="Tracks">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OfferOrCheckID" Type="int" Nullable="false" />
           <Property Name="YearTaken" Type="int" />
           <Property Name="MonthTaken" Type="int" />
@@ -432,34 +292,36 @@
           <Property Name="TrackType" Type="int" Nullable="false" />
           <Property Name="Time" Type="int" Nullable="false" />
           <Property Name="Inflation" Type="bit" Nullable="false" />
-          <Property Name="Rate" Type="decimal" Scale="4" />
+          <Property Name="Rate" Type="decimal" Precision="18" Scale="4" />
           <Property Name="PMT" Type="int" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CreatedOn" Type="datetime" Nullable="false" />
-          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="500" />
-          <Property Name="SecondaryEmail" Type="nvarchar" MaxLength="500" />
+          <Property Name="Email" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="LastLogin" Type="datetime" />
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="Role" Type="int" Nullable="false" />
           <Property Name="FacebookID" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="TempID" Type="nvarchar" MaxLength="500" />
+          <Property Name="SecondaryEmail" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="UserStatus">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_BankOfIsraelInterestRates_BankOfIsraelInterestTypes">
-          <End Role="BankOfIsraelInterestTypes" Type="Model.Store.BankOfIsraelInterestTypes" Multiplicity="1" />
-          <End Role="BankOfIsraelInterestRates" Type="Model.Store.BankOfIsraelInterestRates" Multiplicity="*" />
+          <End Role="BankOfIsraelInterestTypes" Type="Self.BankOfIsraelInterestTypes" Multiplicity="1" />
+          <End Role="BankOfIsraelInterestRates" Type="Self.BankOfIsraelInterestRates" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BankOfIsraelInterestTypes">
               <PropertyRef Name="ID" />
@@ -470,8 +332,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ChangePreferences_Orders">
-          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="1" />
-          <End Role="ChangePreferences" Type="Model.Store.ChangePreferences" Multiplicity="*" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="ChangePreferences" Type="Self.ChangePreferences" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
               <PropertyRef Name="ID" />
@@ -482,8 +344,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CPITable_IndexTypes">
-          <End Role="IndexTypes" Type="Model.Store.IndexTypes" Multiplicity="1" />
-          <End Role="CPITable" Type="Model.Store.CPITable" Multiplicity="*" />
+          <End Role="IndexTypes" Type="Self.IndexTypes" Multiplicity="1" />
+          <End Role="CPITable" Type="Self.CPITable" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="IndexTypes">
               <PropertyRef Name="ID" />
@@ -494,8 +356,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Executions_ExecutionStatus">
-          <End Role="ExecutionStatus" Type="Model.Store.ExecutionStatus" Multiplicity="1" />
-          <End Role="Executions" Type="Model.Store.Executions" Multiplicity="*" />
+          <End Role="ExecutionStatus" Type="Self.ExecutionStatus" Multiplicity="1" />
+          <End Role="Executions" Type="Self.Executions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ExecutionStatus">
               <PropertyRef Name="ID" />
@@ -506,8 +368,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Executions_Orders">
-          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="1" />
-          <End Role="Executions" Type="Model.Store.Executions" Multiplicity="*" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Executions" Type="Self.Executions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
               <PropertyRef Name="ID" />
@@ -518,8 +380,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Invoices_Currencies">
-          <End Role="Currencies" Type="Model.Store.Currencies" Multiplicity="1" />
-          <End Role="Invoices" Type="Model.Store.Invoices" Multiplicity="*" />
+          <End Role="Currencies" Type="Self.Currencies" Multiplicity="1" />
+          <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Currencies">
               <PropertyRef Name="ID" />
@@ -530,8 +392,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Invoices_Orders">
-          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="1" />
-          <End Role="Invoices" Type="Model.Store.Invoices" Multiplicity="*" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
               <PropertyRef Name="ID" />
@@ -542,8 +404,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ObligationFutures_Orders">
-          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="1" />
-          <End Role="ObligationOrFutures" Type="Model.Store.ObligationOrFutures" Multiplicity="*" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="ObligationOrFutures" Type="Self.ObligationOrFutures" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
               <PropertyRef Name="ID" />
@@ -554,8 +416,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderApprovingBanks_ListBanks">
-          <End Role="ListBanks" Type="Model.Store.ListBanks" Multiplicity="1" />
-          <End Role="OrderApprovingBanks" Type="Model.Store.OrderApprovingBanks" Multiplicity="*" />
+          <End Role="ListBanks" Type="Self.ListBanks" Multiplicity="1" />
+          <End Role="OrderApprovingBanks" Type="Self.OrderApprovingBanks" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ListBanks">
               <PropertyRef Name="ID" />
@@ -566,8 +428,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderApprovingBanks_Orders">
-          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="1" />
-          <End Role="OrderApprovingBanks" Type="Model.Store.OrderApprovingBanks" Multiplicity="*" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="OrderApprovingBanks" Type="Self.OrderApprovingBanks" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
               <PropertyRef Name="ID" />
@@ -578,8 +440,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_DealTypes">
-          <End Role="DealTypes" Type="Model.Store.DealTypes" Multiplicity="1" />
-          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="*" />
+          <End Role="DealTypes" Type="Self.DealTypes" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DealTypes">
               <PropertyRef Name="ID" />
@@ -590,8 +452,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_ListBanks">
-          <End Role="ListBanks" Type="Model.Store.ListBanks" Multiplicity="0..1" />
-          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="*" />
+          <End Role="ListBanks" Type="Self.ListBanks" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ListBanks">
               <PropertyRef Name="ID" />
@@ -602,8 +464,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_ListBanks1">
-          <End Role="ListBanks" Type="Model.Store.ListBanks" Multiplicity="0..1" />
-          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="*" />
+          <End Role="ListBanks" Type="Self.ListBanks" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ListBanks">
               <PropertyRef Name="ID" />
@@ -614,8 +476,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_OrderStatus">
-          <End Role="OrderStatus" Type="Model.Store.OrderStatus" Multiplicity="1" />
-          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="*" />
+          <End Role="OrderStatus" Type="Self.OrderStatus" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="OrderStatus">
               <PropertyRef Name="ID" />
@@ -626,8 +488,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_RelationshipTypes">
-          <End Role="RelationshipTypes" Type="Model.Store.RelationshipTypes" Multiplicity="1" />
-          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="*" />
+          <End Role="RelationshipTypes" Type="Self.RelationshipTypes" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RelationshipTypes">
               <PropertyRef Name="ID" />
@@ -638,8 +500,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_Users">
-          <End Role="Users" Type="Model.Store.Users" Multiplicity="1" />
-          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="ID" />
@@ -650,8 +512,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_RefinanceCheckForOrders_Orders">
-          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="1" />
-          <End Role="OffersOrChecks" Type="Model.Store.OffersOrChecks" Multiplicity="*" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="OffersOrChecks" Type="Self.OffersOrChecks" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
               <PropertyRef Name="ID" />
@@ -662,8 +524,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ResultEntries_Orders">
-          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="1" />
-          <End Role="ResultEntries" Type="Model.Store.ResultEntries" Multiplicity="*" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="ResultEntries" Type="Self.ResultEntries" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
               <PropertyRef Name="ID" />
@@ -674,8 +536,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Results_Executions">
-          <End Role="Executions" Type="Model.Store.Executions" Multiplicity="1" />
-          <End Role="Results" Type="Model.Store.Results" Multiplicity="*" />
+          <End Role="Executions" Type="Self.Executions" Multiplicity="1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Executions">
               <PropertyRef Name="ID" />
@@ -686,8 +548,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ResultTracks_ListedTracks">
-          <End Role="ListedTracks" Type="Model.Store.ListedTracks" Multiplicity="1" />
-          <End Role="ResultTracks" Type="Model.Store.ResultTracks" Multiplicity="*" />
+          <End Role="ListedTracks" Type="Self.ListedTracks" Multiplicity="1" />
+          <End Role="ResultTracks" Type="Self.ResultTracks" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ListedTracks">
               <PropertyRef Name="ID" />
@@ -698,8 +560,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ResultTracks_ResultEntries">
-          <End Role="ResultEntries" Type="Model.Store.ResultEntries" Multiplicity="1" />
-          <End Role="ResultTracks" Type="Model.Store.ResultTracks" Multiplicity="*" />
+          <End Role="ResultEntries" Type="Self.ResultEntries" Multiplicity="1" />
+          <End Role="ResultTracks" Type="Self.ResultTracks" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ResultEntries">
               <PropertyRef Name="ID" />
@@ -710,8 +572,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Savings_Orders">
-          <End Role="Orders" Type="Model.Store.Orders" Multiplicity="1" />
-          <End Role="Savings" Type="Model.Store.Savings" Multiplicity="*" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Savings" Type="Self.Savings" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
               <PropertyRef Name="ID" />
@@ -722,8 +584,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Savings_SavingsTypes">
-          <End Role="SavingsTypes" Type="Model.Store.SavingsTypes" Multiplicity="1" />
-          <End Role="Savings" Type="Model.Store.Savings" Multiplicity="*" />
+          <End Role="SavingsTypes" Type="Self.SavingsTypes" Multiplicity="1" />
+          <End Role="Savings" Type="Self.Savings" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SavingsTypes">
               <PropertyRef Name="ID" />
@@ -734,8 +596,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TrackInterestRates_ListBanks">
-          <End Role="ListBanks" Type="Model.Store.ListBanks" Multiplicity="1" />
-          <End Role="TrackInterestRates" Type="Model.Store.TrackInterestRates" Multiplicity="*" />
+          <End Role="ListBanks" Type="Self.ListBanks" Multiplicity="1" />
+          <End Role="TrackInterestRates" Type="Self.TrackInterestRates" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ListBanks">
               <PropertyRef Name="ID" />
@@ -746,8 +608,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TrackInterestRates_ListedTracks">
-          <End Role="ListedTracks" Type="Model.Store.ListedTracks" Multiplicity="1" />
-          <End Role="TrackInterestRates" Type="Model.Store.TrackInterestRates" Multiplicity="*" />
+          <End Role="ListedTracks" Type="Self.ListedTracks" Multiplicity="1" />
+          <End Role="TrackInterestRates" Type="Self.TrackInterestRates" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ListedTracks">
               <PropertyRef Name="ID" />
@@ -758,8 +620,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tracks_ListedTracks">
-          <End Role="ListedTracks" Type="Model.Store.ListedTracks" Multiplicity="1" />
-          <End Role="Tracks" Type="Model.Store.Tracks" Multiplicity="*" />
+          <End Role="ListedTracks" Type="Self.ListedTracks" Multiplicity="1" />
+          <End Role="Tracks" Type="Self.Tracks" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ListedTracks">
               <PropertyRef Name="ID" />
@@ -770,8 +632,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tracks_OffersOrChecks">
-          <End Role="OffersOrChecks" Type="Model.Store.OffersOrChecks" Multiplicity="1" />
-          <End Role="Tracks" Type="Model.Store.Tracks" Multiplicity="*" />
+          <End Role="OffersOrChecks" Type="Self.OffersOrChecks" Multiplicity="1" />
+          <End Role="Tracks" Type="Self.Tracks" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="OffersOrChecks">
               <PropertyRef Name="ID" />
@@ -782,8 +644,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Users_UserStatus">
-          <End Role="UserStatus" Type="Model.Store.UserStatus" Multiplicity="1" />
-          <End Role="Users" Type="Model.Store.Users" Multiplicity="*" />
+          <End Role="UserStatus" Type="Self.UserStatus" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="UserStatus">
               <PropertyRef Name="ID" />
@@ -793,6 +655,148 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="BankOfIsraelInterestRates" EntityType="Self.BankOfIsraelInterestRates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BankOfIsraelInterestTypes" EntityType="Self.BankOfIsraelInterestTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChangePreferences" EntityType="Self.ChangePreferences" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CPITable" EntityType="Self.CPITable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Currencies" EntityType="Self.Currencies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DealTypes" EntityType="Self.DealTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Executions" EntityType="Self.Executions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExecutionStatus" EntityType="Self.ExecutionStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IndexTypes" EntityType="Self.IndexTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ListBanks" EntityType="Self.ListBanks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ListedTracks" EntityType="Self.ListedTracks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MailTemplates" EntityType="Self.MailTemplates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ObligationOrFutures" EntityType="Self.ObligationOrFutures" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OffersOrChecks" EntityType="Self.OffersOrChecks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderApprovingBanks" EntityType="Self.OrderApprovingBanks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderStatus" EntityType="Self.OrderStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RelationshipTypes" EntityType="Self.RelationshipTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResultEntries" EntityType="Self.ResultEntries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Results" EntityType="Self.Results" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResultTracks" EntityType="Self.ResultTracks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Savings" EntityType="Self.Savings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SavingsTypes" EntityType="Self.SavingsTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrackInterestRates" EntityType="Self.TrackInterestRates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tracks" EntityType="Self.Tracks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserStatus" EntityType="Self.UserStatus" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BankOfIsraelInterestRates_BankOfIsraelInterestTypes" Association="Self.FK_BankOfIsraelInterestRates_BankOfIsraelInterestTypes">
+            <End Role="BankOfIsraelInterestTypes" EntitySet="BankOfIsraelInterestTypes" />
+            <End Role="BankOfIsraelInterestRates" EntitySet="BankOfIsraelInterestRates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChangePreferences_Orders" Association="Self.FK_ChangePreferences_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="ChangePreferences" EntitySet="ChangePreferences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPITable_IndexTypes" Association="Self.FK_CPITable_IndexTypes">
+            <End Role="IndexTypes" EntitySet="IndexTypes" />
+            <End Role="CPITable" EntitySet="CPITable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Executions_ExecutionStatus" Association="Self.FK_Executions_ExecutionStatus">
+            <End Role="ExecutionStatus" EntitySet="ExecutionStatus" />
+            <End Role="Executions" EntitySet="Executions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Executions_Orders" Association="Self.FK_Executions_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Executions" EntitySet="Executions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoices_Currencies" Association="Self.FK_Invoices_Currencies">
+            <End Role="Currencies" EntitySet="Currencies" />
+            <End Role="Invoices" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoices_Orders" Association="Self.FK_Invoices_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Invoices" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ObligationFutures_Orders" Association="Self.FK_ObligationFutures_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="ObligationOrFutures" EntitySet="ObligationOrFutures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderApprovingBanks_ListBanks" Association="Self.FK_OrderApprovingBanks_ListBanks">
+            <End Role="ListBanks" EntitySet="ListBanks" />
+            <End Role="OrderApprovingBanks" EntitySet="OrderApprovingBanks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderApprovingBanks_Orders" Association="Self.FK_OrderApprovingBanks_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderApprovingBanks" EntitySet="OrderApprovingBanks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_DealTypes" Association="Self.FK_Orders_DealTypes">
+            <End Role="DealTypes" EntitySet="DealTypes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_ListBanks" Association="Self.FK_Orders_ListBanks">
+            <End Role="ListBanks" EntitySet="ListBanks" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_ListBanks1" Association="Self.FK_Orders_ListBanks1">
+            <End Role="ListBanks" EntitySet="ListBanks" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_OrderStatus" Association="Self.FK_Orders_OrderStatus">
+            <End Role="OrderStatus" EntitySet="OrderStatus" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_RelationshipTypes" Association="Self.FK_Orders_RelationshipTypes">
+            <End Role="RelationshipTypes" EntitySet="RelationshipTypes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Users" Association="Self.FK_Orders_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RefinanceCheckForOrders_Orders" Association="Self.FK_RefinanceCheckForOrders_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OffersOrChecks" EntitySet="OffersOrChecks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResultEntries_Orders" Association="Self.FK_ResultEntries_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="ResultEntries" EntitySet="ResultEntries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Results_Executions" Association="Self.FK_Results_Executions">
+            <End Role="Executions" EntitySet="Executions" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResultTracks_ListedTracks" Association="Self.FK_ResultTracks_ListedTracks">
+            <End Role="ListedTracks" EntitySet="ListedTracks" />
+            <End Role="ResultTracks" EntitySet="ResultTracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResultTracks_ResultEntries" Association="Self.FK_ResultTracks_ResultEntries">
+            <End Role="ResultEntries" EntitySet="ResultEntries" />
+            <End Role="ResultTracks" EntitySet="ResultTracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Savings_Orders" Association="Self.FK_Savings_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Savings" EntitySet="Savings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Savings_SavingsTypes" Association="Self.FK_Savings_SavingsTypes">
+            <End Role="SavingsTypes" EntitySet="SavingsTypes" />
+            <End Role="Savings" EntitySet="Savings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrackInterestRates_ListBanks" Association="Self.FK_TrackInterestRates_ListBanks">
+            <End Role="ListBanks" EntitySet="ListBanks" />
+            <End Role="TrackInterestRates" EntitySet="TrackInterestRates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrackInterestRates_ListedTracks" Association="Self.FK_TrackInterestRates_ListedTracks">
+            <End Role="ListedTracks" EntitySet="ListedTracks" />
+            <End Role="TrackInterestRates" EntitySet="TrackInterestRates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tracks_ListedTracks" Association="Self.FK_Tracks_ListedTracks">
+            <End Role="ListedTracks" EntitySet="ListedTracks" />
+            <End Role="Tracks" EntitySet="Tracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tracks_OffersOrChecks" Association="Self.FK_Tracks_OffersOrChecks">
+            <End Role="OffersOrChecks" EntitySet="OffersOrChecks" />
+            <End Role="Tracks" EntitySet="Tracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_UserStatus" Association="Self.FK_Users_UserStatus">
+            <End Role="UserStatus" EntitySet="UserStatus" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -1183,13 +1187,15 @@
           <Property Type="String" Name="Email" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Password" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="SecondaryEmail" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SecondaryEmail" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="LastLogin" Precision="3" />
           <Property Type="Int32" Name="Status" Nullable="false" />
           <Property Type="Int32" Name="Role" Nullable="false" />
           <NavigationProperty Name="UserStatus" Relationship="Model.FK_Users_UserStatus" FromRole="User" ToRole="UserStatus" />
           <NavigationProperty Name="Orders" Relationship="Model.FK_Orders_Users" FromRole="User" ToRole="Order" />
           <Property Type="String" Name="FacebookID" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsVerified" Type="Boolean" Nullable="false" />
+          <Property Name="TempID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_BankOfIsraelInterestRates_BankOfIsraelInterestTypes">
           <End Type="Model.BankOfIsraelInterestType" Role="BankOfIsraelInterestType" Multiplicity="1" />
@@ -1377,6 +1383,8 @@
           <NavigationProperty Name="OrderStatus" Relationship="Model.FK_Orders_OrderStatus" FromRole="Order" ToRole="OrderStatus" />
           <NavigationProperty Name="ResultEntries" Relationship="Model.FK_ResultEntries_Orders" FromRole="Order" ToRole="ResultEntry" />
           <Property Type="Decimal" Name="InitialCalculatedTotal" Precision="18" Scale="0" />
+          <Property Name="PlanningValue" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="StabilityValue" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_ChangePreferences_Orders">
           <End Type="Model.Order" Role="Order" Multiplicity="1" />
@@ -1837,6 +1845,8 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="Model.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="TempID" ColumnName="TempID" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
                 <ScalarProperty Name="FacebookID" ColumnName="FacebookID" />
                 <ScalarProperty Name="Role" ColumnName="Role" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
@@ -1861,6 +1871,8 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="Model.Order">
               <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="StabilityValue" ColumnName="StabilityValue" />
+                <ScalarProperty Name="PlanningValue" ColumnName="PlanningValue" />
                 <ScalarProperty Name="InitialCalculatedTotal" ColumnName="InitialCalculatedTotal" />
                 <ScalarProperty Name="CurrentRent" ColumnName="CurrentRent" />
                 <ScalarProperty Name="EntranceYear" ColumnName="EntranceYear" />
@@ -1960,6 +1972,7 @@
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

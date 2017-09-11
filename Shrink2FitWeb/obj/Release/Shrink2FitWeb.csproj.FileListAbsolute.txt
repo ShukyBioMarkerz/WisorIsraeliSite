@@ -57,3 +57,5 @@ C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin
 C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\obj\Release\Shrink2FitWeb.csprojResolveAssemblyReference.cache
 C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\obj\Release\Shrink2FitWeb.dll
 C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\obj\Release\Shrink2FitWeb.pdb
+C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin\RestSharp.dll
+C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin\RestSharp.xml

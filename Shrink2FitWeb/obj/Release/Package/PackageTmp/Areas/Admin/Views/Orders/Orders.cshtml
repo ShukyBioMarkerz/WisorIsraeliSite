@@ -142,7 +142,7 @@
                                             <td>@order.PropertyValue</td>
                                             <td>@order.TotalNetIncome</td>
                                             <td>@order.NumberOfLoaners</td>
-                                            <td>
+                                            @*<td>
                                                     @foreach (var realtionType in ViewBag.RelationsTypes)
                                                     {
                                                         if (realtionType.ID == order.Relations)
@@ -150,6 +150,22 @@
                                                             @realtionType.RelationsName
                                                         }
                                                     }
+                                            </td>*@
+                                            <td>
+                                                @if (order.NumberOfLoaners > 1)
+                                                {
+                                                    foreach (var realtionType in ViewBag.RelationsTypes)
+                                                    {
+                                                        if (realtionType.ID == order.Relations)
+                                                        {
+                                                            @realtionType.RelationsName
+                                                        }
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <p>Single</p>
+                                                }
                                             </td>
 
                                             <td>@order.YoungestLoanerAge</td>

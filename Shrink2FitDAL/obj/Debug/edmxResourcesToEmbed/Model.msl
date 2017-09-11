@@ -226,6 +226,8 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="Model.User">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="TempID" ColumnName="TempID" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
           <ScalarProperty Name="FacebookID" ColumnName="FacebookID" />
           <ScalarProperty Name="Role" ColumnName="Role" />
           <ScalarProperty Name="Status" ColumnName="Status" />
@@ -250,6 +252,8 @@
     <EntitySetMapping Name="Orders">
       <EntityTypeMapping TypeName="Model.Order">
         <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="StabilityValue" ColumnName="StabilityValue" />
+          <ScalarProperty Name="PlanningValue" ColumnName="PlanningValue" />
           <ScalarProperty Name="InitialCalculatedTotal" ColumnName="InitialCalculatedTotal" />
           <ScalarProperty Name="CurrentRent" ColumnName="CurrentRent" />
           <ScalarProperty Name="EntranceYear" ColumnName="EntranceYear" />

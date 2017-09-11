@@ -30,7 +30,9 @@ namespace Shrink2FitWeb.Controllers
             {
                 name = "unknown";
             }
-			string[] dd = d.Split(' ');
+            string[] dd = { name };
+            if (null != d)
+			    dd = d.Split(' ');
 			ViewBag.lastEntrance = dd[0];
 
 			ViewBag.CurrentPage = "index";
@@ -59,8 +61,11 @@ namespace Shrink2FitWeb.Controllers
 
 		public ActionResult NewOrder()
 		{
-			string d = UserBL.GetLastEntrance(int.Parse(User.Identity.Name.Split('~')[1]));			
-			string[] dd = d.Split(' ');
+			string d = UserBL.GetLastEntrance(int.Parse(User.Identity.Name.Split('~')[1]));
+            string[] dd = { "" };
+            if (null != d)
+                dd = d.Split(' ');
+            
 			ViewBag.lastEntrance = dd[0];
 
 			var model = BankBL.GetAllBanks();
@@ -83,9 +88,11 @@ namespace Shrink2FitWeb.Controllers
 
 		public ActionResult Profit()
 		{
-			string d = UserBL.GetLastEntrance(int.Parse(User.Identity.Name.Split('~')[1]));			
-			string[] dd = d.Split(' ');
-			ViewBag.lastEntrance = dd[0];
+			string d = UserBL.GetLastEntrance(int.Parse(User.Identity.Name.Split('~')[1]));
+            string[] dd = { "" };
+            if (null != d)
+                dd = d.Split(' ');
+            ViewBag.lastEntrance = dd[0];
 			// get all user orders and all orders tracks
 
 			var model = OrderBL.GetAllUserOrders(int.Parse(User.Identity.Name.Split('~')[1]));
@@ -114,9 +121,11 @@ namespace Shrink2FitWeb.Controllers
 
 		public ActionResult Orders()
 		{
-			string d = UserBL.GetLastEntrance(int.Parse(User.Identity.Name.Split('~')[1]));			
-			string[] dd = d.Split(' ');
-			ViewBag.lastEntrance = dd[0];
+			string d = UserBL.GetLastEntrance(int.Parse(User.Identity.Name.Split('~')[1]));
+            string[] dd = { "" };
+            if (null != d)
+                dd = d.Split(' ');
+            ViewBag.lastEntrance = dd[0];
 
 			var model = OrderBL.GetAllUserOrders(int.Parse(User.Identity.Name.Split('~')[1]));
 
@@ -130,9 +139,11 @@ namespace Shrink2FitWeb.Controllers
 
 		public ActionResult Payments()
 		{
-			string d = UserBL.GetLastEntrance(int.Parse(User.Identity.Name.Split('~')[1]));			
-			string[] dd = d.Split(' ');
-			ViewBag.lastEntrance = dd[0];
+			string d = UserBL.GetLastEntrance(int.Parse(User.Identity.Name.Split('~')[1]));
+            string[] dd = { "" };
+            if (null != d)
+                dd = d.Split(' ');
+            ViewBag.lastEntrance = dd[0];
 
             var model = OrderBL.GetInvoicesForUser(int.Parse(User.Identity.Name.Split('~')[1]));
 
@@ -189,9 +200,11 @@ namespace Shrink2FitWeb.Controllers
 
 		public ActionResult Settings()
 		{
-			string d = UserBL.GetLastEntrance(int.Parse(User.Identity.Name.Split('~')[1]));			
-			string[] dd = d.Split(' ');
-			ViewBag.lastEntrance = dd[0];
+			string d = UserBL.GetLastEntrance(int.Parse(User.Identity.Name.Split('~')[1]));
+            string[] dd = { "" };
+            if (null != d)
+                dd = d.Split(' ');
+            ViewBag.lastEntrance = dd[0];
 
 			// get user details
 			UserVM currentuser = UserBL.GetUserByID(int.Parse(User.Identity.Name.Split('~')[1]));
@@ -256,8 +269,8 @@ namespace Shrink2FitWeb.Controllers
 				model.InitialSavings = initialCalc;
 				ViewBag.Save = false;
 			}
-
-			if (OrderBL.CheckForInvoice(orderId))
+            
+            if (OrderBL.CheckForInvoice(orderId))
 			{
 				ViewBag.WasPaid = true;
 			}
@@ -265,8 +278,11 @@ namespace Shrink2FitWeb.Controllers
 			{
 				ViewBag.WasPaid = false;
 			}
+            // Since we don't support payment now, avoid displaying the payment announcment
+            // TBD - ugly but that's life... since we don't have the lastest backend code to compare to
+            ViewBag.WasPaid = true;
 
-			ViewBag.CurrentOrderId = orderId;
+            ViewBag.CurrentOrderId = orderId;
 
 			return PartialView("GetOrderTracks", model);
 		}

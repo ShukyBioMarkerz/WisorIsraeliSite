@@ -17,6 +17,7 @@ C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin
 C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin\Remotion.Data.Linq.dll
 C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin\Remotion.dll
 C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin\Remotion.Interfaces.dll
+C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin\RestSharp.dll
 C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin\Shrink2FitDAL.dll
 C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin\System.Net.Http.Formatting.dll
 C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin\System.Web.Helpers.dll
@@ -43,6 +44,7 @@ C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin
 C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin\Mindscape.Raygun4Net.pdb
 C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin\Mindscape.Raygun4Net4.pdb
 C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin\Newtonsoft.Json.xml
+C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin\RestSharp.xml
 C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin\System.Web.Optimization.xml
 C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin\System.Net.Http.Formatting.xml
 C:\Users\shukyWisor\Downloads\Shrink2Fit\Shrink2Fit\Shrink2Fit\Shrink2FitWeb\bin\System.Web.Helpers.xml

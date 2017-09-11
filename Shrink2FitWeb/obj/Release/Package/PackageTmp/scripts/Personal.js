@@ -653,6 +653,29 @@ function accordionFuncs() {
 	$("#buy-hand-year").customSelect();
 	$("#buy-hand-month").customSelect();
 
+    // for the current year display only from the current month and on. For the future year - show all months
+	$("#buy-first-hand-details-selectYear").on("change", function () {
+	    var months = [ "ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר" ];
+	    var selectedYear = $("#buy-first-hand-details-selectYear").val();
+	    var fromMonth = 0;
+	    var currentTime = new Date();
+	    // alert("select year changed: " + selectedYear + ", getFullYear: " + currentTime.getFullYear() + ", month: " + currentTime.getMonth() + 1);
+	    if (selectedYear == currentTime.getFullYear() /*DateTime.Now.Year*/) {
+	        fromMonth = currentTime.getMonth() + 1 /*DateTime.Now.Month*/;
+	    }
+
+	    $("#buy-first-hand-details-selectMonth").empty();
+	    for (var i = fromMonth; i < 12; i++)
+	    {
+	        $("#buy-first-hand-details-selectMonth").append("<option value=" + i + ">" + months[i] + "</option>");
+	    }
+	    $("buy-first-hand-details-selectMonth select").val(months[fromMonth]).change();
+	    $("buy-first-hand-details-selectMonth").val(fromMonth.toString()).change();
+	});
+
+	
+
+
 	//this piece of strange code, is to prevent a mysterios bug that reduce the height of the containing div.
 	$("#num-of-borrowers").on("change", function () {
 		$("#item-borrowers-details .item-content").addClass("item-borrowers-details-plaster");
@@ -1082,20 +1105,27 @@ function CountRows(table) {
 
 //השלמת פרטי לווים
 function AddTr(elem, type) {
-	var $table = elem.prev("table");
-	if (CountRows($table) < 5) {
+    var $table = elem.prev("table");
+    var MaxNumberOfPlans = 8;
+    var MaxNumberOfAll = 5;
 
+    //alert("In add AddTr type: " + type + ", $table: " + $table + ", bank-name-recycle: " + $('#bank-name-recycle').val() +
+    //    ", bank-name-offers: " + $("bank-name-offers").val() + ", bank-name-offers2: " + $("bank-name-offers2").val());
 
-	    if (type == "bank") {
-	        if (!PersonalValidate.AddRowCheck($table)) {
-	            alert(PersonalValidate.errorLog);
-	            return;
-	        }
-			if (CountRows($table) >= 3) {
-				alert("אפשר להוסיף עד 3 מסלולים");
-				return;
-			}
-		}
+    if ((type == "bank" && CountRows($table) < MaxNumberOfPlans) || (CountRows($table) < MaxNumberOfAll)) {
+
+        if (type == "bank") {
+            if (!PersonalValidate.AddRowCheck($table)) {
+                alert(PersonalValidate.errorLog);
+                return;
+            }
+            if (CountRows($table) >= MaxNumberOfPlans) {
+                alert("אפשר להוסיף עד " + MaxNumberOfPlans + "מסלולים ");
+                // alert("אפשר להוסיף עד 3 מסלולים");
+                return;
+            }
+        }
+
 		if (type == "release") {
 			if (!PersonalValidate.ReleaseRowCheck()) {
 
@@ -1105,7 +1135,7 @@ function AddTr(elem, type) {
 		}
 		if (type == "must") {
 			if (!PersonalValidate.HasMustsCheck()) {
-				alert("  יש להזין נתונים תקינים לפני הוספת חובות" + "\n" + PersonalValidate.errorLog);
+				alert("  יש להזין נתונים תקינים לפני הוספת התחייבות" + "\n" + PersonalValidate.errorLog);
 				return;
 			}
 		}
@@ -1144,8 +1174,13 @@ function AddTr(elem, type) {
 		}
 	}
 	else {
-		var m = "";
+        var m = "";
+        var MaxNumber = MaxNumberOfAll;
 		switch (type) {
+		    case "bank":
+		        MaxNumber = MaxNumberOfPlans;
+		        m = "מסלולים";
+		        break;
 			case "release":
 				m = "שחרורים";
 				break;
@@ -1153,18 +1188,23 @@ function AddTr(elem, type) {
 				m = "חסכונות";
 				break;
 			case "must":
-				m = "התחיבויות";
+				m = "התחייבויות";
 				break;
 
-		}
-		alert("אפשר להוסיף עד 5 " + m)
+        }
+		alert("אפשר להוסיף עד " + MaxNumber + " " + m);
+		// alert("אפשר להוסיף עד 5 " + m)
 	};
 }
 
 //הצעת מחיר בנקים למשכנתאות
 function AddBank(elem) {
     var tablesnum = $(elem).parent().parent().find("table").length - 1; // future dev -yeah you! the -1 is to ignore the template section. look in NewOrder.cshtml
-    if (!PersonalValidate.CheckAddBank()) {
+
+    //alert("In add AddBank tablesnum: " + tablesnum + ", bank-name-recycle: " + $('#bank-name-recycle').val() +
+    //", bank-name-offers: " + $("bank-name-offers").val() + ", bank-name-offers2: " + $("bank-name-offers2").val());
+
+     if (!PersonalValidate.CheckAddBank()) {
         alert(PersonalValidate.errorLog);
         return;
     }
@@ -1190,7 +1230,7 @@ function AddBank(elem) {
 		}
 	}
     else // alert("אפשר להוסיף עד 3 בנקים");
-        alert("אפשר להוסיף עד " + MaxNumberOfBanks + "בנקים");
+        alert("אפשר להוסיף עד " + MaxNumberOfBanks + " הצעות מחיר");
 }
 
 function RemoveBank(elem) {
@@ -1255,8 +1295,8 @@ $(document).on("input", ".loanSum, .percentage, .track-period, .bidSum", functio
         else {
             if (loanSumE.length)
                 loanSumElment = loanSumE;
-            else 
-                alert("On document change: cant find the amount object.")
+            //else 
+            //    alert("On document change: cant find the amount object.")
         }
         var percentageElment = $(this).closest('tr').find('.percentage');
         var trackPeriodElment = $(this).closest('tr').find('.track-period');
@@ -1396,7 +1436,7 @@ function CalculateLoan()
         data: data,
         url: '/order/CheckCompatibility',
         success: function (data) {
-            alert("In CalculateLoan data: " + data.result);
+            //alert("In CalculateLoan data: " + data.result);
             if (data.result) {
                 var elem = $('.modal-dialog').find('.bootbox-body');
                 elem.html("User added");

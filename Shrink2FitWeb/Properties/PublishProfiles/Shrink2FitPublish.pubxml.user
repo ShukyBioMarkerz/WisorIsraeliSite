@@ -5,7 +5,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>C:\Users\shukyWisor\Downloads\PublishSiteSample\Shrink2FitIsrael23-83</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\shukyWisor\Downloads\PublishSiteSample\Shrink2FitIsrael10-9-17</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Areas/Admin/assets/css/ie8.css">
@@ -3236,11 +3236,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/Admin/Views/Orders/ApprovingBanks.cshtml">
       <publishTime>04/18/2016 14:54:48</publishTime>
     </File>
+    <File Include="Areas/Admin/Views/Orders/ChangePrefernces.cshtml">
+      <publishTime>05/01/2017 14:27:53</publishTime>
+    </File>
     <File Include="Areas/Admin/Views/Orders/ObligationFutures.cshtml">
       <publishTime>04/18/2016 14:54:47</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Orders/Orders.cshtml">
-      <publishTime>08/10/2017 18:38:12</publishTime>
+      <publishTime>08/31/2017 17:37:58</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Orders/PropertyDetails.cshtml">
       <publishTime>04/18/2016 14:54:48</publishTime>
@@ -3282,10 +3285,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/18/2016 14:54:23</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>08/24/2017 11:20:41</publishTime>
+      <publishTime>09/10/2017 17:50:50</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>08/24/2017 11:20:41</publishTime>
+      <publishTime>09/10/2017 17:50:50</publishTime>
     </File>
     <File Include="bin/AWSSDK.Core.dll">
       <publishTime>05/11/2017 14:28:44</publishTime>
@@ -3294,7 +3297,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/11/2017 14:32:10</publishTime>
     </File>
     <File Include="bin/CheckAmountWithPMTV3.dll">
-      <publishTime>08/16/2017 15:24:37</publishTime>
+      <publishTime>09/04/2017 17:38:48</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>04/18/2016 14:54:26</publishTime>
@@ -3335,11 +3338,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Remotion.Interfaces.dll">
       <publishTime>04/18/2016 14:54:24</publishTime>
     </File>
+    <File Include="bin/RestSharp.dll">
+      <publishTime>08/26/2015 16:33:34</publishTime>
+    </File>
     <File Include="bin/Shrink2FitDAL.dll">
-      <publishTime>08/16/2017 15:24:38</publishTime>
+      <publishTime>09/04/2017 17:38:48</publishTime>
     </File>
     <File Include="bin/Shrink2FitWeb.dll">
-      <publishTime>08/24/2017 11:20:35</publishTime>
+      <publishTime>09/06/2017 22:47:29</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>04/18/2016 14:54:30</publishTime>
@@ -3615,7 +3621,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/18/2016 14:54:49</publishTime>
     </File>
     <File Include="MailTemplates/NewOrderWithNoPayment.html">
-      <publishTime>08/07/2017 12:55:24</publishTime>
+      <publishTime>09/03/2017 10:04:23</publishTime>
     </File>
     <File Include="MailTemplates/NewUser.html">
       <publishTime>04/18/2016 14:54:49</publishTime>
@@ -3639,10 +3645,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/18/2016 14:54:49</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>08/07/2017 14:08:43</publishTime>
+      <publishTime>08/30/2017 13:45:15</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>08/24/2017 11:20:38</publishTime>
+      <publishTime>09/10/2017 17:50:47</publishTime>
     </File>
     <File Include="scripts/accountsettings.js">
       <publishTime>04/18/2016 14:54:49</publishTime>
@@ -3654,7 +3660,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/18/2016 14:54:49</publishTime>
     </File>
     <File Include="scripts/contact.js">
-      <publishTime>04/18/2016 14:54:49</publishTime>
+      <publishTime>09/10/2017 17:08:02</publishTime>
     </File>
     <File Include="scripts/Copy of Personal.js">
       <publishTime>08/03/2017 15:12:25</publishTime>
@@ -3702,10 +3708,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/14/2017 16:16:09</publishTime>
     </File>
     <File Include="scripts/Personal.js">
-      <publishTime>08/24/2017 10:28:00</publishTime>
+      <publishTime>09/10/2017 17:30:29</publishTime>
     </File>
     <File Include="scripts/PersonalValidate.js">
-      <publishTime>08/15/2017 17:44:34</publishTime>
+      <publishTime>09/10/2017 17:37:35</publishTime>
     </File>
     <File Include="scripts/popUps.js">
       <publishTime>08/24/2017 08:47:31</publishTime>
@@ -3717,7 +3723,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2017 13:12:51</publishTime>
     </File>
     <File Include="scripts/script.js">
-      <publishTime>08/14/2017 16:37:43</publishTime>
+      <publishTime>09/07/2017 15:57:15</publishTime>
     </File>
     <File Include="scripts/scrollTo.js">
       <publishTime>04/18/2016 14:54:49</publishTime>
@@ -3738,7 +3744,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/18/2016 14:54:49</publishTime>
     </File>
     <File Include="Views/Home/Calculate.cshtml">
-      <publishTime>08/14/2017 16:40:25</publishTime>
+      <publishTime>09/10/2017 17:50:43</publishTime>
     </File>
     <File Include="Views/Home/Contact.cshtml">
       <publishTime>04/18/2016 14:54:49</publishTime>
@@ -3747,7 +3753,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/17/2017 13:44:11</publishTime>
     </File>
     <File Include="Views/Home/Payment.cshtml">
-      <publishTime>06/08/2017 13:40:32</publishTime>
+      <publishTime>09/06/2017 11:23:27</publishTime>
     </File>
     <File Include="Views/Home/Privacy.cshtml">
       <publishTime>04/18/2016 14:54:49</publishTime>
@@ -3762,7 +3768,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/18/2016 14:54:49</publishTime>
     </File>
     <File Include="Views/Order/Compatibility.cshtml">
-      <publishTime>07/31/2017 17:56:03</publishTime>
+      <publishTime>09/10/2017 17:17:56</publishTime>
     </File>
     <File Include="Views/Personal/BankOfferRow.cshtml">
       <publishTime>07/06/2015 19:07:54</publishTime>
@@ -3783,13 +3789,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/18/2016 14:54:49</publishTime>
     </File>
     <File Include="Views/Personal/GetOrderTracks.cshtml">
-      <publishTime>04/18/2016 14:54:49</publishTime>
+      <publishTime>09/10/2017 17:47:27</publishTime>
     </File>
     <File Include="Views/Personal/Index.cshtml">
       <publishTime>04/18/2016 14:54:49</publishTime>
     </File>
     <File Include="Views/Personal/NewOrder.cshtml">
-      <publishTime>08/24/2017 10:31:50</publishTime>
+      <publishTime>09/10/2017 17:34:38</publishTime>
     </File>
     <File Include="Views/Personal/Orders.cshtml">
       <publishTime>04/18/2016 14:54:49</publishTime>
@@ -3816,7 +3822,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/18/2016 14:54:49</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/23/2017 17:51:04</publishTime>
+      <publishTime>09/10/2017 17:50:45</publishTime>
     </File>
   </ItemGroup>
 </Project>

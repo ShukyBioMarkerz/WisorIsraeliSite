@@ -1201,7 +1201,9 @@ var totalSum = 0;
 
 for(var i=0;i<allLoans.length;i++)
 	totalSum += Number($("#allLoansTable").find(allLoans[i]).find(".loanSum").val());
-$("#originalLoanSum").val(totalSum);
+// $("#originalLoanSum").val(totalSum);
+var numWithComma = numberWithCommas(totalSum);
+$("#originalLoanSum").val(numWithComma);
 }
 
 function UpdateRecycleTotal() {
@@ -1215,7 +1217,9 @@ function UpdateMonthlyReturn() {
 
 	for (var i = 0; i < allReturns.length; i++)
 		totalSum += Number($("#allLoansTable").find(allReturns[i]).find(".returnSum").val());
-	$("#startMonthReturn").val(totalSum);
+	// $("#startMonthReturn").val(totalSum);
+	var numWithComma = numberWithCommas(totalSum);
+	$("#startMonthReturn").val(numWithComma);
 }
 
 function disableOtherFieldsChanges() {
@@ -1403,11 +1407,35 @@ function checkReleaseTable() {
 
 }
 
+
+// return true for future. false for past
+function IsItFutureDate(month, year) {
+    var now = new Date();
+    var rc = true;
+
+    // check the past years as well...
+    if (now.getFullYear() > year) {
+        rc = false;
+    }
+    else if (now.getFullYear() < year) {
+        rc = true;
+    }
+    else if (now.getFullYear() == year) {
+        //if (month < now.getMonth() + 1) {
+        if (month <= now.getMonth()) {
+            rc = false;
+        }
+    }
+
+    return rc;
+}
+
 function CheckDate(month, year) {
     var now = new Date();
     
     if (now.getFullYear() == year) {
-        if (month < now.getMonth() + 1) {
+        //if (month < now.getMonth() + 1) {
+        if (month <= now.getMonth()) {
             return false;
         }
     }

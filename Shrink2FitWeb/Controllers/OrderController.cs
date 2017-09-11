@@ -71,7 +71,7 @@ namespace Shrink2FitWeb.Controllers
             var isPaymentAvailable = System.Configuration.ConfigurationManager.AppSettings["IsPaymentAvailable"];
             if (isPaymentAvailable == "False")
             {
-                return true;
+                return false; // true; avoid sending NewOrderWithNoPayment email since it crashes the system because of Date parameters which should be consider... 
             }
             
             var invoices = OrderBL.GetInvoicesForUser(userid);
@@ -127,9 +127,9 @@ namespace Shrink2FitWeb.Controllers
             {
                 double LTV = (double)sum / (double)property;
                 double returnRatio = (double)monthlyReturn / (double)income;
-                bool flag = false;
+                bool flag = true; //  false;
                 
-                flag = LTV > 0.7 || returnRatio > 0.3;
+                // flag = LTV > 0.7 || returnRatio > 0.3;
 
                 Result check =  CheckAmountWithPMTV3.Program.Check((double)sum, (double)monthlyReturn, (uint)age, (uint) income, (uint) property);
                 var model = new CompatibilityVM

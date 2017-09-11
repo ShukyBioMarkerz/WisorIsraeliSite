@@ -105,7 +105,8 @@ namespace Shrink2FitWeb.Controllers
             }
 
             // TODO SEND MAIL TO ADMIN
-
+            Mailing.PrepareMail(new string[] { username, email }, MailType.NewRegister);
+            
             // check if email allready exist
             if (UserBL.GetUserByEmail(email) != null)
 			{
@@ -115,7 +116,9 @@ namespace Shrink2FitWeb.Controllers
 			try
 			{
 				int id = UserBL.AddUser(email, password, username);
-                Mailing.PrepareMail(new string[] { username, email }, MailType.NewRegister);
+                // Mailing.PrepareMail(new string[] { username, email }, MailType.NewRegister);
+                // send to the user as well
+                Mailing.PrepareMail(new string[] { username, email }, MailType.NewRegister, null /* attachmentPath */, false /* isMultiLine */, email);
                 FormsAuthentication.SetAuthCookie(email + '~' + id + '~' + username, true);
                 Logger.SetUser(id, email);
 

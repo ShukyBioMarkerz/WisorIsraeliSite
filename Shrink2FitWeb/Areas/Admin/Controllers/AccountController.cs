@@ -25,9 +25,6 @@ namespace Shrink2FitWeb.Areas.Admin.Controllers
             {
                 var email = form["Email"];
                 var password = form["password"];
-                // shuky should remove
-                email = "admin@shrink.com";
-                password = "YaffaAmos1954!";
                 var user = UserBL.GetUserByEmail(email);
 		
                 if (user.Password == password && user.Role == (int)Common.Roles.Admin)

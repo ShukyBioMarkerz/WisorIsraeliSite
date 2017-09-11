@@ -25,7 +25,7 @@
                     }
                     else {
                         $('#contact h1').text('תקלה בשליחת ההודעה').css('color','red');
-                        $('#contact h2').text('אנא נסה שוב מאוחר יותר');
+                        $('#contact h2').text('נא נסה שוב מאוחר יותר');
                         $('#form-div').slideUp('slow', function () {
                             setTimeout(function () {
                                 closePopup();

@@ -386,13 +386,15 @@
     <Property Type="String" Name="Email" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Password" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="SecondaryEmail" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SecondaryEmail" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="DateTime" Name="LastLogin" Precision="3" />
     <Property Type="Int32" Name="Status" Nullable="false" />
     <Property Type="Int32" Name="Role" Nullable="false" />
     <NavigationProperty Name="UserStatus" Relationship="Model.FK_Users_UserStatus" FromRole="User" ToRole="UserStatus" />
     <NavigationProperty Name="Orders" Relationship="Model.FK_Orders_Users" FromRole="User" ToRole="Order" />
     <Property Type="String" Name="FacebookID" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsVerified" Type="Boolean" Nullable="false" />
+    <Property Name="TempID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK_BankOfIsraelInterestRates_BankOfIsraelInterestTypes">
     <End Type="Model.BankOfIsraelInterestType" Role="BankOfIsraelInterestType" Multiplicity="1" />
@@ -580,6 +582,8 @@
     <NavigationProperty Name="OrderStatus" Relationship="Model.FK_Orders_OrderStatus" FromRole="Order" ToRole="OrderStatus" />
     <NavigationProperty Name="ResultEntries" Relationship="Model.FK_ResultEntries_Orders" FromRole="Order" ToRole="ResultEntry" />
     <Property Type="Decimal" Name="InitialCalculatedTotal" Precision="18" Scale="0" />
+    <Property Name="PlanningValue" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="StabilityValue" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK_ChangePreferences_Orders">
     <End Type="Model.Order" Role="Order" Multiplicity="1" />

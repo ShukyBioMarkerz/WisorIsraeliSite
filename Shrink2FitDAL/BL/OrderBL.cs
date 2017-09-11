@@ -1,8 +1,11 @@
-﻿using Shrink2FitDAL.VModels;
+﻿using FastThreeOptionSearchV3_2_1;
+using Shrink2FitDAL.VModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Objects;
 using System.Linq;
-using FastThreeOptionSearchV3_2_1;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Shrink2FitDAL.BL
 {
@@ -104,9 +107,9 @@ namespace Shrink2FitDAL.BL
                         SecondaryAccount = order.SecondaryAccount,
                         MainBankName = order.ListBank.Name,
                         SecondaryAccountName = order.ListBank1.Name,
-                        HasResults = order.ResultEntries.Count > 0 /*,
+                        HasResults = order.ResultEntries.Count > 0 ,
                         PlaningValue = order.PlanningValue,
-                        StabilityValue = order.StabilityValue */
+                        StabilityValue = order.StabilityValue
 
 
                     }).OrderByDescending(o => o.CreatedOn).ToList();
@@ -320,7 +323,7 @@ namespace Shrink2FitDAL.BL
 							PlanningPreference = order.PlanningPreference,
 							PropertyValue = order.PropertyValue,
 							RefinanceCheck = order.RefinanceCheck,
-							StabilityPreference = order.PlanningPreference,
+							StabilityPreference = order.StabilityPreference,
 							Status = order.Status,
 							YoungestLoanerAge = order.YoungestLoanerAge,
 							Savings = order.Savings,
@@ -331,8 +334,10 @@ namespace Shrink2FitDAL.BL
 							DealName = order.DealType1.DealType1,
 							HasResults = order.ResultEntries.Count > 0 ? true : false,
                             InitialCalculatedTotal = order.InitialCalculatedTotal,
-                            OffersTotal = 0
-						};
+                            OffersTotal = 0,
+                            PlaningValue = order.PlanningValue,
+                            StabilityValue = order.StabilityValue
+                        };
 
                         result.Add(currentOrder);
 					}
@@ -856,5 +861,76 @@ namespace Shrink2FitDAL.BL
                 return "לא ידוע";
             }
         }
+
+        // Status values: 1 == new order. 2 == open. 3 == calculation
+        /*
+         * var model = OrderBL.GetAll();
+         */
+        public static List<OrderVM> GetAllOrdersByStatus(int status)
+        {
+            try
+            {
+                List<OrderVM> result = new List<OrderVM>();
+
+                using (Shrink2FitEntities context = new Shrink2FitEntities())
+                {
+                    var orders = context.Orders.Where(o => o.Status == status);
+
+                    foreach (var order in orders)
+                    {
+
+                        if (order.DealType > 3)
+                        {
+                            order.DealType = 3;
+                            order.DealType1 = context.DealTypes.Single(t => t.ID == 3);
+                        }
+                        var currentOrder = new OrderVM
+                        {
+                            ID = order.ID,
+                            CreatedOn = order.CreatedOn,
+                            BankOffers = order.BankOffers,
+                            DealType = order.DealType,
+                            ChangesPreference = order.ChangesPreference,
+                            FutureMoney = order.FutureMoney,
+                            Obligations = order.Obligations,
+                            DesiredLoanAmount = order.DesiredLoanAmount,
+                            DesiredMonthlyPayment = order.DesiredMonthlyPayment,
+                            Label = order.Label,
+                            NumberOfLoaners = order.NumberOfLoaners,
+                            TotalNetIncome = order.TotalNetIncome,
+                            UpdatedOn = order.UpdatedOn,
+                            UserID = order.UserID,
+                            PlanningPreference = order.PlanningPreference,
+                            PropertyValue = order.PropertyValue,
+                            RefinanceCheck = order.RefinanceCheck,
+                            StabilityPreference = order.StabilityPreference,
+                            Status = order.Status,
+                            YoungestLoanerAge = order.YoungestLoanerAge,
+                            Savings = order.Savings,
+                            ApprovingBanksCount = order.ListBanks.Count(),
+                            SavingsCount = order.Savings1.Count(),
+                            Relations = order.Relations,
+                            StatusName = order.OrderStatus.Status,
+                            DealName = order.DealType1.DealType1,
+                            HasResults = order.ResultEntries.Count > 0 ? true : false,
+                            InitialCalculatedTotal = order.InitialCalculatedTotal,
+                            OffersTotal = 0,
+                            PlaningValue = order.PlanningValue,
+                            StabilityValue = order.StabilityValue
+                        };
+
+                        result.Add(currentOrder);
+                    }
+                }
+                return result;
+
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+
     }
 }

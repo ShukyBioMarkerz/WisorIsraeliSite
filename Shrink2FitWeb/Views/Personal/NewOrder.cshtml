@@ -1,8 +1,10 @@
 ﻿@model List<Shrink2FitDAL.VModels.BankVM>	
 @{
-        ViewBag.Title = "NewOrder";
-        Layout = "~/Views/Personal/PersonalLayout.cshtml";
-        string[] months = { "ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר" };
+    ViewBag.Title = "NewOrder";
+    Layout = "~/Views/Personal/PersonalLayout.cshtml";
+    string[] months = { "ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר" };
+
+ 
     }
 <script>
     var tracks = [];
@@ -21,7 +23,7 @@
                     <div class="item item-deal-type open" id="item-deal-type">
                         <div class="item-title">בחירת סוג עסקה</div>
                         <div class="item-content">
-                            <span class="bold">האם הבדיקה היא עבור משכנתא חדשה או משכנתא קימת ?</span>
+                            <span class="bold">האם הבדיקה היא עבור משכנתא חדשה או משכנתא קיימת ?</span>
 
                             <input class="ShowCb deal-choice" data-attr="buy-hand" type="checkbox" name="deal-hand" value="0" id="buy-property"  />
                             <label for="buy-property">משכנתא חדשה לרכישת נכס</label><br />
@@ -32,8 +34,8 @@
 									<div id="buy-first-hand-details" style="display:none">
 										<label>כניסה משוערת לנכס</label>
 
-                                        <select class="selectYear" id="buy-first-hand-details-selectMonth">
-                                            @for (var i = DateTime.Now.Month; i < 12; i++)
+                                        <select class="selectMonth" id="buy-first-hand-details-selectMonth" value="1">
+                                            @for (var i = 0; i < 12; i++)
                                             {
                                                 <option value="@i">@months[i]</option>
                                             }
@@ -48,7 +50,7 @@
                                             </select>
 
 											<br />
-
+                                        
 											<label for="buy-first-hand-details-currentrent">שכירות חודשית עד כניסה לנכס</label>
 											<input type="text" name="buy-first-hand-details-currentrent" id="buy-first-hand-details-currentrent" value="" class="number-input" />
 																				
@@ -62,7 +64,7 @@
 							</div>
     
                             <input class="HideCb deal-choice" data-attr="buy-hand" type="radio" name="deal-type" value="3" id="recycle" />
-                            <label for="recycle">בדיקת מיחזור של משכנתא קימת</label>
+                            <label for="recycle">בדיקת מיחזור של משכנתא קיימת</label>
                             @*<div id="recycle-checked">
                                 <input type="radio" name="include-recycle-check" value="1" id="include" checked="checked" />
                                 <label for="include">כולל בדיקת כדאיות מיחזור</label><br />
@@ -103,7 +105,7 @@
                            
                             <div id="relations" style="display:none">
 							<label for="loaners-relation">קשר בין הלווים</label>													     
-							
+							<!---->
 							<select class="bankName" name="loaners-relation" id="loaners-relation">
 								
 								@foreach (var relationship in ViewBag.RelationshipTypes)
@@ -118,7 +120,7 @@
                             <label for="neto-sum">סה"כ הכנסות החודשיות נטו בש"ח של <span class="bold">כל</span> הלווים בעסקה</label>
                             <input type="text" name="neto-sum" id="neto-sum" value="" class="number-input" /><br />
                             
-							<label class="text-label">האם ישנן הלואות קימות נוספות (הלואה לרכב, הלואת סטודנט וכדומה) ?</label>
+							<label class="text-label">האם ישנן הלוואות קיימות נוספות (הלוואה לרכב, הלואת סטודנט וכדומה) ?</label>
                             <input class="ShowCb" data-attr="tbl_must_container" type="radio" name="has-musts" value="1" id="has-musts" />
                             <label for="has-musts">כן</label>
 
@@ -137,7 +139,7 @@
                                         <td><input type="text" value="" class="number-input numberDebt" onKeyUp="checkMustTable();" /></td>
                                         <td>
                                             <select class="selectMonth">
-                                                @for (var i = DateTime.Now.Month; i < 12; i++)
+                                                @for (var i = 0 @*DateTime.Now.Month*@; i < 12; i++)
                                                 {
                                                     <option value="@i">@months[i]</option>
                                                 }
@@ -199,7 +201,7 @@
                                         <td><input type="text" value="" class="numberRelease number-input" onkeyup="checkReleaseTable()" /></td>
                                         <td>
                                             <select class="selectMonth">
-                                                @for (var i = DateTime.Now.Month; i < 12; i++)
+                                                @for (var i = 0 @*DateTime.Now.Month*@; i < 12; i++)
                                                 {
                                                     <option value="@i">@months[i]</option>
                                                 }
@@ -305,20 +307,20 @@
                     <div class="item item-unabled item-loan-details" id="item-loan-details">
                         <div class="item-title">השלמת פרטי הלוואה</div>
                         <div class="item-content">
-                            <span class="bold">אנו נצטרך לדעת את פרטי ההלואה לבדיקה :</span><br />
+                            <span class="bold">אנו נצטרך לדעת את פרטי ההלוואה לבדיקה :</span><br />
                                     
                             <div id="contain-recycle-loan-details" style="display:none;">
                                     <table class="input-table">
                                         <tr>
-		                                <td><label for="property-value-recycle">מה שוי הנכס הממושכן ב-₪</label></td>
+		                                <td><label for="property-value-recycle">מה שווי הנכס הממושכן ב-₪</label></td>
 		                                <td><input type="text" name="property-value-recycle" id="property-value-recycle" value="" class="number-input" /></td>
                                             </tr>
 		                                <tr>
-		                                <td><label for="loan-left">מה יתרת ההלואה (כול עמלות וקנסות) ב-₪</label></td>
+		                                <td><label for="loan-left">מה יתרת ההלוואה (כולל עמלות וקנסות) ב-₪</label></td>
 		                                <td><input type="text" name="loan-left" id="loan-left" value="" class="number-input" /></td>
                                             </tr>
 		                                <tr>
-		                                <td><label for="wanted-return-recycle">מה ההחזר החודשי הרצוי ב-₪ עבור ההלואה החדשה</label></td>
+		                                <td><label for="wanted-return-recycle">מה ההחזר החודשי הרצוי ב-₪ עבור ההלוואה החדשה</label></td>
 		                                <td><input type="text" name="wanted-return-recycle" id="wanted-return-recycle" value="" class="number-input" /></td>
                                             </tr>
                                     </table>
@@ -326,7 +328,7 @@
                                     <div>
                                         <span><strong>חשוב!</strong></span>
                                         <p style="width: 77%;">ההחזר החודשי הרצוי הוא הפרמטר החשוב ביותר, ובעל ההשפעה הגדולה ביותר
-                                            על התשלום הסופי עבור ההלואה. חשוב להציב יעד של החזר אותו לא עוברים,
+                                            על התשלום הסופי עבור ההלוואה. חשוב להציב יעד של החזר אותו לא עוברים,
                                             ולא להתפתות להחזיר יותר מהיכולת
 
                                         </p>
@@ -334,7 +336,7 @@
 
                                 <div class="item-content">
                                     @*<span class="bold">נא למלא את כל השדות:</span><br />*@
-                                    <label for="has-money">האם ידוע הרכב ההלואה המקורית כפי שנלקחה ?</label>
+                                    <label for="has-money">האם ידוע הרכב ההלוואה המקורית כפי שנלקחה ?</label>
                                     <input class="ShowCb" data-attr="loan-details" type="radio" name="has-loan-details" value="1" id="has-loan-details" checked="checked"/>
                                     <label for="has-loan-details">כן</label>
 
@@ -463,7 +465,7 @@
                                             </span>
                                         </span>
                                         
-                                        <label for="originalLoanSum">סכום הלוואה מקורית ב-₪</label>
+                                        <label for="originalLoanSum">סכום ההלוואה המקורית ב-₪</label>
                                         <input type="text" disabled="disabled" id="originalLoanSum" />
                                         
                                         <br />
@@ -491,15 +493,15 @@
                                
                                     <table class="input-table">
                                         <tr>
-                                            <td><label for="property-value-buy">מה שוי הנכס הנרכש ב-₪</label></td>
+                                            <td><label for="property-value-buy">מה שווי הנכס הנרכש ב-₪</label></td>
 		                                <td><input type="text" onkeyup="updateMoneyHave();" name="property-value-buy" id="property-value-buy" value="" class="number-input" /></td>
 		                                </tr>
                                         <tr>
-		                                <td><label for="loan-desire">מה סכום ההלואה הרצויה ב-₪</label></td>
+		                                <td><label for="loan-desire">מה סכום ההלוואה הרצויה ב-₪</label></td>
 		                                <td><input type="text" onkeyup="updateMoneyHave();" name="loan-desire" id="loan-desire" value="" class="number-input" /></td>
                                             </tr>
                                         <tr>
-		 									    <td><label for="money-have">הון עצמי קים ב-₪</label></td>
+		 									    <td><label for="money-have">הון עצמי קיים ב-₪</label></td>
 		                                <td><input type="text" name="money-have" id="money-have" value="" class="number-input" disabled ="disabled" /></td>
                                             </tr>
 		                                <tr>
@@ -513,7 +515,7 @@
                                     <div>
                                         <span><strong>חשוב!</strong></span>
                                         <p style="width: 77%;">ההחזר החודשי הרצוי הוא הפרמטר החשוב ביותר, ובעל ההשפעה הגדולה ביותר
-                                            על התשלום הסופי עבור ההלואה. חשוב להציב יעד של החזר אותו לא עוברים,
+                                            על התשלום הסופי עבור ההלוואה. חשוב להציב יעד של החזר אותו לא עוברים,
                                             ולא להתפתות להחזיר יותר מהיכולת
 
                                         </p>
@@ -662,7 +664,7 @@
 
                             <span class="label-select">
 							<input type="checkbox" class="bank-account-management" name="agree-main-account" id="agree-main-account" />
-                            <label for="agree-main-account"><span>חשבון העו"ש העיקרי מנוהל בנק (אופציונלי)</span></label> 
+                            <label for="agree-main-account"><span>חשבון העו"ש העיקרי מנוהל בבנק (אופציונלי)</span></label> 
 
 							     <select id="agree-main-account-bank" name="bank-name[]" class="bankName" disabled="disabled">
 									<option disabled selected style="display:none"></option>		
@@ -674,7 +676,7 @@
                            </span>
                             <span class="label-select">
 							<input type="checkbox" class="bank-account-management" name="agree-secondary-account" id="agree-secondary-account" />
-                            <label for="agree-secondary-account"><span>חשבון עו"ש נוסף מנוהל בנק (אופציונלי)</span></label>
+                            <label for="agree-secondary-account"><span>חשבון עו"ש נוסף מנוהל בבנק (אופציונלי)</span></label>
 
 							     <select id="agree-secondary-account-bank" name="bank-name[]" class="bankName" disabled="disabled">
 									<option disabled selected style="display:none"></option>		
@@ -687,8 +689,8 @@
                             <br />
                             <div>
                                 
-                                <p style="width: 77%;">על מנת להתקדם ביצוע בדיקה עבור ההלואה, אנו צריכים לודא שקים אישור עקרוני
-                                        עבור אותה הלואה, לפחות מבנק אחד למשכנתאות :
+                                <p style="width: 77%;">על מנת להתקדם בביצוע בדיקה עבור ההלוואה, אנו צריכים לוודא שקיים אישור עקרוני
+                                        עבור אותה הלוואה, לפחות מבנק אחד למשכנתאות :
 
                                 </p>
                             </div>
@@ -731,8 +733,8 @@
                             <div>
 								<span class="bold text-label">
 									<br />
-									מומלץ להזין הצעות מחיר שהתקבלו כדי לקבל השואה של ההצעות - זה חינם !<br />
-									האם כבר התקבלו הצעות מחיר עבור בדיוק אותה ההלואה ?
+									מומלץ להזין הצעות מחיר שהתקבלו כדי לקבל השוואה של ההצעות - זה חינם !<br />
+									האם כבר התקבלו הצעות מחיר עבור בדיוק אותה ההלוואה ?
 								</span>
                                         
                                 <input type="radio" name="has-offers" id="has-offers" value ="1" checked="checked" />
@@ -741,9 +743,10 @@
                                 <input type="radio" name="has-offers" value="0" id="doesnt-have-offers" />
                                 <label for="doesnt-have-offers">לא</label>
                             </div>
-                            <div id="banksContainer">
 
-							 
+
+                            <div id="banksContainer">
+                                <!----><!----><!----><!----><!----> 
 <!-- template-->
 								<section id="offersTemplate" style="display:none;">
 									              <div class="table-after-checkbox" style="width: 95%;margin:20px auto 60px auto;">
@@ -751,10 +754,11 @@
                                     <div class="plus">-</div>
 									הסרת בנק
                                 </span>
+                                    <!----><!----><!----><!---->
                                 <span class="bankOffersTable">
 		                                <label>בנק: </label>
-
-		                                <select name="bank-name[]" class="bankName">
+                                    <!----><!----><!----><!----><!---->
+		                                <select name="bank-name[]" class="bankName" id="bank-name-offers">
 											<option disabled selected style="display:none"></option>
                                             @foreach (var bank in Model)
                                             {
@@ -828,7 +832,7 @@
                                 </span>
                                 <span class="bankOffersTable">
 		                                <label>בנק: </label>
-		                                <select name="bank-name[]" class="bankName">
+		                                <select name="bank-name[]" class="bankName" id="bank-name-offers2">
                                             <option disabled selected style="display:none"></option>
 		                                   @foreach (var bank in Model)
                                      {
@@ -845,7 +849,7 @@
 		                                        <th>החזר בש"ח</th>
 												
 		                                    </tr>
-		                                    <tr class="bidTr value-rows">
+		                                    <tr class="bidTr value-rows"> <!---->
 		                                        <td><input type="text" value="" class="number-input bidSum" onkeyup="updateTotalLoanSum()" /></td>
 		                                        <td>
 		                                            <select class="bidType loan-track">
@@ -892,7 +896,7 @@
 				                        </span>
 		                        </span>
                             </div>
-
+                                <!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
 							 <span onclick="AddBank($(this))" class="plusBox addBank">
                                 <div class="plus">+</div>
                                 <span>הוספת בנק</span>
@@ -923,20 +927,20 @@
                             <h2>יציבות ונזילות </h2><br />
                             <input type="radio" name="stability" value="יציבות" id="stability-quite" checked="checked" />
                             <label for="stability-quite">
-                                העדפה לשקט נפשי, החזר יציב ולא הרבה שינוים לאורך הזמן
+                                העדפה לשקט נפשי, החזר יציב ולא הרבה שינויים לאורך הזמן
                             </label>
 
                             <input type="radio" name="stability" value="נזילות" id="stability-danger" />
                             <label for="stability-danger">
-                                העדפה לביצוע יותר שינוים, עם יותר סיכון לשינוים בריבית לאורך הזמן
+                                העדפה לביצוע יותר שינוים, עם יותר סיכון לשינויים בריבית לאורך הזמן
                             </label>
 
                             <h2>שינויים</h2><br />
                             <input type="radio" name="changes" value="0" id="doesnt-have-changes" checked="checked" />
-                            <label for="doesnt-have-changes">אין צפי לשינוים ביכולת ההחזר בעתיד הנראה לעין</label>
+                            <label for="doesnt-have-changes">אין צפי לשינויים ביכולת ההחזר בעתיד הנראה לעין</label>
 
                             <input type="radio" name="changes" value ="1" id="has-changes" />
-                            <label for="has-changes">יש צפי לשינוים ביכולת ההחזר בעתיד:</label>
+                            <label for="has-changes">יש צפי לשינויים ביכולת ההחזר בעתיד:</label>
                             <div id="has-changes-checked">
                                 <span class="bold">נא לסמן אחת משתי האפשרויות לבחירה:</span><br />
                                 <input type="radio" name="changes-options" value="monthlyReturn" id="changes-quite" />
@@ -958,7 +962,7 @@
 
                                 <input type="radio" name="changes-options" value="fullOut" id="changes-danger" checked="checked" />
                                 <label for="changes-danger" class="changes-options-label" style="display:inline-block;">
-                                    התכנון הוא לסגור לגמרי את ההלואה בתוך-
+                                    התכנון הוא לסגור לגמרי את ההלוואה בתוך-
                                     </label>
                                     <select id="fullOutTime">
                                          @for (var i = 2; i < 21; i++)
@@ -997,7 +1001,7 @@
                                 <span class="autoUpdate" id="ODisDebt" style="margin-left:200px;"></span>
                             שיעור מימון :
                                 <span class="autoUpdate" id="ODloanPercent"></span><br />
-                            שיחרורים עתידיים :
+                            שחרורים עתידיים :
                                 <span class="autoUpdate" id="ODisRelease" style="margin-left:200px;"></span>
                             יחס החזר מההכנסה :
                                 <span class="autoUpdate" id="ODreturnPercent"></span><br />
